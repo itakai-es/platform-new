@@ -31,12 +31,33 @@ coverage/
 .DS_Store
 Thumbs.db
 
-# IDE
+# IDE / editores
 .vscode/
 .idea/
+.zed/
+.cursor/
 *.swp
 *.swo
 *~
+
+# Herramientas de agentes IA (Claude Code, Cursor Skills, BMAD…)
+.claude/
+.agents/
+_bmad/
+_bmad-*/
+.bmad-*/
+CLAUDE.md
+app/CLAUDE.md
+api/CLAUDE.md
+
+# Documentación / planning internos (si algún día se meten por accidente)
+AUDIT-PLAN.md
+PRESUPUESTO.md
+ESTADO-MVP.md
+NEW-PLAN.md
+REPO_STRATEGY.md
+TODO.md
+PUBLISHING.md
 
 # Temp files
 *.tmp
