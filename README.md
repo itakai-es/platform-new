@@ -10,7 +10,7 @@
   <p>
     <a href="https://itakai.es"><strong>Website</strong></a> ·
     <a href="https://feedback.itakai.es"><strong>Reportar Bug</strong></a> ·
-    <a href="https://x.com/itakai"><strong>Comunidad</strong></a>
+    <a href="https://x.com/proyectoitakai"><strong>Comunidad</strong></a>
   </p>
 
   <p>
@@ -119,7 +119,7 @@
 ```bash
 # Clonar el repositorio
 git clone https://github.com/itakai-es/platform-new.git
-cd platform
+cd platform-new
 
 # Configurar variables de entorno
 cp .env.example .env
@@ -153,7 +153,6 @@ pnpm preview
 
 [![Deploy on Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/itakai-es/platform-new)
 [![Deploy on Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/itakai-es/platform-new)
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/itakai)
 
 ---
 
@@ -330,11 +329,11 @@ Lee nuestra [Guía de Contribución](./CONTRIBUTING.md) para más detalles.
 
 <div align="center">
 
-[![X](https://img.shields.io/badge/X-Síguenos-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/itakai)
+[![X](https://img.shields.io/badge/X-Síguenos-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/proyectoitakai)
 
 </div>
 
-Novedades, avances y comunidad en [x.com/itakai](https://x.com/itakai).
+Novedades, avances y comunidad en [x.com/proyectoitakai](https://x.com/proyectoitakai).
 
 ---
 
@@ -407,7 +406,7 @@ Agradecemos a todos los contribuidores que han hecho posible este proyecto:
 
 - 🌐 [Website Oficial](https://itakai.es)
 - 🐛 [Reportar bugs y sugerencias](https://feedback.itakai.es)
-- 🐦 [X / Twitter](https://x.com/itakai)
+- 🐦 [X / Twitter](https://x.com/proyectoitakai)
 - 📦 [Releases](https://github.com/itakai-es/platform-new/releases)
 
 ---
@@ -422,6 +421,6 @@ Agradecemos a todos los contribuidores que han hecho posible este proyecto:
 
 **Construido con ❤️ por el equipo de ITAKAI**
 
-[Website](https://itakai.es) • [Reportar bug](https://feedback.itakai.es) • [X](https://x.com/itakai)
+[Website](https://itakai.es) • [Reportar bug](https://feedback.itakai.es) • [X](https://x.com/proyectoitakai)
 
 </div>
