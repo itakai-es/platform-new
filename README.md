@@ -121,11 +121,13 @@
 git clone https://github.com/itakai-es/platform-new.git
 cd platform-new
 
-# Configurar variables de entorno
+# Configurar variables de entorno (3 archivos: raíz, api y app)
 cp .env.example .env
+cp api/.env.example api/.env
+cp app/.env.example app/.env
 
 # Levantar con Docker Compose
-docker-compose up -d
+docker compose up -d
 
 # Acceder en http://localhost:4000
 ```
