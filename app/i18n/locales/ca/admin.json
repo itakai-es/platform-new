@@ -1,0 +1,251 @@
+{
+  "admin": {
+    "dashboard": {
+      "title": "Tauler d'Administrador",
+      "subtitle": "Tauler de control del sistema ITAKAI",
+      "activity": {
+        "title": "Activitat del Sistema",
+        "period_24h": "Últimes 24 hores",
+        "period_week": "Última setmana",
+        "period_month": "Últim mes"
+      },
+      "quick_actions": {
+        "manage_users": "Gestionar Usuaris"
+      },
+      "system_status": {
+        "title": "Estat del Sistema",
+        "operational": "Operatiu",
+        "degraded": "Degradat",
+        "down": "Fora de servei",
+        "unknown": "Desconegut",
+        "empty": "No hi ha serveis disponibles"
+      },
+      "meta": {
+        "title": "Tauler Admin | ITAKAI",
+        "description": "Tauler de control del sistema ITAKAI. Gestiona usuaris, institucions i monitoritza l'estat de la plataforma."
+      }
+    },
+    "users": {
+      "title": "Gestió d'Usuaris",
+      "meta": {
+        "title": "Gestió d'Usuaris | ITAKAI Admin",
+        "description": "Administra tots els usuaris del sistema, crea nous perfils, edita rols i monitoritza l'activitat."
+      },
+      "subtitle": "Administra tots els usuaris de la plataforma",
+      "filters": {
+        "search_placeholder": "Cercar per nom o email...",
+        "all_roles": "Tots els rols",
+        "students": "Estudiants",
+        "teachers": "Professors",
+        "admins": "Administradors",
+        "all_statuses": "Tots els estats",
+        "active": "Actiu",
+        "suspended": "Suspès",
+        "inactive": "Inactiu",
+        "clear": "Esborrar filtres"
+      },
+      "roles": {
+        "student": "Estudiant",
+        "teacher": "Professor",
+        "admin": "Admin"
+      },
+      "card": {
+        "status": "Estat",
+        "classes": "Classes",
+        "last_login": "Últ. accés"
+      },
+      "empty": {
+        "title": "No s'han trobat usuaris",
+        "description": "No hi ha usuaris que coincideixin amb els filtres seleccionats."
+      },
+      "actions": {
+        "suspend_title": "Suspendre usuari",
+        "suspend_message": "Estàs segur que vols suspendre {name}? No podrà accedir a la plataforma.",
+        "suspend_confirm": "Suspendre",
+        "delete_title": "Eliminar usuari",
+        "delete_message": "Estàs segur que vols eliminar {name}? Aquesta acció no es pot desfer.",
+        "delete_confirm": "Eliminar"
+      }
+    },
+    "classes": {
+      "title": "Gestió de Classes",
+      "meta": {
+        "title": "Gestió de Classes | ITAKAI Admin"
+      },
+      "subtitle": "Visualitza totes les classes de la plataforma",
+      "filters": {
+        "search_placeholder": "Cercar classes..."
+      },
+      "empty": {
+        "title": "No s'han trobat classes",
+        "description": "No hi ha classes que coincideixin amb els filtres seleccionats."
+      }
+    },
+    "missions": {
+      "title": "Gestió de Missions",
+      "meta": {
+        "title": "Gestió de Missions | ITAKAI Admin"
+      },
+      "subtitle": "Visualitza totes les missions de la plataforma",
+      "filters": {
+        "search_placeholder": "Cercar missions..."
+      },
+      "empty": {
+        "title": "No s'han trobat missions",
+        "description": "No hi ha missions que coincideixin amb els filtres seleccionats."
+      }
+    },
+    "schools": {
+      "title": "Gestió d'Institucions",
+      "meta": {
+        "title": "Gestió d'Institucions | ITAKAI Admin",
+        "description": "Administra totes les institucions educatives del sistema, crea noves escoles i monitoritza la seva activitat."
+      },
+      "subtitle": "Administra les institucions educatives",
+      "filters": {
+        "search_placeholder": "Cercar institució...",
+        "all_statuses": "Tots els estats",
+        "active": "Activa",
+        "inactive": "Inactiva"
+      },
+      "form": {
+        "create_title": "Nova institució",
+        "edit_title": "Editar institució",
+        "name": "Nom",
+        "name_placeholder": "Nom de la institució",
+        "city": "Ciutat",
+        "city_placeholder": "Ciutat",
+        "country": "País",
+        "country_placeholder": "País",
+        "save": "Desar",
+        "cancel": "Cancel·lar"
+      },
+      "actions": {
+        "create": "Crear institució",
+        "delete_title": "Eliminar institució",
+        "delete_message": "Estàs segur que vols eliminar {name}?",
+        "delete_confirm": "Eliminar"
+      },
+      "empty": {
+        "title": "No s'han trobat institucions",
+        "description": "No hi ha institucions que coincideixin amb els filtres seleccionats."
+      }
+    },
+    "analytics": {
+      "title": "Analítiques del Sistema",
+      "subtitle": "Mètriques i estadístiques de la plataforma",
+      "period": {
+        "week": "Setmana",
+        "month": "Mes",
+        "quarter": "Trimestre"
+      },
+      "kpis": {
+        "avg_response": "Temps de resposta",
+        "requests_per_min": "Peticions/min",
+        "error_rate": "Taxa d'error",
+        "uptime": "Disponibilitat"
+      },
+      "overview": {
+        "total_users": "Usuaris Totals",
+        "missions_completed": "Missions Completades",
+        "completion_rate": "Taxa de Compleció",
+        "active_today": "Actius avui"
+      },
+      "sections": {
+        "system_resources": "Recursos del Sistema",
+        "service_health": "Estat dels Serveis",
+        "response_time": "Temps de Resposta",
+        "active_users": "Usuaris Actius",
+        "requests": "Peticions",
+        "tokens_over_time": "Tokens Consumits",
+        "users_by_role": "Usuaris per Rol",
+        "missions_by_status": "Missions per Estat",
+        "missions_by_rarity": "Missions per Raresa",
+        "ai_usage": "Ús d'IA (Assistents)"
+      },
+      "system": {
+        "memory": "Memòria",
+        "disk": "Disc",
+        "db_latency": "Latència BD"
+      },
+      "ai": {
+        "total_tokens": "Tokens totals",
+        "avg_tokens_user": "Mitjana per usuari",
+        "total_conversations": "Converses",
+        "avg_conversations_user": "Conv. per usuari"
+      },
+      "table": {
+        "service": "Servei",
+        "status": "Estat",
+        "uptime": "Uptime",
+        "latency": "Latència"
+      },
+      "status": {
+        "operational": "OK",
+        "degraded": "Degradat",
+        "down": "Caigut"
+      },
+      "meta": {
+        "title": "Analítiques del Sistema | ITAKAI Admin",
+        "description": "Visualitza mètriques avançades, gràfics de rendiment i anàlisis detallades de la plataforma."
+      }
+    },
+    "logs": {
+      "title": "Logs del Sistema",
+      "meta": {
+        "title": "Logs del Sistema | ITAKAI Admin",
+        "description": "Revisa els registres d'activitat del sistema, audita accions d'usuaris i diagnostica problemes tècnics."
+      },
+      "tab": "Activitat",
+      "subtitle": "Registres d'activitat del sistema",
+      "filters": {
+        "search_placeholder": "Cercar als logs...",
+        "period_24h": "Últimes 24 hores",
+        "period_week": "Última setmana",
+        "period_month": "Últim mes",
+        "all_severities": "Totes",
+        "info": "Info",
+        "warning": "Warning",
+        "error": "Error",
+        "success": "Success",
+        "all_types": "Tots els tipus",
+        "new_school": "Nova institució",
+        "new_users": "Nous usuaris",
+        "alert": "Alerta",
+        "system_update": "Actualització",
+        "missions_completed": "Missions completades",
+        "user_action": "Acció d'usuari"
+      },
+      "empty": {
+        "title": "No s'han trobat logs",
+        "description": "No hi ha registres que coincideixin amb els filtres seleccionats."
+      }
+    },
+    "system_logs": {
+      "tab": "Sistema",
+      "filters": {
+        "search_placeholder": "Cercar als logs del sistema...",
+        "all_levels": "Tots els nivells",
+        "all_categories": "Totes les categories"
+      },
+      "levels": {
+        "info": "Info",
+        "warning": "Avís",
+        "error": "Error",
+        "success": "OK"
+      },
+      "categories": {
+        "health_check": "Health Check",
+        "service_status": "Estat de Servei",
+        "security": "Seguretat",
+        "performance": "Rendiment",
+        "maintenance": "Manteniment",
+        "backup": "Backup"
+      },
+      "empty": {
+        "title": "No s'han trobat logs del sistema",
+        "description": "No hi ha registres del sistema que coincideixin amb els filtres seleccionats."
+      }
+    }
+  }
+}

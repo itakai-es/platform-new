@@ -1,0 +1,18 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: itakai-frontend
+    env_file:
+      - .env
+    environment:
+      PORT: 3000
+      HOST: 0.0.0.0
+    restart: unless-stopped
+    networks:
+      - shared-proxy-network
+
+networks:
+  shared-proxy-network:
+    external: true

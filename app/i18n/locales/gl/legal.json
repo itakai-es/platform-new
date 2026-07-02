@@ -1,0 +1,456 @@
+{
+  "legal": {
+    "terms": {
+      "title": "Termos e Condicións",
+      "last_updated": "Última actualización: Xaneiro 2026",
+      "sections": {
+        "acceptance": {
+          "title": "1. Aceptación dos Termos",
+          "p1": "Benvido a ITAKAI. Ao acceder e utilizar a nosa plataforma educativa gamificada, aceptas estar vinculado por estes Termos e Condicións (\"Termos\"). Se non estás de acordo con algunha parte destes termos, non debes utilizar os nosos servizos.",
+          "p2": "Estes Termos constitúen un acordo legal entre ti (o \"Usuario\") e ITAKAI (a \"Plataforma\", \"nós\", \"noso\"). Recomendámosche ler estes termos coidadosamente antes de rexistrarte."
+        },
+        "service_description": {
+          "title": "2. Descrición do Servizo",
+          "intro": "ITAKAI é unha plataforma educativa gamificada inspirada na mitoloxía grega que ofrece:",
+          "features": {
+            "missions": "Misións educativas interactivas (tarefas gamificadas)",
+            "ai_assistants": "Cinco asistentes de intelixencia artificial baseados en personaxes mitolóxicos (Atenea, Odiseo, Penélope, Polifemo, Poseidón)",
+            "progress": "Sistema de progreso con experiencia (XP), niveis e logros",
+            "management": "Ferramentas de xestión para profesores e administradores",
+            "chat": "Chat en tempo real con asistentes IA para apoio educativo"
+          },
+          "disclaimer": "Reservámonos o dereito de modificar, suspender ou descontinuar calquera aspecto do servizo en calquera momento, con ou sen previo aviso."
+        },
+        "accounts": {
+          "title": "3. Rexistro e Contas de Usuario",
+          "eligibility_title": "3.1 Elixibilidade",
+          "eligibility_text": "Para utilizar ITAKAI, debes ter polo menos 13 anos de idade. Os menores de 18 anos deben contar co consentimento dun pai, nai ou titor legal para rexistrarse. O uso por parte de menores debe ser supervisado por unha institución educativa ou titor.",
+          "account_types_title": "3.2 Tipos de Conta",
+          "account_student": "Estudante: Para usuarios que realizan misións e aprenden a través da plataforma",
+          "account_teacher": "Profesor: Para educadores que crean misións, xestionan clases e monitorizan o progreso de estudantes",
+          "account_admin": "Administrador: Para persoal interno de ITAKAI con acceso a funcións administrativas do sistema",
+          "security_title": "3.3 Seguridade da Conta",
+          "security_intro": "Es responsable de:",
+          "security_password": "Manter a confidencialidade do teu contrasinal",
+          "security_activity": "Todas as actividades que ocorran baixo a túa conta",
+          "security_notify": "Notificarnos inmediatamente sobre calquera uso non autorizado da túa conta",
+          "security_info": "Proporcionar información de rexistro precisa, completa e actualizada"
+        },
+        "acceptable_use": {
+          "title": "4. Uso Aceptable",
+          "permitted_title": "4.1 Conduta Permitida",
+          "permitted_intro": "Ao usar ITAKAI, comprométesche a:",
+          "permitted_educational": "Utilizar a plataforma unicamente con fins educativos e lexítimos",
+          "permitted_respect": "Respectar a outros usuarios, profesores e administradores",
+          "permitted_content": "Proporcionar contido apropiado e respectuoso",
+          "permitted_laws": "Cumprir con todas as leis e regulacións aplicables",
+          "prohibited_title": "4.2 Conduta Prohibida",
+          "prohibited_intro": "Está estritamente prohibido:",
+          "prohibited_hacking": "Hackear, realizar enxeñaría inversa ou intentar acceder a sistemas non autorizados",
+          "prohibited_offensive": "Subir contido ofensivo, difamatorio, ilegal ou inapropiado",
+          "prohibited_harassment": "Acosar, intimidar ou ameazar a outros usuarios",
+          "prohibited_cheating": "Facer trampas ou manipular o sistema de puntos, XP ou logros",
+          "prohibited_sharing": "Compartir a túa conta con terceiros",
+          "prohibited_bots": "Usar bots, scripts ou ferramentas automatizadas sen autorización",
+          "prohibited_ip": "Violar dereitos de propiedade intelectual de terceiros",
+          "prohibited_data": "Recompilar datos de outros usuarios sen consentimento"
+        },
+        "intellectual_property": {
+          "title": "5. Propiedade Intelectual",
+          "content_title": "5.1 Contido de ITAKAI",
+          "content_text": "Todo o contido da plataforma, incluíndo pero non limitado a deseño, gráficos, logotipos, texto, código fonte, funcionalidades, personaxes mitolóxicos adaptados, asistentes IA e estrutura de misións, é propiedade exclusiva de ITAKAI e está protexido por leis de dereitos de autor, marcas rexistradas e outras leis de propiedade intelectual.",
+          "license_title": "5.2 Licenza de Uso",
+          "license_text": "Outorgámosche unha licenza limitada, non exclusiva, intransferible e revocable para acceder e usar ITAKAI unicamente para os teus propósitos educativos persoais. Non podes copiar, modificar, distribuír, vender ou explotar comercialmente ningunha parte da plataforma sen o noso consentimento previo por escrito."
+        },
+        "user_content": {
+          "title": "6. Contido do Usuario",
+          "p1": "Ao enviar contido a ITAKAI (como respostas a misións, mensaxes de chat, comentarios), outórganos unha licenza mundial, libre de regalías, sublicenzable e transferible para usar, reproducir, distribuír, amosar e modificar dito contido co fin de proporcionar e mellorar os nosos servizos.",
+          "p2": "Es o único responsable do contido que publicas e garantís que tes todos os dereitos necesarios para outorgar esta licenza. Non publicamos contido que viole dereitos de terceiros ou leis aplicables."
+        },
+        "liability": {
+          "title": "7. Limitación de Responsabilidade",
+          "availability_title": "7.1 Dispoñibilidade do Servizo",
+          "availability_text": "ITAKAI proporciónase \"tal cal\" e \"segundo dispoñibilidade\". Non garantimos que o servizo estea dispoñible de maneira ininterrompida, segura ou libre de erros. Podemos experimentar interrupcións por mantemento, actualizacións ou problemas técnicos.",
+          "educational_title": "7.2 Contido Educativo",
+          "educational_text": "Aínda que nos esforzamos por proporcionar contido educativo de calidade, non garantimos a exactitude, completitude ou actualidade de todo o contido. Os asistentes IA son ferramentas de apoio educativo e non substitúen a supervisión dun profesor cualificado.",
+          "warranty_title": "7.3 Exclusión de Garantías",
+          "warranty_text": "Na máxima medida permitida pola lei, ITAKAI exclúe todas as garantías, expresas ou implícitas, incluíndo garantías de comerciabilidade, idoneidade para un propósito particular e non infracción."
+        },
+        "modifications": {
+          "title": "8. Modificacións do Servizo e Termos",
+          "p1": "Reservámonos o dereito de modificar ou descontinuar, temporal ou permanentemente, o servizo (ou calquera parte del) con ou sen previo aviso. Non seremos responsables ante ti nin ante terceiros por calquera modificación, suspensión ou descontinuación do servizo.",
+          "p2": "Podemos actualizar estes Termos ocasionalmente. Notificarémosche sobre cambios significativos mediante un aviso na plataforma ou por correo electrónico. O uso continuado do servizo despois da notificación constitúe a túa aceptación dos novos termos."
+        },
+        "termination": {
+          "title": "9. Terminación de Conta",
+          "by_user_title": "9.1 Terminación polo Usuario",
+          "by_user_text": "Podes eliminar a túa conta en calquera momento desde a configuración do teu perfil ou contactándonos en soporte{'@'}itakai.com. A eliminación da túa conta resultará na perda permanente de todos os teus datos, progreso, logros e contido asociado.",
+          "by_itakai_title": "9.2 Terminación por ITAKAI",
+          "by_itakai_intro": "Reservámonos o dereito de suspender ou terminar a túa conta se:",
+          "by_itakai_violation": "Violas estes Termos e Condicións",
+          "by_itakai_fraud": "Participas en conduta fraudulenta ou ilegal",
+          "by_itakai_inactivity": "A túa conta permanece inactiva por un período prolongado",
+          "by_itakai_legal": "O requirimos por motivos legais ou regulatorios"
+        },
+        "jurisdiction": {
+          "title": "10. Lei Aplicable e Xurisdición",
+          "text": "Estes Termos rexeranse e interpretaranse de acordo coas leis de España, sen dar efecto a ningún principio de conflitos de lei. Calquera disputa que xurda de ou relacionada con estes Termos estará suxeita á xurisdición exclusiva dos tribunais de España."
+        },
+        "general": {
+          "title": "11. Disposicións Xerais",
+          "complete_title": "11.1 Acordo Completo",
+          "complete_text": "Estes Termos, xunto coa nosa Política de Privacidade e Política de Cookies, constitúen o acordo completo entre ti e ITAKAI.",
+          "severability_title": "11.2 Divisibilidade",
+          "severability_text": "Se algunha disposición destes Termos se considera inválida ou inaplicable, as disposicións restantes permanecerán en pleno vigor e efecto.",
+          "waiver_title": "11.3 Renuncia",
+          "waiver_text": "A falta de exercicio de calquera dereito ou disposición destes Termos non constituirá unha renuncia a dito dereito ou disposición."
+        },
+        "contact": {
+          "title": "12. Contacto",
+          "intro": "Se tes preguntas ou preocupacións sobre estes Termos e Condicións, podes contactarnos en:",
+          "company": "ITAKAI",
+          "email_label": "Email:",
+          "support_label": "Soporte:"
+        }
+      },
+      "meta": {
+        "title": "Termos de Servizo | ITAKAI",
+        "description": "Termos e condicións de uso da plataforma educativa ITAKAI."
+      }
+    },
+    "privacy_policy": {
+      "title": "Política de Privacidade",
+      "last_updated": "Última actualización: Xaneiro 2026",
+      "sections": {
+        "introduction": {
+          "title": "1. Introdución",
+          "p1": "En ITAKAI (\"nós\", \"noso\" ou \"a plataforma\"), comprometémonos a protexer a túa privacidade e os teus datos persoais. Esta Política de Privacidade describe como recompilamos, usamos, compartimos e protexemos a información persoal dos nosos usuarios (estudantes, profesores e administradores).",
+          "p2": "Ao utilizar ITAKAI, aceptas as prácticas descritas nesta política. Se non estás de acordo con algunha parte desta política, por favor non utilices os nosos servizos."
+        },
+        "information_collected": {
+          "title": "2. Información que Recompilamos",
+          "account_title": "2.1 Información de Conta",
+          "account_intro": "Cando te rexistras en ITAKAI, recompilamos:",
+          "account_name": "Nome completo",
+          "account_email": "Correo electrónico",
+          "account_password": "Contrasinal (encriptado)",
+          "account_role": "Rol (estudante, profesor, administrador)",
+          "account_avatar": "Avatar ou foto de perfil (opcional)",
+          "usage_title": "2.2 Información de Uso",
+          "usage_intro": "Durante o uso da plataforma, recompilamos:",
+          "usage_missions": "Misións completadas e progreso educativo",
+          "usage_xp": "Puntos de experiencia (XP) e niveis alcanzados",
+          "usage_ai": "Interaccións con asistentes de IA",
+          "usage_chat": "Mensaxes no chat con profesores e asistentes",
+          "usage_badges": "Logros e badges desbloqueados",
+          "usage_stats": "Estatísticas de rendemento académico",
+          "technical_title": "2.3 Información Técnica",
+          "technical_intro": "Automaticamente recompilamos:",
+          "technical_ip": "Enderezo IP",
+          "technical_browser": "Tipo de navegador e versión",
+          "technical_os": "Sistema operativo",
+          "technical_pages": "Páxinas visitadas e tempo de navegación",
+          "technical_cookies": "Cookies e tecnoloxías similares"
+        },
+        "how_we_use": {
+          "title": "3. Como Usamos a túa Información",
+          "intro": "Utilizamos a túa información persoal para:",
+          "educational": "Proporcionar o servizo educativo: Xestionar a túa conta, entregar contido personalizado e rastrexar o teu progreso académico",
+          "personalization": "Personalización con IA: Adaptar as recomendacións dos nosos asistentes IA segundo o teu nivel e necesidades",
+          "communication": "Comunicación: Enviarche notificacións importantes, actualizacións de misións e mensaxes de profesores",
+          "improvement": "Mellora do servizo: Analizar o uso da plataforma para mellorar funcionalidades e experiencia de usuario",
+          "security": "Seguridade: Detectar e previr fraude, abuso ou actividades non autorizadas",
+          "legal": "Cumprimento legal: Cumprir con obrigacións legais e regulatorias aplicables"
+        },
+        "sharing": {
+          "title": "4. Compartir Información",
+          "intro": "Non vendemos nin alugamos a túa información persoal a terceiros. Podemos compartir os teus datos nas seguintes circunstancias:",
+          "teachers": "Con profesores: Se es estudante, os teus profesores poden ver o teu progreso académico e estatísticas de rendemento",
+          "providers": "Provedores de servizos: Compartimos información con provedores que nos axudan a operar a plataforma (hosting, análise, IA)",
+          "legal_requirements": "Requisitos legais: Cando sexa requirido por lei, orde xudicial ou autoridades gobernamentais",
+          "rights": "Protección de dereitos: Para protexer os dereitos, propiedade ou seguridade de ITAKAI, usuarios ou outros"
+        },
+        "data_security": {
+          "title": "5. Seguridade de Datos",
+          "intro": "Implementamos medidas de seguridade técnicas e organizativas apropiadas para protexer a túa información persoal contra acceso non autorizado, perda, destrución ou alteración. Isto inclúe:",
+          "encryption": "Encriptación de contrasinais con algoritmos seguros",
+          "https": "Conexións HTTPS/SSL para todas as transmisións de datos",
+          "access": "Acceso restrinxido a datos persoais só para persoal autorizado",
+          "audits": "Auditorías de seguridade regulares",
+          "backup": "Copia de seguridade e recuperación de datos"
+        },
+        "gdpr_rights": {
+          "title": "6. Os teus Dereitos (GDPR)",
+          "intro": "De acordo co Regulamento Xeral de Protección de Datos (GDPR), tes os seguintes dereitos:",
+          "access": "Acceso: Solicitar unha copia dos teus datos persoais",
+          "rectification": "Rectificación: Corrixir datos inexactos ou incompletos",
+          "erasure": "Eliminación: Solicitar a eliminación dos teus datos (\"dereito ao esquecemento\")",
+          "portability": "Portabilidade: Recibir os teus datos en formato estruturado e transferilos a outro servizo",
+          "objection": "Oposición: Opoñerte ao procesamento dos teus datos para certos fins",
+          "restriction": "Limitación: Solicitar a restrición do procesamento dos teus datos",
+          "contact": "Para exercer estes dereitos, contáctanos en privacidad{'@'}itakai.com"
+        },
+        "cookies_section": {
+          "title": "7. Cookies e Tecnoloxías Similares",
+          "text": "Utilizamos cookies e tecnoloxías similares para mellorar a túa experiencia en ITAKAI. Para máis información sobre o noso uso de cookies, consulta a nosa Política de Cookies."
+        },
+        "data_retention": {
+          "title": "8. Retención de Datos",
+          "text": "Conservamos a túa información persoal durante o tempo que a túa conta estea activa ou mentres sexa necesario para proporcionar os nosos servizos. Se eliminas a túa conta, conservaremos certos datos durante o período requirido por lei ou para fins lexítimos de negocio (por exemplo, prevención de fraude, resolución de disputas)."
+        },
+        "minors": {
+          "title": "9. Menores de Idade",
+          "text": "ITAKAI está deseñado para uso educativo e pode incluír usuarios menores de 18 anos baixo a supervisión de profesores ou institucións educativas. Se es pai/nai/titor e tes preguntas sobre como manexamos os datos de menores, contáctanos en soporte{'@'}itakai.com"
+        },
+        "policy_changes": {
+          "title": "10. Cambios a esta Política",
+          "text": "Podemos actualizar esta Política de Privacidade ocasionalmente. Notificarémosche sobre cambios significativos mediante un aviso na plataforma ou por correo electrónico. A data de \"Última actualización\" ao inicio desta política indicará cando se realizaron os cambios máis recentes."
+        },
+        "contact": {
+          "title": "11. Contacto",
+          "intro": "Se tes preguntas, preocupacións ou solicitudes relacionadas con esta Política de Privacidade, podes contactarnos en:",
+          "company": "ITAKAI",
+          "email_label": "Email:",
+          "support_label": "Soporte:"
+        }
+      },
+      "meta": {
+        "title": "Política de Privacidade | ITAKAI",
+        "description": "Coñece como protexemos e xestionamos a túa información persoal en ITAKAI."
+      }
+    },
+    "cookies": {
+      "title": "Política de Cookies",
+      "last_updated": "Última actualización: Xaneiro 2026",
+      "sections": {
+        "what_are": {
+          "title": "1. Que son as Cookies?",
+          "p1": "As cookies son pequenos arquivos de texto que se almacenan no teu dispositivo (ordenador, tablet ou móbil) cando visitas un sitio web. As cookies permiten que o sitio web recorde as túas accións e preferencias durante un período de tempo, para que non teñas que volver a configuralas cada vez que regreses ao sitio ou navegues dunha páxina a outra.",
+          "p2": "En ITAKAI utilizamos cookies e tecnoloxías similares para mellorar a túa experiencia na nosa plataforma educativa, proporcionar funcionalidades esenciais e analizar como se utiliza o noso servizo."
+        },
+        "types": {
+          "title": "2. Tipos de Cookies que Utilizamos",
+          "essential_title": "2.1 Cookies Esenciais (Estritamente Necesarias)",
+          "essential_text": "Estas cookies son imprescindibles para que poidas navegar por ITAKAI e utilizar as súas funcionalidades. Sen estas cookies, servizos como o inicio de sesión, a navegación entre páxinas ou o acceso a áreas seguras non funcionarían correctamente.",
+          "essential_examples_title": "Exemplos de uso:",
+          "essential_session": "Manter a túa sesión activa mentres navegas pola plataforma",
+          "essential_auth": "Recordar a túa autenticación (tokens de acceso)",
+          "essential_security": "Seguridade e prevención de fraudes",
+          "essential_load": "Equilibrio de carga do servidor",
+          "essential_note": "Estas cookies non se poden desactivar xa que son necesarias para o funcionamento básico de ITAKAI.",
+          "functionality_title": "2.2 Cookies de Funcionalidade",
+          "functionality_text": "Estas cookies permiten que ITAKAI recorde as eleccións que fas (como o teu nome de usuario, idioma ou rexión) e proporcionen funcionalidades melloradas e máis personalizadas.",
+          "functionality_examples_title": "Exemplos de uso:",
+          "functionality_preferences": "Recordar as túas preferencias de visualización (tema, tamaño de fonte)",
+          "functionality_progress": "Gardar o teu progreso en misións",
+          "functionality_assistant": "Manter a túa selección de asistente IA favorito",
+          "functionality_chat": "Recordar a túa última conversa activa no chat",
+          "functionality_note": "Podes controlar estas cookies a través da configuración do teu navegador, pero desactivalas pode afectar a funcionalidade da plataforma.",
+          "analytics_title": "2.3 Cookies de Rendemento e Analíticas",
+          "analytics_text": "Estas cookies recompilan información sobre como os usuarios utilizan ITAKAI, como que páxinas visitan máis frecuentemente ou se reciben mensaxes de erro. Toda a información que recollen estas cookies é agregada e anónima.",
+          "analytics_examples_title": "Exemplos de uso:",
+          "analytics_patterns": "Analizar patróns de navegación e uso da plataforma",
+          "analytics_visitors": "Contar visitantes e entender como navegan polo sitio",
+          "analytics_effectiveness": "Medir a efectividade de misións e contido educativo",
+          "analytics_errors": "Detectar e solucionar erros técnicos",
+          "analytics_performance": "Mellorar o rendemento do sitio",
+          "analytics_note": "Utilizamos ferramentas de análise para comprender mellor como mellorar a experiencia do usuario. Podes optar por non participar no seguimento analítico a través da configuración do teu navegador.",
+          "third_party_title": "2.4 Cookies de Terceiros",
+          "third_party_text": "Algúns dos nosos servizos utilizan cookies establecidas por terceiros de confianza para proporcionar funcionalidades adicionais:",
+          "third_party_google": "Google OAuth: Para permitir o inicio de sesión coa túa conta de Google",
+          "third_party_ai": "Servizos de IA: Para proporcionar respostas dos nosos asistentes mitolóxicos",
+          "third_party_cdn": "CDN e Hosting: Para mellorar a velocidade de carga do sitio",
+          "third_party_note": "Estas cookies de terceiros están suxeitas ás políticas de privacidade dos seus respectivos provedores."
+        },
+        "duration": {
+          "title": "3. Duración das Cookies",
+          "session_title": "3.1 Cookies de Sesión",
+          "session_text": "Son cookies temporais que se eliminan automaticamente cando pechas o teu navegador. Utilízanse principalmente para manter a túa sesión activa mentres navegas por ITAKAI.",
+          "persistent_title": "3.2 Cookies Persistentes",
+          "persistent_text": "Permanecen no teu dispositivo durante un período de tempo específico ou ata que as elimines manualmente. En ITAKAI, as cookies persistentes adoitan expirar despois de:",
+          "persistent_auth": "Autenticación: 30 días (se seleccionas \"Lembrarme\")",
+          "persistent_preferences": "Preferencias: 1 ano",
+          "persistent_analytics": "Analíticas: 2 anos"
+        },
+        "manage": {
+          "title": "4. Como Xestionar e Eliminar Cookies",
+          "intro": "Tes dereito a decidir se aceptas ou rexeitas cookies. Podes exercer as túas preferencias de cookies das seguintes maneiras:",
+          "browser_title": "4.1 Configuración do Navegador",
+          "browser_text": "A maioría dos navegadores web aceptan cookies automaticamente, pero podes modificar a configuración do teu navegador para rexeitalas se o prefires:",
+          "browser_chrome": "Google Chrome: Configuración → Privacidade e seguridade → Cookies e outros datos de sitios",
+          "browser_firefox": "Firefox: Opcións → Privacidade e seguridade → Cookies e datos do sitio",
+          "browser_safari": "Safari: Preferencias → Privacidade → Cookies e datos de sitios web",
+          "browser_edge": "Microsoft Edge: Configuración → Cookies e permisos do sitio → Cookies",
+          "tools_title": "4.2 Ferramentas de Terceiros",
+          "tools_text": "Existen ferramentas de terceiros que che permiten xestionar cookies, como:",
+          "blocking_title": "4.3 Impacto de Bloquear Cookies",
+          "blocking_warning_title": "Advertencia",
+          "blocking_warning_text": "Se decides bloquear ou eliminar cookies, algunhas funcionalidades de ITAKAI poden non funcionar correctamente. Por exemplo, non poderás manter a túa sesión activa, gardar o teu progreso en misións ou acceder a contido personalizado."
+        },
+        "changes": {
+          "title": "5. Cambios nesta Política de Cookies",
+          "p1": "Podemos actualizar esta Política de Cookies ocasionalmente para reflectir cambios nas cookies que utilizamos ou por razóns operativas, legais ou regulatorias. Recomendámosche revisar esta páxina periodicamente para estar informado sobre o noso uso de cookies.",
+          "p2": "A data de \"Última actualización\" ao inicio desta política indica cando se realizaron os cambios máis recentes."
+        },
+        "more_info": {
+          "title": "6. Máis Información",
+          "p1": "Para obter máis información sobre como protexemos a túa privacidade e xestionamos os teus datos persoais, consulta a nosa Política de Privacidade.",
+          "p2": "Se tes algunha pregunta ou preocupación sobre a nosa Política de Cookies, contáctanos en:",
+          "company": "ITAKAI",
+          "email_label": "Email:",
+          "support_label": "Soporte:"
+        },
+        "summary_table": {
+          "title": "7. Táboa Resumo de Cookies",
+          "col_type": "Tipo",
+          "col_purpose": "Propósito",
+          "col_duration": "Duración",
+          "col_required": "Necesaria",
+          "essential_type": "Esenciais",
+          "essential_purpose": "Autenticación, seguridade, navegación",
+          "essential_duration": "Sesión / 30 días",
+          "essential_required": "Si",
+          "functionality_type": "Funcionalidade",
+          "functionality_purpose": "Preferencias, configuración, personalización",
+          "functionality_duration": "1 ano",
+          "functionality_required": "Non",
+          "analytics_type": "Analíticas",
+          "analytics_purpose": "Análise de uso, rendemento, melloras",
+          "analytics_duration": "2 anos",
+          "analytics_required": "Non",
+          "third_party_type": "Terceiros",
+          "third_party_purpose": "OAuth, IA, CDN",
+          "third_party_duration": "Variable",
+          "third_party_required": "Parcial"
+        }
+      },
+      "meta": {
+        "title": "Política de Cookies | ITAKAI",
+        "description": "Información sobre o uso de cookies na plataforma ITAKAI."
+      }
+    },
+    "legal_notice": {
+      "title": "Aviso Legal",
+      "last_updated": "Última actualización: Xaneiro 2026",
+      "sections": {
+        "identification": {
+          "title": "1. Datos Identificativos do Titular",
+          "intro": "En cumprimento co deber de información recollido no artigo 10 da Lei 34/2002, do 11 de xullo, de Servizos da Sociedade da Información e do Comercio Electrónico (LSSICE), o titular deste sitio web infórmao do seguinte:",
+          "company_name": "Denominación social: ITAKAI",
+          "domain": "Dominio: itakai.com",
+          "email_legal": "Email de contacto:",
+          "email_support": "Email de soporte:"
+        },
+        "purpose": {
+          "title": "2. Obxecto",
+          "p1": "ITAKAI é unha plataforma educativa gamificada baseada na mitoloxía grega que proporciona servizos de aprendizaxe interactiva a través de misións educativas, asistentes de intelixencia artificial e un sistema de progreso gamificado. O presente Aviso Legal regula o uso do sitio web itakai.com (en diante, \"o Sitio Web\").",
+          "p2": "O acceso e uso do Sitio Web implica a aceptación expresa e sen reservas de todas as condicións establecidas neste Aviso Legal, nos Termos e Condicións, na Política de Privacidade e na Política de Cookies."
+        },
+        "conditions": {
+          "title": "3. Condicións de Uso",
+          "access_title": "3.1 Acceso e Navegación",
+          "access_text": "O acceso ao Sitio Web por parte do Usuario ten carácter libre e gratuíto. O rexistro como usuario e o uso de determinados servizos pode estar suxeito a condicións específicas e pode requirir o previo rexistro do Usuario.",
+          "correct_use_title": "3.2 Uso Correcto",
+          "correct_use_text": "O Usuario comprométese a utilizar o Sitio Web e os servizos de conformidade coa lei, o presente Aviso Legal, os Termos e Condicións e os bos costumes. O Usuario obrígase a facer un uso dilixente dos servizos e a non destinalos a actividades ilícitas ou contrarias á boa fe.",
+          "prohibitions_title": "3.3 Prohibicións",
+          "prohibitions_intro": "Queda expresamente prohibido:",
+          "prohibitions_damage": "Realizar accións que poidan danar, inutilizar, sobrecargar ou deteriorar o Sitio Web",
+          "prohibitions_impede": "Impedir a normal utilización do Sitio Web por parte doutros usuarios",
+          "prohibitions_impersonate": "Suplantar a identidade doutros usuarios",
+          "prohibitions_illegal_content": "Difundir contidos ilegais, racistas, xenófobos, pornográficos, de apoloxía do terrorismo ou que atenten contra os dereitos humanos",
+          "prohibitions_malware": "Introducir virus informáticos, troianos, vermes, bombas lóxicas ou calquera outro programa ou material daniño",
+          "prohibitions_unauthorized_access": "Intentar acceder a áreas restrinxidas dos sistemas informáticos de ITAKAI ou de terceiros"
+        },
+        "intellectual_property": {
+          "title": "4. Propiedade Intelectual e Industrial",
+          "p1": "Todos os contidos do Sitio Web, incluíndo sen limitación, textos, fotografías, gráficos, imaxes, iconas, tecnoloxía, software, ligazóns, deseños gráficos, código fonte, personaxes mitolóxicos adaptados e demais contidos audiovisuais ou sonoros, así como o seu deseño gráfico e códigos fonte (en diante, \"os Contidos\"), son propiedade intelectual de ITAKAI ou de terceiros, sen que poidan entenderse cedidos ao Usuario ningún dos dereitos de explotación recoñecidos pola normativa vixente en materia de propiedade intelectual sobre os mesmos.",
+          "p2": "As marcas, nomes comerciais ou signos distintivos son titularidade de ITAKAI ou de terceiros, sen que poida entenderse que o acceso ao Sitio Web atribúa ningún dereito sobre as citadas marcas, nomes comerciais e/ou signos distintivos.",
+          "p3": "Quedan reservados todos os dereitos de propiedade intelectual e industrial sobre os Contidos. Queda expresamente prohibida a reprodución, distribución, comunicación pública, transformación ou calquera outra forma de explotación, por calquera procedemento, de todo ou parte dos Contidos sen a autorización previa, expresa e por escrito de ITAKAI."
+        },
+        "third_party_links": {
+          "title": "5. Ligazóns (Links) a Sitios de Terceiros",
+          "p1": "O Sitio Web pode conter ligazóns a sitios web de terceiros. ITAKAI non exerce ningún tipo de control sobre os devanditos sitios web e, en consecuencia, non asume responsabilidade algunha polos contidos, servizos ou calquera outro material existente nos mesmos.",
+          "p2": "A inclusión destas ligazóns ten finalidade meramente informativa e en ningún caso supón suxestión, invitación ou recomendación sobre os mesmos. O Usuario accede aos devanditos sitios baixo a súa exclusiva responsabilidade."
+        },
+        "liability_exclusion": {
+          "title": "6. Exclusión de Responsabilidade",
+          "availability_title": "6.1 Dispoñibilidade do Sitio Web",
+          "availability_text": "ITAKAI non garante a dispoñibilidade e continuidade do funcionamento do Sitio Web. En consecuencia, ITAKAI non será en ningún caso responsable por calesquera danos e prexuízos que poidan derivarse da falta de dispoñibilidade ou de continuidade do funcionamento do Sitio Web.",
+          "content_title": "6.2 Contidos",
+          "content_text": "ITAKAI non garante a exactitude, veracidade, exhaustividade ou actualización dos Contidos. O Usuario é responsable de contrastar a información que aparece no Sitio Web. ITAKAI exclúe calquera responsabilidade polos danos e prexuízos de toda natureza que poidan deberse á falta de veracidade, exactitude, exhaustividade e/ou actualidade dos Contidos.",
+          "security_title": "6.3 Virus e Seguridade",
+          "security_text": "ITAKAI non garante a ausencia de virus nin doutros elementos no Sitio Web que poidan producir alteracións no sistema informático do Usuario. ITAKAI exclúe calquera responsabilidade polos danos e prexuízos de toda natureza que poidan deberse á presenza de virus ou á presenza doutros elementos lesivos.",
+          "user_content_title": "6.4 Contido Xerado por Usuarios",
+          "user_content_text": "ITAKAI non se fai responsable das opinións vertidas polos Usuarios a través de comentarios, foros, chat ou outras ferramentas de participación. ITAKAI resérvase o dereito a eliminar calquera contido que considere inapropiado."
+        },
+        "modifications": {
+          "title": "7. Modificacións",
+          "p1": "ITAKAI resérvase o dereito de efectuar sen previo aviso as modificacións que considere oportunas no Sitio Web, podendo cambiar, suprimir ou engadir tanto os contidos e servizos que se presten a través do mesmo como a forma na que estes aparezan presentados ou localizados.",
+          "p2": "Do mesmo xeito, ITAKAI poderá modificar en calquera momento as condicións do presente Aviso Legal. Recoméndase ao Usuario consultar periodicamente o presente Aviso Legal para estar ao tanto de posibles cambios."
+        },
+        "data_protection": {
+          "title": "8. Protección de Datos Persoais",
+          "p1": "ITAKAI cumpre co Regulamento Xeral de Protección de Datos (RXPD) UE 2016/679 e a Lei Orgánica 3/2018, do 5 de decembro, de Protección de Datos Persoais e garantía dos dereitos dixitais (LOPDGDD).",
+          "p2": "Para información detallada sobre o tratamento de datos persoais, por favor consulta a nosa Política de Privacidade."
+        },
+        "cookies_section": {
+          "title": "9. Cookies",
+          "p1": "O Sitio Web utiliza cookies propias e de terceiros para mellorar a experiencia do Usuario e ofrecer contidos e servizos do seu interese.",
+          "p2": "Para máis información sobre o uso de cookies, consulta a nosa Política de Cookies."
+        },
+        "jurisdiction": {
+          "title": "10. Lexislación Aplicable e Xurisdición",
+          "p1": "A relación entre ITAKAI e o Usuario rexerase pola normativa española vixente. En caso de controversia, as partes poderán someter os seus conflitos a arbitraxe ou acudir á xurisdición ordinaria, sendo competentes para resolver calquera controversia os Xulgados e Tribunais de España.",
+          "p2": "Se algunha cláusula do presente Aviso Legal fose declarada nula, as demais cláusulas seguirán vixentes e interpretaranse tendo en conta a vontade das partes e a finalidade mesma do presente Aviso Legal."
+        },
+        "dispute_resolution": {
+          "title": "11. Resolución de Litixios en Liña",
+          "p1": "Conforme ao Regulamento (UE) 524/2013, a Comisión Europea facilita unha plataforma de acceso gratuíto para a resolución alternativa de conflitos entre o empresario e o consumidor, sen necesidade de recorrer aos tribunais de xustiza, mediante a intervención dun terceiro, chamado Organismo de resolución alternativa de litixios.",
+          "p2": "Para máis información, podes acceder á plataforma europea de resolución de litixios en liña a través da seguinte ligazón:"
+        },
+        "contact": {
+          "title": "12. Contacto",
+          "intro": "Para calquera consulta, reclamación ou aclaración sobre este Aviso Legal, podes poñerte en contacto connosco a través dos seguintes medios:",
+          "company": "ITAKAI",
+          "email_legal": "Email legal:",
+          "email_support": "Email soporte:",
+          "email_privacy": "Email privacidade:"
+        },
+        "acceptance": {
+          "title": "Aceptación do Aviso Legal",
+          "text": "O acceso e uso do Sitio Web implica a aceptación expresa e plena do presente Aviso Legal, así como dos Termos e Condicións, a Política de Privacidade e a Política de Cookies. Se non estás de acordo con algún destes documentos, debes absterte de utilizar o Sitio Web."
+        }
+      },
+      "meta": {
+        "title": "Aviso Legal | ITAKAI",
+        "description": "Información legal sobre o uso da plataforma educativa ITAKAI."
+      }
+    },
+    "licenses": {
+      "title": "Licenzas",
+      "description": "Aquí poderás consultar toda a información sobre as licenzas de software, bibliotecas de terceiros e atribucións utilizadas na plataforma ITAKAI.",
+      "btn_back": "Volver á páxina principal",
+      "meta": {
+        "title": "Licenzas - ITAKAI",
+        "description": "Información sobre licenzas de ITAKAI"
+      }
+    },
+    "notifications": {
+      "title": "Notificacións",
+      "btn_mark_all_read": "Marcar todas como lidas",
+      "tabs": {
+        "all": "Todas",
+        "unread": "Non lidas"
+      },
+      "unread_label": "Non lida",
+      "btn_view": "Ver",
+      "btn_delete": "Eliminar notificación",
+      "empty_unread": "Non tes notificacións sen ler",
+      "empty_all": "Non tes notificacións",
+      "meta": {
+        "title": "Notificacións | ITAKAI",
+        "description": "Revisa as túas notificacións e mantente ao día coas últimas actualizacións das túas misións e clases."
+      }
+    }
+  }
+}

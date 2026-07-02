@@ -1,0 +1,68 @@
+{
+  "chat": {
+    "assistant": {
+      "default_name": "Asistente IA",
+      "default_title": "Disponible para ayudarte",
+      "default_description": "Estoy aquí para ayudarte con tus estudios.",
+      "itakai_assistant": "ITAKAI Assistant"
+    },
+    "interface": {
+      "welcome_greeting": "¡Hola! Soy {name}",
+      "welcome_greeting_default": "¡Hola! Soy tu asistente",
+      "ask_about": "Puedes preguntarme sobre:",
+      "input_placeholder": "Escribe tu pregunta aquí...",
+      "input_typing": "El asistente está escribiendo...",
+      "input_sending": "Enviando mensaje...",
+      "attach_file": "Adjuntar archivo",
+      "attach_image": "Adjuntar imagen",
+      "mention": "Mencionar",
+      "ask_anything_placeholder": "Pregunta cualquier cosa...",
+      "suggested_questions_label": "Preguntas sugeridas:",
+      "message_input_placeholder": "Escribe tu mensaje aquí...",
+      "default_suggestions": [
+        "¿Cómo completo una misión?",
+        "¿Dónde puedo ver mi progreso?",
+        "¿Cómo funciona el sistema de XP?",
+        "¿Cómo me uno a una clase?"
+      ],
+      "teacher_suggestions": [
+        "¿Cómo creo una nueva misión?",
+        "¿Cómo gestiono mi clase?",
+        "¿Cómo reviso el progreso de los alumnos?",
+        "¿Cómo asigno puntos extra?"
+      ]
+    },
+    "god_messages": {
+      "student": [
+        "¿Necesitas ayuda con tu misión?",
+        "¡Vamos a aprender juntos!",
+        "¿Dudas con la tarea?",
+        "¡Pregúntame lo que quieras!",
+        "Estoy aquí para ayudarte",
+        "¿Te atascaste? ¡Hablemos!",
+        "¡Conquista ese desafío!",
+        "¿Qué tal va tu progreso?"
+      ],
+      "teacher": [
+        "¿Cómo van tus clases?",
+        "¿Necesitas crear una misión?",
+        "¿Dudas sobre tus alumnos?",
+        "Estoy para asistirte",
+        "¿Revisamos algo juntos?",
+        "¿Ideas para tu clase?",
+        "¡Planifiquemos la lección!",
+        "¿Cómo te ayudo hoy?"
+      ],
+      "admin": [
+        "¿Necesitas ayuda?",
+        "A tu servicio",
+        "¿En qué te ayudo?",
+        "¡Estoy aquí!"
+      ]
+    },
+    "user_subtitles": {
+      "teacher": "Profesor",
+      "default": "Usuario"
+    }
+  }
+}

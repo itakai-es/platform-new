@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="system-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ECDC4"/>
+      <stop offset="100%" style="stop-color:#2C3E50"/>
+    </linearGradient>
+    <linearGradient id="shield-gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE066"/>
+      <stop offset="100%" style="stop-color:#D4AF37"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="url(#system-bg)"/>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#fff" stroke-width="2" opacity="0.3"/>
+  <!-- Shield shape -->
+  <path d="M50 20 L75 30 L75 55 Q75 72 50 82 Q25 72 25 55 L25 30 Z" fill="url(#shield-gold)"/>
+  <path d="M50 25 L70 33 L70 53 Q70 67 50 76 Q30 67 30 53 L30 33 Z" fill="#2C3E50"/>
+  <!-- Connected nodes (system of equations) -->
+  <circle cx="40" cy="42" r="5" fill="#fff"/>
+  <circle cx="60" cy="42" r="5" fill="#fff"/>
+  <circle cx="50" cy="58" r="5" fill="#fff"/>
+  <!-- Connecting lines -->
+  <line x1="40" y1="42" x2="60" y2="42" stroke="#D4AF37" stroke-width="2"/>
+  <line x1="40" y1="42" x2="50" y2="58" stroke="#D4AF37" stroke-width="2"/>
+  <line x1="60" y1="42" x2="50" y2="58" stroke="#D4AF37" stroke-width="2"/>
+  <!-- Node symbols -->
+  <text x="40" y="45" font-family="serif" font-size="6" fill="#2C3E50" text-anchor="middle">x</text>
+  <text x="60" y="45" font-family="serif" font-size="6" fill="#2C3E50" text-anchor="middle">y</text>
+  <text x="50" y="61" font-family="serif" font-size="6" fill="#2C3E50" text-anchor="middle">z</text>
+  <!-- Stars -->
+  <circle cx="18" cy="28" r="1.5" fill="#fff"/>
+  <circle cx="82" cy="32" r="1.5" fill="#fff"/>
+  <circle cx="15" cy="55" r="1" fill="#fff" opacity="0.7"/>
+  <circle cx="85" cy="58" r="1" fill="#fff" opacity="0.7"/>
+</svg>

@@ -1,0 +1,251 @@
+{
+  "admin": {
+    "dashboard": {
+      "title": "Administratzailearen Panela",
+      "subtitle": "ITAKAI sistemaren kontrol-panela",
+      "activity": {
+        "title": "Sistemaren Jarduera",
+        "period_24h": "Azken 24 orduak",
+        "period_week": "Azken astea",
+        "period_month": "Azken hilabetea"
+      },
+      "quick_actions": {
+        "manage_users": "Erabiltzaileak Kudeatu"
+      },
+      "system_status": {
+        "title": "Sistemaren Egoera",
+        "operational": "Operatibo",
+        "degraded": "Degradatuta",
+        "down": "Zerbitzutik kanpo",
+        "unknown": "Ezezaguna",
+        "empty": "Ez dago zerbitzu eskuragarririk"
+      },
+      "meta": {
+        "title": "Admin Panela | ITAKAI",
+        "description": "ITAKAI sistemaren kontrol-panela. Kudeatu erabiltzaileak, ikastetxeak eta monitorizatu plataformaren egoera."
+      }
+    },
+    "users": {
+      "title": "Erabiltzaileen Kudeaketa",
+      "meta": {
+        "title": "Erabiltzaileen Kudeaketa | ITAKAI Admin",
+        "description": "Administratu sistemako erabiltzaile guztiak, sortu profil berriak, editatu rolak eta monitorizatu jarduera."
+      },
+      "subtitle": "Plataformako erabiltzaile guztiak administratu",
+      "filters": {
+        "search_placeholder": "Bilatu izenez edo emailez...",
+        "all_roles": "Rol guztiak",
+        "students": "Ikasleak",
+        "teachers": "Irakasleak",
+        "admins": "Administratzaileak",
+        "all_statuses": "Egoera guztiak",
+        "active": "Aktibo",
+        "suspended": "Etenda",
+        "inactive": "Inaktibo",
+        "clear": "Iragazkiak garbitu"
+      },
+      "roles": {
+        "student": "Ikaslea",
+        "teacher": "Irakaslea",
+        "admin": "Admin"
+      },
+      "card": {
+        "status": "Egoera",
+        "classes": "Klaseak",
+        "last_login": "Azken sarrera"
+      },
+      "empty": {
+        "title": "Ez da erabiltzailerik aurkitu",
+        "description": "Ez dago hautatutako iragazkiekin bat datorren erabiltzailerik."
+      },
+      "actions": {
+        "suspend_title": "Erabiltzailea eten",
+        "suspend_message": "Ziur zaude {name} eten nahi duzula? Ezin izango du plataforman sartu.",
+        "suspend_confirm": "Eten",
+        "delete_title": "Erabiltzailea ezabatu",
+        "delete_message": "Ziur zaude {name} ezabatu nahi duzula? Ekintza hau ezin da desegin.",
+        "delete_confirm": "Ezabatu"
+      }
+    },
+    "classes": {
+      "title": "Klaseen Kudeaketa",
+      "meta": {
+        "title": "Klaseen Kudeaketa | ITAKAI Admin"
+      },
+      "subtitle": "Plataformako klase guztiak ikusi",
+      "filters": {
+        "search_placeholder": "Klaseak bilatu..."
+      },
+      "empty": {
+        "title": "Ez da klaserik aurkitu",
+        "description": "Ez dago hautatutako iragazkiekin bat datorren klaserik."
+      }
+    },
+    "missions": {
+      "title": "Misioen Kudeaketa",
+      "meta": {
+        "title": "Misioen Kudeaketa | ITAKAI Admin"
+      },
+      "subtitle": "Plataformako misio guztiak ikusi",
+      "filters": {
+        "search_placeholder": "Misioak bilatu..."
+      },
+      "empty": {
+        "title": "Ez da misiorik aurkitu",
+        "description": "Ez dago hautatutako iragazkiekin bat datorren misiorik."
+      }
+    },
+    "schools": {
+      "title": "Ikastetxeen Kudeaketa",
+      "meta": {
+        "title": "Ikastetxeen Kudeaketa | ITAKAI Admin",
+        "description": "Administratu sistemako hezkuntza-ikastetxe guztiak, sortu ikastetxe berriak eta monitorizatu haien jarduera."
+      },
+      "subtitle": "Hezkuntza-ikastetxeak administratu",
+      "filters": {
+        "search_placeholder": "Ikastetxea bilatu...",
+        "all_statuses": "Egoera guztiak",
+        "active": "Aktibo",
+        "inactive": "Inaktibo"
+      },
+      "form": {
+        "create_title": "Ikastetxe berria",
+        "edit_title": "Ikastetxea editatu",
+        "name": "Izena",
+        "name_placeholder": "Ikastetxearen izena",
+        "city": "Hiria",
+        "city_placeholder": "Hiria",
+        "country": "Herrialdea",
+        "country_placeholder": "Herrialdea",
+        "save": "Gorde",
+        "cancel": "Utzi"
+      },
+      "actions": {
+        "create": "Ikastetxea sortu",
+        "delete_title": "Ikastetxea ezabatu",
+        "delete_message": "Ziur zaude {name} ezabatu nahi duzula?",
+        "delete_confirm": "Ezabatu"
+      },
+      "empty": {
+        "title": "Ez da ikastetxerik aurkitu",
+        "description": "Ez dago hautatutako iragazkiekin bat datorren ikastetxerik."
+      }
+    },
+    "analytics": {
+      "title": "Sistemaren Analitikak",
+      "subtitle": "Plataformaren metrikak eta estatistikak",
+      "period": {
+        "week": "Astea",
+        "month": "Hilabetea",
+        "quarter": "Hiruhilekoa"
+      },
+      "kpis": {
+        "avg_response": "Erantzun-denbora",
+        "requests_per_min": "Eskaerak/min",
+        "error_rate": "Errore-tasa",
+        "uptime": "Erabilgarritasuna"
+      },
+      "overview": {
+        "total_users": "Erabiltzaileak Guztira",
+        "missions_completed": "Misio Burututakoak",
+        "completion_rate": "Burutze-tasa",
+        "active_today": "Gaur aktibo"
+      },
+      "sections": {
+        "system_resources": "Sistemaren Baliabideak",
+        "service_health": "Zerbitzuen Egoera",
+        "response_time": "Erantzun-denbora",
+        "active_users": "Erabiltzaile Aktiboak",
+        "requests": "Eskaerak",
+        "tokens_over_time": "Kontsumitutako Tokenak",
+        "users_by_role": "Erabiltzaileak Rolaren Arabera",
+        "missions_by_status": "Misioak Egoeraren Arabera",
+        "missions_by_rarity": "Misioak Bakantasunaren Arabera",
+        "ai_usage": "AA-ren Erabilera (Laguntzaileak)"
+      },
+      "system": {
+        "memory": "Memoria",
+        "disk": "Diskoa",
+        "db_latency": "BD Latentzia"
+      },
+      "ai": {
+        "total_tokens": "Token guztiak",
+        "avg_tokens_user": "Batez bestekoa erabiltzaileko",
+        "total_conversations": "Elkarrizketak",
+        "avg_conversations_user": "Elk. erabiltzaileko"
+      },
+      "table": {
+        "service": "Zerbitzua",
+        "status": "Egoera",
+        "uptime": "Uptime",
+        "latency": "Latentzia"
+      },
+      "status": {
+        "operational": "OK",
+        "degraded": "Degradatuta",
+        "down": "Eroria"
+      },
+      "meta": {
+        "title": "Sistemaren Analitikak | ITAKAI Admin",
+        "description": "Ikusi metrika aurreratuak, errendimendu-grafikoak eta plataformaren analisi xeheak."
+      }
+    },
+    "logs": {
+      "title": "Sistemaren Logak",
+      "meta": {
+        "title": "Sistemaren Logak | ITAKAI Admin",
+        "description": "Berrikusi sistemaren jarduera-erregistroak, ikuskatu erabiltzaileen ekintzak eta diagnostikatu arazo teknikoak."
+      },
+      "tab": "Jarduera",
+      "subtitle": "Sistemaren jarduera-erregistroak",
+      "filters": {
+        "search_placeholder": "Logetan bilatu...",
+        "period_24h": "Azken 24 orduak",
+        "period_week": "Azken astea",
+        "period_month": "Azken hilabetea",
+        "all_severities": "Guztiak",
+        "info": "Info",
+        "warning": "Warning",
+        "error": "Error",
+        "success": "Success",
+        "all_types": "Mota guztiak",
+        "new_school": "Ikastetxe berria",
+        "new_users": "Erabiltzaile berriak",
+        "alert": "Alerta",
+        "system_update": "Eguneraketa",
+        "missions_completed": "Misio burututakoak",
+        "user_action": "Erabiltzaile-ekintza"
+      },
+      "empty": {
+        "title": "Ez da logik aurkitu",
+        "description": "Ez dago hautatutako iragazkiekin bat datorren erregistrorik."
+      }
+    },
+    "system_logs": {
+      "tab": "Sistema",
+      "filters": {
+        "search_placeholder": "Sistemaren logetan bilatu...",
+        "all_levels": "Maila guztiak",
+        "all_categories": "Kategoria guztiak"
+      },
+      "levels": {
+        "info": "Info",
+        "warning": "Oharra",
+        "error": "Errorea",
+        "success": "OK"
+      },
+      "categories": {
+        "health_check": "Health Check",
+        "service_status": "Zerbitzu-egoera",
+        "security": "Segurtasuna",
+        "performance": "Errendimendua",
+        "maintenance": "Mantentzea",
+        "backup": "Backup"
+      },
+      "empty": {
+        "title": "Ez da sistemaren logik aurkitu",
+        "description": "Ez dago hautatutako iragazkiekin bat datorren sistema-erregistrorik."
+      }
+    }
+  }
+}

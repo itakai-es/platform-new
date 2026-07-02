@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="history-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#B8860B"/>
+      <stop offset="100%" style="stop-color:#654321"/>
+    </linearGradient>
+    <linearGradient id="hourglass-gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE066"/>
+      <stop offset="100%" style="stop-color:#D4AF37"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8F4F8"/>
+      <stop offset="100%" style="stop-color:#B0C4DE"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="url(#history-bg)"/>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#fff" stroke-width="2" opacity="0.3"/>
+  <!-- Hourglass frame top -->
+  <rect x="32" y="20" width="36" height="5" rx="2" fill="url(#hourglass-gold)"/>
+  <!-- Hourglass frame bottom -->
+  <rect x="32" y="75" width="36" height="5" rx="2" fill="url(#hourglass-gold)"/>
+  <!-- Hourglass glass shape -->
+  <path d="M35 25 L35 40 Q35 50 50 50 Q65 50 65 40 L65 25" fill="url(#glass)" opacity="0.8"/>
+  <path d="M35 75 L35 60 Q35 50 50 50 Q65 50 65 60 L65 75" fill="url(#glass)" opacity="0.8"/>
+  <!-- Sand (top) -->
+  <path d="M38 28 L38 38 Q38 45 50 48 Q62 45 62 38 L62 28" fill="#F4D03F" opacity="0.7"/>
+  <!-- Sand (bottom) -->
+  <path d="M42 72 L42 65 Q42 58 50 55 Q58 58 58 65 L58 72" fill="#F4D03F"/>
+  <!-- Flowing sand -->
+  <line x1="50" y1="48" x2="50" y2="55" stroke="#F4D03F" stroke-width="2"/>
+  <!-- Decorative elements -->
+  <circle cx="50" cy="22" r="2" fill="#D4AF37"/>
+  <circle cx="50" cy="78" r="2" fill="#D4AF37"/>
+  <!-- Greek key borders -->
+  <rect x="30" y="18" width="2" height="9" fill="#D4AF37"/>
+  <rect x="68" y="18" width="2" height="9" fill="#D4AF37"/>
+  <rect x="30" y="73" width="2" height="9" fill="#D4AF37"/>
+  <rect x="68" y="73" width="2" height="9" fill="#D4AF37"/>
+  <!-- Stars -->
+  <circle cx="18" cy="30" r="1.5" fill="#fff"/>
+  <circle cx="82" cy="35" r="1.5" fill="#fff"/>
+  <circle cx="15" cy="65" r="1" fill="#fff" opacity="0.7"/>
+  <circle cx="85" cy="68" r="1" fill="#fff" opacity="0.7"/>
+</svg>

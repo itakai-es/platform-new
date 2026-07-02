@@ -1,0 +1,656 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ==================== USERS & AUTH ====================
+
+enum UserRole {
+  student
+  teacher
+  admin
+}
+
+enum UserStatus {
+  active
+  suspended
+  inactive
+}
+
+model User {
+  id            String     @id @default(uuid())
+  email         String     @unique
+  passwordHash  String     @map("password_hash")
+  name          String
+  role          UserRole?
+  isOnboarded   Boolean    @default(false) @map("is_onboarded")
+  status        UserStatus @default(active)
+  createdAt     DateTime   @default(now()) @map("created_at")
+  updatedAt     DateTime   @updatedAt @map("updated_at")
+
+  // Relations
+  refreshTokens     RefreshToken[]
+  teacherClasses    Class[]             @relation("TeacherClasses")
+  enrollments       ClassEnrollment[]
+  createdBadges     Badge[]             @relation("CreatedBadges")
+  earnedBadges      StudentBadge[]
+  missionProgress   StudentMissionProgress[]
+  enigmaProgress    StudentEnigmaProgress[]
+  notifications     Notification[]
+  activities        Activity[]
+  conversations     ChatConversation[]
+  joinRequests      JoinRequest[]
+  sentInvitations   Invitation[]        @relation("SentInvitations")
+  receivedInvitations Invitation[]      @relation("ReceivedInvitations")
+  submissions       EnigmaSubmission[]  @relation("StudentSubmissions")
+  settings          UserSettings?
+  shopPurchases     ShopPurchase[]
+  shopItemUses      ShopItemUse[]
+  behaviorsApplied  BehaviorApplication[] @relation("BehaviorTeacher")
+  behaviorsReceived BehaviorApplication[] @relation("BehaviorStudent")
+
+  @@map("users")
+}
+
+model UserSettings {
+  id                 String   @id @default(uuid())
+  userId             String   @unique @map("user_id")
+  twoFactorEnabled   Boolean  @default(false) @map("two_factor_enabled")
+  emailNotifications Boolean  @default(true) @map("email_notifications")
+  missionReminders   Boolean  @default(true) @map("mission_reminders")
+  language           String   @default("es")
+  theme              String   @default("college")
+  createdAt          DateTime @default(now()) @map("created_at")
+  updatedAt          DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_settings")
+}
+
+model RefreshToken {
+  id          String   @id @default(uuid())
+  token       String   @unique
+  userId      String   @map("user_id")
+  family      String   @default(uuid()) // Token family for rotation tracking
+  isRevoked   Boolean  @default(false) @map("is_revoked")
+  expiresAt   DateTime @map("expires_at")
+  createdAt   DateTime @default(now()) @map("created_at")
+  lastUsedAt  DateTime? @map("last_used_at")
+  userAgent   String?  @map("user_agent")
+  ipAddress   String?  @map("ip_address")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([token])
+  @@index([family])
+  @@map("refresh_tokens")
+}
+
+// ==================== CLASSES ====================
+
+model Class {
+  id              String    @id @default(uuid())
+  name            String
+  narrative       String?
+  schedule        String?
+  archived        Boolean   @default(false)
+  invitationCode  String    @unique @map("invitation_code")
+  backgroundImage String?   @map("background_image")
+  settings        Json      @default("{}")
+  teacherId       String    @map("teacher_id")
+  createdAt       DateTime  @default(now()) @map("created_at")
+  updatedAt       DateTime  @updatedAt @map("updated_at")
+
+  // Relations
+  teacher       User              @relation("TeacherClasses", fields: [teacherId], references: [id])
+  enrollments   ClassEnrollment[]
+  missions      Mission[]
+  guide         ClassGuide?
+  joinRequests  JoinRequest[]
+  invitations   Invitation[]
+  shopItems     ShopItem[]
+  shopPurchases ShopPurchase[]
+  shopItemUses  ShopItemUse[]
+  behaviorTemplates    BehaviorTemplate[]
+  behaviorApplications BehaviorApplication[]
+
+  @@map("classes")
+}
+
+model ClassEnrollment {
+  id         String   @id @default(uuid())
+  studentId  String   @map("student_id")
+  classId    String   @map("class_id")
+  xp         Int      @default(0)
+  coins      Int      @default(0) // Spendable balance earned from enigma rewards, spent in the class shop
+  mana       Int      @default(0) // Spendable balance earned from enigma rewards (independent of XP and coins)
+  lives      Int      @default(100) // Class life points, modified by positive/negative behaviors
+  level      Int      @default(1)
+  nickname   String?  // Class-specific nickname (e.g., "MateMaster99")
+  avatarUrl  String?  @map("avatar_url") // Class-specific avatar (default, preset, or AI-generated)
+  enrolledAt DateTime @default(now()) @map("enrolled_at")
+
+  student User  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  class   Class @relation(fields: [classId], references: [id], onDelete: Cascade)
+
+  @@unique([studentId, classId])
+  @@map("class_enrollments")
+}
+
+model ClassGuide {
+  id          String   @id @default(uuid())
+  classId     String   @unique @map("class_id")
+  content     String   @db.Text
+  lastUpdated DateTime @default(now()) @map("last_updated")
+
+  class Class @relation(fields: [classId], references: [id], onDelete: Cascade)
+
+  @@map("class_guides")
+}
+
+// ==================== SHOP (per-class rewards bought with coins) ====================
+
+model ShopItem {
+  id          String   @id @default(uuid())
+  classId     String   @map("class_id")
+  name        String
+  description String   @default("")
+  price       Int
+  active      Boolean  @default(true) // Visible to students
+  kind        String   @default("reward") // "reward" (buy with coins) | "power" (buy with coins, used by spending mana)
+  manaCost    Int      @default(0) @map("mana_cost") // Mana spent per use (powers only)
+  usage       String   @default("single") // "single" (consumed on redeem) | "unlimited" (kept) — rewards only
+  lifeRestore Int      @default(0) @map("life_restore") // Lives the item restores: applied on purchase (rewards) or on use (powers)
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  class     Class          @relation(fields: [classId], references: [id], onDelete: Cascade)
+  purchases ShopPurchase[]
+  uses      ShopItemUse[]
+
+  @@index([classId])
+  @@map("shop_items")
+}
+
+model ShopPurchase {
+  id        String   @id @default(uuid())
+  classId   String   @map("class_id")
+  itemId    String?  @map("item_id") // nullable: keep history if the item is later deleted
+  studentId String   @map("student_id")
+  itemName  String   @map("item_name") // snapshot of the name at purchase time
+  price     Int
+  createdAt DateTime @default(now()) @map("created_at")
+
+  class   Class     @relation(fields: [classId], references: [id], onDelete: Cascade)
+  item    ShopItem? @relation(fields: [itemId], references: [id], onDelete: SetNull)
+  student User      @relation(fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@index([classId])
+  @@index([studentId, classId])
+  @@map("shop_purchases")
+}
+
+// Each time a student uses a power (spending mana). Lets the teacher see usage.
+model ShopItemUse {
+  id        String   @id @default(uuid())
+  classId   String   @map("class_id")
+  itemId    String?  @map("item_id") // nullable: keep history if the item is later deleted
+  studentId String   @map("student_id")
+  itemName  String   @map("item_name") // snapshot of the name at use time
+  manaCost  Int      @map("mana_cost") // mana spent at use time
+  createdAt DateTime @default(now()) @map("created_at")
+
+  class   Class     @relation(fields: [classId], references: [id], onDelete: Cascade)
+  item    ShopItem? @relation(fields: [itemId], references: [id], onDelete: SetNull)
+  student User      @relation(fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@index([classId])
+  @@index([studentId, classId])
+  @@map("shop_item_uses")
+}
+
+// ==================== MISSIONS ====================
+
+enum MissionStatus {
+  activa
+  bloqueada
+}
+
+enum MissionRarity {
+  comun
+  rara
+  epica
+  legendaria
+}
+
+model Mission {
+  id              String            @id @default(uuid())
+  classId         String            @map("class_id")
+  title           String
+  description     String?
+  status          MissionStatus     @default(activa)
+  rarity          MissionRarity     @default(comun)
+  backgroundImage String?           @map("background_image")
+  deadline        DateTime?
+  createdAt       DateTime          @default(now()) @map("created_at")
+  updatedAt       DateTime          @updatedAt @map("updated_at")
+
+  class     Class                    @relation(fields: [classId], references: [id], onDelete: Cascade)
+  enigmas   MissionEnigma[]
+  badges    Badge[]
+  progress  StudentMissionProgress[]
+  documents MissionDocument[]
+
+  @@map("missions")
+}
+
+model MissionDocument {
+  id          String   @id @default(uuid())
+  missionId   String   @map("mission_id")
+  name        String
+  description String?
+  fileUrl     String   @map("file_url")
+  fileName    String   @map("file_name")
+  fileSize    Int      @map("file_size")
+  mimeType    String   @map("mime_type")
+  tags        String[] @default([])
+  orderIndex  Int      @default(0) @map("order_index")
+  uploadedAt  DateTime @default(now()) @map("uploaded_at")
+
+  mission Mission @relation(fields: [missionId], references: [id], onDelete: Cascade)
+
+  @@map("mission_documents")
+}
+
+enum EnigmaStatus {
+  pendiente
+  en_progreso
+  completado
+}
+
+model MissionEnigma {
+  id             String       @id @default(uuid())
+  missionId      String       @map("mission_id")
+  title          String
+  description    String?
+  objectives     String[]     @default([])
+  isOptional     Boolean      @default(false) @map("is_optional")
+  xpReward       Int          @default(0) @map("xp_reward")
+  coinReward     Int          @default(0) @map("coin_reward")
+  manaReward     Int          @default(0) @map("mana_reward")
+  orderIndex     Int          @default(0) @map("order_index")
+
+  mission     Mission                 @relation(fields: [missionId], references: [id], onDelete: Cascade)
+  progress    StudentEnigmaProgress[]
+  submissions EnigmaSubmission[]
+
+  @@map("mission_enigmas")
+}
+
+model StudentEnigmaProgress {
+  id          String    @id @default(uuid())
+  studentId   String    @map("student_id")
+  enigmaId    String    @map("enigma_id")
+  completedAt DateTime  @default(now()) @map("completed_at")
+  xpEarned    Int       @default(0) @map("xp_earned")
+  coinsEarned Int       @default(0) @map("coins_earned")
+  manaEarned  Int       @default(0) @map("mana_earned")
+  percentage  Int       @default(100) // Completion % the teacher graded (0-100); scales every reward
+
+  student User          @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  enigma  MissionEnigma @relation(fields: [enigmaId], references: [id], onDelete: Cascade)
+
+  @@unique([studentId, enigmaId])
+  @@map("student_enigma_progress")
+}
+
+enum SubmissionStatus {
+  pendiente
+  aprobada
+}
+
+model EnigmaSubmission {
+  id          String           @id @default(uuid())
+  studentId   String           @map("student_id")
+  enigmaId    String           @map("enigma_id")
+  fileUrl     String?          @map("file_url")
+  fileName    String?          @map("file_name")
+  fileSize    Int?             @map("file_size")
+  status      SubmissionStatus @default(pendiente)
+  xpAwarded   Int?             @map("xp_awarded")
+  submittedAt DateTime         @default(now()) @map("submitted_at")
+  reviewedAt  DateTime?        @map("reviewed_at")
+
+  student  User          @relation("StudentSubmissions", fields: [studentId], references: [id], onDelete: Cascade)
+  enigma   MissionEnigma @relation(fields: [enigmaId], references: [id], onDelete: Cascade)
+
+  @@map("enigma_submissions")
+}
+
+model StudentMissionProgress {
+  id          String    @id @default(uuid())
+  studentId   String    @map("student_id")
+  missionId   String    @map("mission_id")
+  progress    Int       @default(0) // 0-100
+  enigmasCompleted Int  @default(0) @map("enigmas_completed")
+  startedAt   DateTime  @default(now()) @map("started_at")
+  completedAt DateTime? @map("completed_at")
+
+  student User    @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  mission Mission @relation(fields: [missionId], references: [id], onDelete: Cascade)
+
+  @@unique([studentId, missionId])
+  @@map("student_mission_progress")
+}
+
+// ==================== BADGES & ACHIEVEMENTS ====================
+
+model Badge {
+  id           String   @id @default(uuid())
+  name         String
+  description  String?
+  imageUrl     String?  @map("image_url")
+  rarity       String   @default("common") // common, rare, epic, legendary
+  category     String   @default("missions") // missions, streak, xp, social, level
+  teacherId    String?  @map("teacher_id")
+  missionId    String?  @map("mission_id")
+  // Auto-unlock trigger for system badges (null = manually awarded).
+  // Types: "missions_completed", "xp_total", "level_reached".
+  triggerType  String?  @map("trigger_type")
+  triggerValue Int?     @map("trigger_value")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  teacher  User?          @relation("CreatedBadges", fields: [teacherId], references: [id])
+  mission  Mission?       @relation(fields: [missionId], references: [id])
+  students StudentBadge[]
+
+  @@index([triggerType, triggerValue])
+  @@map("badges")
+}
+
+model StudentBadge {
+  id        String   @id @default(uuid())
+  studentId String   @map("student_id")
+  badgeId   String   @map("badge_id")
+  earnedAt  DateTime @default(now()) @map("earned_at")
+
+  student User  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  badge   Badge @relation(fields: [badgeId], references: [id], onDelete: Cascade)
+
+  @@unique([studentId, badgeId])
+  @@map("student_badges")
+}
+
+
+// ==================== ENROLLMENTS ====================
+
+enum JoinRequestStatus {
+  pending
+  accepted
+  rejected
+}
+
+model JoinRequest {
+  id              String            @id @default(uuid())
+  studentId       String            @map("student_id")
+  classId         String            @map("class_id")
+  status          JoinRequestStatus @default(pending)
+  message         String?
+  rejectionReason String?           @map("rejection_reason")
+  createdAt       DateTime          @default(now()) @map("created_at")
+  updatedAt       DateTime          @updatedAt @map("updated_at")
+
+  student User  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  class   Class @relation(fields: [classId], references: [id], onDelete: Cascade)
+
+  @@map("join_requests")
+}
+
+enum InvitationStatus {
+  pending
+  accepted
+  rejected
+  expired
+}
+
+model Invitation {
+  id        String           @id @default(uuid())
+  classId   String           @map("class_id")
+  teacherId String           @map("teacher_id")
+  studentId String           @map("student_id")
+  status    InvitationStatus @default(pending)
+  message   String?
+  expiresAt DateTime?        @map("expires_at")
+  createdAt DateTime         @default(now()) @map("created_at")
+  updatedAt DateTime         @updatedAt @map("updated_at")
+
+  class   Class @relation(fields: [classId], references: [id], onDelete: Cascade)
+  teacher User  @relation("SentInvitations", fields: [teacherId], references: [id])
+  student User  @relation("ReceivedInvitations", fields: [studentId], references: [id])
+
+  @@map("invitations")
+}
+
+// ==================== NOTIFICATIONS ====================
+
+enum NotificationType {
+  mission_assigned
+  mission_completed
+  badge_earned
+  level_up
+  class_invitation
+  deadline_reminder
+  join_request
+  join_accepted
+  join_rejected
+  achievement_unlocked
+  system_announcement
+  chat_message
+}
+
+enum NotificationPriority {
+  low
+  medium
+  high
+  urgent
+}
+
+model Notification {
+  id        String               @id @default(uuid())
+  userId    String               @map("user_id")
+  type      NotificationType
+  title     String
+  message   String
+  priority  NotificationPriority @default(medium)
+  isRead    Boolean              @default(false) @map("is_read")
+  actionUrl String?              @map("action_url")
+  metadata  Json?
+  expiresAt DateTime?            @map("expires_at")
+  createdAt DateTime             @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("notifications")
+}
+
+// ==================== ACTIVITIES ====================
+
+enum ActivityType {
+  mission_completed
+  mission_started
+  level_up
+  badge_earned
+  class_joined
+  xp_gained
+  enigma_submitted
+  enigma_completed
+  achievement_unlocked
+  student_enrolled
+  progress_milestone
+  behavior_applied
+  shop_purchased
+  shop_item_used
+}
+
+model Activity {
+  id          String       @id @default(uuid())
+  userId      String       @map("user_id")
+  type        ActivityType
+  description String
+  metadata    Json?
+  createdAt   DateTime     @default(now()) @map("created_at")
+
+  // Class-specific student profile (from ClassEnrollment)
+  avatar      String?      // Student's avatar in the class where activity occurred
+  username    String?      // Student's nickname in the class
+  classId     String?      @map("class_id") // Class where activity occurred
+
+  // Activity-specific fields
+  enigmaTitle   String?  @map("enigma_title")
+  enigmaXp      Int?     @map("enigma_xp")
+  missionTitle  String?  @map("mission_title")
+  missionXp     Int?     @map("mission_xp")
+  newLevel      Int?     @map("new_level")
+  newTitle      String?  @map("new_title")
+  className     String?  @map("class_name")
+  teacherName   String?  @map("teacher_name")
+  badgeName     String?  @map("badge_name")
+  badgeRarity   String?  @map("badge_rarity")
+  badgeImage    String?  @map("badge_image")
+  achievementName String? @map("achievement_name")
+  xpAmount      Int?     @map("xp_amount")
+  source        String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("activities")
+}
+
+// ==================== SYSTEM LOGS ====================
+
+enum SystemLogLevel {
+  info
+  warning
+  error
+  success
+}
+
+enum SystemLogCategory {
+  health_check
+  service_status
+  security
+  performance
+  maintenance
+  backup
+}
+
+model SystemLog {
+  id        String              @id @default(uuid())
+  level     SystemLogLevel
+  category  SystemLogCategory
+  title     String
+  message   String
+  service   String?
+  metadata  Json?
+  createdAt DateTime            @default(now()) @map("created_at")
+
+  @@index([createdAt])
+  @@index([level])
+  @@index([category])
+  @@map("system_logs")
+}
+
+// ==================== CHAT ====================
+
+enum AssistantId {
+  atenea
+  odiseo
+  penelope
+  polifemo
+  poseidon
+}
+
+model ChatConversation {
+  id          String      @id @default(uuid())
+  userId      String      @map("user_id")
+  assistantId AssistantId @map("assistant_id")
+  title       String?
+  missionId   String?     @map("mission_id")
+  classId     String?     @map("class_id")
+  archived    Boolean     @default(false)
+  createdAt   DateTime    @default(now()) @map("created_at")
+  updatedAt   DateTime    @updatedAt @map("updated_at")
+
+  user     User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages ChatMessage[]
+
+  @@map("chat_conversations")
+}
+
+enum MessageRole {
+  user
+  assistant
+}
+
+model ChatMessage {
+  id             String      @id @default(uuid())
+  conversationId String      @map("conversation_id")
+  role           MessageRole
+  content        String      @db.Text
+  metadata       Json?
+  createdAt      DateTime    @default(now()) @map("created_at")
+
+  conversation ChatConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@map("chat_messages")
+}
+
+// ==================== BEHAVIORS (per-class positive/negative actions) ====================
+
+model BehaviorTemplate {
+  id          String   @id @default(uuid())
+  classId     String   @map("class_id")
+  kind        String   // "positive" | "negative"
+  name        String
+  description String   @default("")
+  xpDelta     Int      @default(0) @map("xp_delta")
+  coinDelta   Int      @default(0) @map("coin_delta")
+  lifeDelta   Int      @default(0) @map("life_delta")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  class        Class                 @relation(fields: [classId], references: [id], onDelete: Cascade)
+  applications BehaviorApplication[]
+
+  @@index([classId])
+  @@map("behavior_templates")
+}
+
+model BehaviorApplication {
+  id         String   @id @default(uuid())
+  classId    String   @map("class_id")
+  behaviorId String?  @map("behavior_id")
+  teacherId  String   @map("teacher_id")
+  studentId  String   @map("student_id")
+  kind       String   // "positive" | "negative" — snapshotted from the template
+  name       String   // Snapshotted from the template
+  xpDelta    Int      @map("xp_delta")
+  coinDelta  Int      @map("coin_delta")
+  lifeDelta  Int      @map("life_delta")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  class    Class             @relation(fields: [classId], references: [id], onDelete: Cascade)
+  behavior BehaviorTemplate? @relation(fields: [behaviorId], references: [id], onDelete: SetNull)
+  teacher  User              @relation("BehaviorTeacher", fields: [teacherId], references: [id], onDelete: Cascade)
+  student  User              @relation("BehaviorStudent", fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@index([classId])
+  @@index([studentId, classId])
+  @@map("behavior_applications")
+}

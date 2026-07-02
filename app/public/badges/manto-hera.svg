@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="hera-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8E2DE2"/>
+      <stop offset="100%" style="stop-color:#4A00E0"/>
+    </linearGradient>
+    <linearGradient id="peacock-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00C9FF"/>
+      <stop offset="50%" style="stop-color:#0080FF"/>
+      <stop offset="100%" style="stop-color:#004080"/>
+    </linearGradient>
+    <linearGradient id="peacock-green" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00FA9A"/>
+      <stop offset="100%" style="stop-color:#006400"/>
+    </linearGradient>
+    <linearGradient id="feather-gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE066"/>
+      <stop offset="100%" style="stop-color:#DAA520"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="url(#hera-bg)"/>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#fff" stroke-width="2" opacity="0.3"/>
+  <!-- Central peacock feather -->
+  <path d="M50 85 Q50 50 50 25" fill="none" stroke="url(#peacock-green)" stroke-width="3"/>
+  <!-- Feather eye (center) -->
+  <ellipse cx="50" cy="35" rx="12" ry="16" fill="url(#peacock-blue)"/>
+  <ellipse cx="50" cy="35" rx="9" ry="12" fill="url(#peacock-green)"/>
+  <ellipse cx="50" cy="35" rx="6" ry="8" fill="url(#feather-gold)"/>
+  <ellipse cx="50" cy="35" rx="3" ry="4" fill="#1a1a2e"/>
+  <ellipse cx="50" cy="33" rx="1.5" ry="2" fill="#fff" opacity="0.6"/>
+  <!-- Feather barbs -->
+  <path d="M50 25 Q35 20 30 15" fill="none" stroke="url(#peacock-blue)" stroke-width="2" opacity="0.7"/>
+  <path d="M50 25 Q65 20 70 15" fill="none" stroke="url(#peacock-blue)" stroke-width="2" opacity="0.7"/>
+  <path d="M50 30 Q32 28 25 25" fill="none" stroke="url(#peacock-green)" stroke-width="2" opacity="0.6"/>
+  <path d="M50 30 Q68 28 75 25" fill="none" stroke="url(#peacock-green)" stroke-width="2" opacity="0.6"/>
+  <path d="M50 40 Q30 40 22 38" fill="none" stroke="url(#peacock-blue)" stroke-width="2" opacity="0.5"/>
+  <path d="M50 40 Q70 40 78 38" fill="none" stroke="url(#peacock-blue)" stroke-width="2" opacity="0.5"/>
+  <path d="M50 50 Q33 52 25 55" fill="none" stroke="url(#peacock-green)" stroke-width="2" opacity="0.4"/>
+  <path d="M50 50 Q67 52 75 55" fill="none" stroke="url(#peacock-green)" stroke-width="2" opacity="0.4"/>
+  <!-- Golden crown at base -->
+  <path d="M40 75 L42 68 L46 72 L50 65 L54 72 L58 68 L60 75 Z" fill="url(#feather-gold)"/>
+  <!-- Sparkles -->
+  <circle cx="35" cy="20" r="1.5" fill="#fff" opacity="0.8"/>
+  <circle cx="65" cy="18" r="1.5" fill="#fff" opacity="0.8"/>
+  <circle cx="22" cy="45" r="1" fill="#00C9FF" opacity="0.7"/>
+  <circle cx="78" cy="42" r="1" fill="#00C9FF" opacity="0.7"/>
+  <!-- Stars -->
+  <circle cx="18" cy="70" r="1.5" fill="#fff"/>
+  <circle cx="82" cy="72" r="1.5" fill="#fff"/>
+</svg>

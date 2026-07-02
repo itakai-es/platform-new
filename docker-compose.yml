@@ -1,0 +1,95 @@
+name: itakai-dev
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: itakai-db-dev
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-itakai}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-itakai_dev}
+      POSTGRES_DB: ${POSTGRES_DB:-itakai_dev}
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./api/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U itakai -d itakai_dev"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - itakai-network
+
+  # Backend API (Fastify)
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: itakai-api-dev
+    env_file:
+      - ./api/.env
+    environment:
+      NODE_ENV: development
+      PORT: 3001
+      DATABASE_URL: postgresql://${POSTGRES_USER:-itakai}:${POSTGRES_PASSWORD:-itakai_dev}@postgres:5432/${POSTGRES_DB:-itakai_dev}
+    ports:
+      - "3003:3001"
+    volumes:
+      - ./api:/app
+      - /app/node_modules
+      - api_uploads:/app/uploads
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - itakai-network
+
+  # Frontend App (Nuxt 4) — modo dev con hot reload
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+      target: builder        # paramos en la fase con node_modules ya instalados
+    container_name: itakai-app-dev
+    env_file:
+      - ./app/.env
+    environment:
+      NODE_ENV: development
+      NUXT_PUBLIC_API_BASE: http://localhost:3003
+    entrypoint: ["sh", "-c"]
+    command: ["pnpm dev"]    # arrancamos en modo dev (HMR), no el bundle de prod
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./app:/app
+      - /app/node_modules    # preservar node_modules del build
+      - /app/.nuxt           # preservar cache de Nuxt
+    depends_on:
+      - api
+    restart: unless-stopped
+    networks:
+      - itakai-network
+
+  # Database Admin UI
+  adminer:
+    image: adminer
+    container_name: itakai-adminer-dev
+    ports:
+      - "8082:8080"
+    depends_on:
+      - postgres
+    restart: unless-stopped
+    networks:
+      - itakai-network
+
+volumes:
+  postgres_data:
+  api_uploads:
+
+networks:
+  itakai-network:
+    name: itakai-dev-network

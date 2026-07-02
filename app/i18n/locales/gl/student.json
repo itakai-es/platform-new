@@ -1,0 +1,369 @@
+{
+  "student": {
+    "dashboard": {
+      "meta": {
+        "title": "O Meu Dashboard | ITAKAI",
+        "description": "Dashboard principal do estudante. Revisa o teu progreso, últimas misións e estatísticas de XP."
+      },
+      "welcome": "Benvido, {name}!",
+      "welcome_fallback_name": "Estudante",
+      "subtitle": "Continúa a túa viaxe de aprendizaxe e completa novas misións",
+      "stats": {
+        "classes_enrolled": "Clases Inscritas",
+        "missions_completed": "Misións Completadas",
+        "badges_earned": "Insignias Conseguidas"
+      },
+      "my_classes": {
+        "title": "As Miñas Clases",
+        "view_all": "Ver todas",
+        "empty": "Aínda non estás inscrito en ningunha clase"
+      },
+      "latest_missions": {
+        "title": "Últimas Misións",
+        "view_all": "Ver todas",
+        "empty": "Non hai misións recentes. Explora novas misións!"
+      },
+      "ai_assistant": {
+        "name": "Atenea",
+        "message_new_user": "Ola {name}! Benvido a ITAKAI. Completa a túa primeira misión para comezar a gañar XP!",
+        "message_returning_user": "Ola {name}! Completaches {missions_completed} misións en {classes_enrolled} clases. Segue así!"
+      },
+      "class_fallback_name": "Clase"
+    },
+    "missions": {
+      "meta": {
+        "title": "As Miñas Misións | ITAKAI",
+        "description": "Explora e completa misións educativas. Gaña XP e desbloquea novos desafíos."
+      },
+      "page_title": "As Miñas Misións",
+      "page_subtitle": "Explora e completa misións para gañar experiencia",
+      "empty": {
+        "title": "Sen misións",
+        "search_no_results": "Non se atoparon misións para \"{query}\"",
+        "class_no_missions_single": "Non hai misións nesta clase",
+        "class_no_missions_multiple": "Non hai misións nas clases seleccionadas",
+        "rarity_no_missions": "Non hai misións coas rarezas seleccionadas",
+        "status_no_missions": "Non hai misións cos estados seleccionados",
+        "coming_soon": "Pronto haberá novas misións dispoñibles"
+      },
+      "redirect": {
+        "redirecting": "Redirixindo..."
+      },
+      "status": {
+        "urgente": "Urxente",
+        "activa": "Activa",
+        "completada": "Completada",
+        "bloqueada": "Bloqueada",
+        "pendiente": "Pendente",
+        "expirada": "Expirada",
+        "en_progreso": "En Progreso"
+      }
+    },
+    "mission_detail": {
+      "meta": {
+        "title": "{title} | ITAKAI",
+        "title_loading": "Detalle de Misión | ITAKAI",
+        "description_fallback": "Detalle de misión en ITAKAI"
+      },
+      "error": {
+        "loading_error": "Erro ao cargar a misión"
+      },
+      "documents": {
+        "action_download": "Descargar ficheiro",
+        "action_open_link": "Abrir ligazón",
+        "action_play_video": "Reproducir vídeo"
+      },
+      "atenea": {
+        "message": "Ola! Estou aquí para axudarche con \"{mission_title}\". Listo para comezar esta aventura?"
+      },
+      "rewards": {
+        "unlock_badge_hint": "Completa todos os enigmas desta misión para desbloquear esta insignia."
+      },
+      "submission": {
+        "success": "Entrega enviada correctamente. O profesor revisaraa pronto.",
+        "error": "Erro ao enviar a entrega. Téntao de novo.",
+        "expired_error": "Esta misión expirou. Xa non podes entregar enigmas.",
+        "downloading": "Descargando"
+      }
+    },
+    "classes": {
+      "meta": {
+        "title": "As Miñas Clases | ITAKAI",
+        "description": "Accede ás túas clases inscritas, revisa o progreso e descobre novas misións asignadas."
+      },
+      "page_title": "As Miñas Clases",
+      "page_subtitle": "Clases nas que estás inscrito",
+      "join_class_button": "Unirse a clase",
+      "empty": {
+        "title": "Non tes clases",
+        "description": "Aínda non estás inscrito en ningunha clase. Pide o código ao teu profesor para unirte."
+      },
+      "detail": {
+        "error_title": "Erro ao cargar a clase",
+        "back_to_classes": "Volver ás miñas clases",
+        "breadcrumb_classes": "As miñas clases",
+        "teacher_fallback": "Profesor",
+        "tabs": {
+          "resumen": "Resumo",
+          "historia": "Historia",
+          "guia": "Guía",
+          "misiones": "Misións",
+          "ranking": "Ranking",
+          "avatar": "Avatar",
+          "tienda": "Tenda"
+        },
+        "progress": {
+          "title": "O Meu Progreso",
+          "completion_rate": "Completado",
+          "missions_completed": "Misións Completadas",
+          "xp_total": "XP Total",
+          "badges_earned": "Insignias Obtidas"
+        },
+        "ai_assistant": {
+          "subtitle": "A túa guía nesta clase",
+          "message": "Ola! Estou aquí para axudarche con calquera dúbida que teñas sobre esta clase. En que podo axudarche hoxe?"
+        },
+        "missions_tab": {
+          "empty_title": "Sen misións",
+          "empty_search": "Non se atoparon misións para \"{query}\"",
+          "empty_rarity": "Non hai misións coas rarezas seleccionadas",
+          "empty_default": "Aínda non hai misións asignadas nesta clase."
+        },
+        "avatar_tab": {
+          "choose_guide": "Elixe a túa guía para esta clase",
+          "describe_avatar": "Describe como queres que sexa o teu avatar:",
+          "example_label": "Exemplo:",
+          "example_text": "Un guerreiro novo con armadura dourada, cabelo escuro e ollos brillantes, sostendo un escudo co símbolo de Atenea. Estilo épico e heroico, inspirado na mitoloxía grega ...",
+          "placeholder": "Describe o teu avatar aquí...",
+          "tip": "Consello: Sé específico con cores, vestimenta, accesorios e estilo. A IA creará o teu avatar baseándose no personaxe que seleccionases.",
+          "generate_button": "Xerar avatar",
+          "generating": "Xerando o teu avatar...",
+          "generated_trait": "Xerado con IA",
+          "nickname_placeholder": "O teu alcume...",
+          "save_changes": "Gardar cambios",
+          "no_guide_hint": "Elixe a túa guía para ver o teu avatar",
+          "save_success": "Perfil gardado correctamente",
+          "save_error": "Erro ao gardar o perfil",
+          "generate_error": "Non se puido xerar o avatar. Téntao de novo nuns segundos.",
+          "generate_error_with_detail": "Non se puido xerar o avatar: {detail}"
+        },
+        "mission_no_description": "Sen descrición",
+        "shop": {
+          "help_coins": "Moedas: gáñaas con misións e cámbiaas por recompensas.",
+          "help_mana": "Mana: úsao para activar poderes.",
+          "tab_rewards": "Recompensas",
+          "tab_purchases": "Os meus troques",
+          "empty_title": "A tenda está baleira",
+          "empty_description": "O teu profesor aínda non engadiu recompensas. Volve máis tarde.",
+          "purchases_empty_title": "Aínda non trocaches nada",
+          "purchases_empty_description": "Gasta as túas moedas nas recompensas e aquí verás o teu historial.",
+          "view_rewards": "Ver recompensas",
+          "coins": "moedas",
+          "confirm_title": "Trocar \"{name}\"?",
+          "cost": "Custo",
+          "balance_after": "Saldo tras o troque",
+          "missing": "Fáltanche",
+          "cancel": "Cancelar",
+          "redeem": "Trocar",
+          "redeemed_toast": "Trocaches \"{name}\"!",
+          "redeem_error": "Non se puido completar o troque.",
+          "mana": "maná",
+          "buy": "Mercar",
+          "use": "Usar",
+          "owned": "Téalo",
+          "power": "Poder",
+          "reward": "Recompensa",
+          "tab_powers": "Poderes",
+          "tab_shop": "Tenda",
+          "tab_items": "Os meus artigos",
+          "owned_empty_title": "Aínda non tes nada",
+          "owned_empty_description": "Merca poderes ou privilexios na tenda e aparecerán aquí.",
+          "tab_history": "Historial",
+          "history_bought": "Mercado",
+          "history_used": "Usado",
+          "history_redeemed": "Canxeado",
+          "history_purchases_title": "Compras",
+          "history_uses_title": "Usos",
+          "history_purchases_empty": "Aínda non compraches nada.",
+          "history_uses_empty": "Aínda non usaches ningún artigo.",
+          "history_empty_title": "Sen actividade aínda",
+          "history_empty_description": "Aquí verás as túas compras e os poderes que uses.",
+          "usage_single": "Un uso",
+          "usage_unlimited": "Ilimitada",
+          "powers_empty_title": "Non hai poderes",
+          "powers_empty_description": "O teu profesor aínda non engadiu poderes. Volve máis tarde.",
+          "confirm_buy_title": "Mercar \"{name}\"?",
+          "confirm_use_title": "Usar \"{name}\"?",
+          "bought_toast": "Mercaches \"{name}\"!",
+          "used_toast": "Usaches \"{name}\"!",
+          "mana_after": "Maná tras o uso"
+        }
+      }
+    },
+    "achievements": {
+      "meta": {
+        "title": "As Miñas Insignias | ITAKAI",
+        "description": "Descobre todas as túas insignias obtidas ao completar misións e logros especiais."
+      },
+      "page_title": "As Miñas Insignias",
+      "page_subtitle": "Recompensas obtidas ao completar misións e logros",
+      "filter": {
+        "search_placeholder": "Buscar insignias...",
+        "all_categories": "Todas as categorías",
+        "all_rarities": "Todas as rarezas",
+        "plural_categories": "categorías",
+        "plural_rarities": "rarezas",
+        "status_all": "Todas",
+        "status_unlocked": "Desbloqueadas",
+        "status_locked": "Bloqueadas"
+      },
+      "rarity": {
+        "common": "Común",
+        "rare": "Rara",
+        "epic": "Épica",
+        "legendary": "Legendaria"
+      },
+      "empty": {
+        "title": "Sen insignias",
+        "no_badges_yet": "Completa misións para desbloquear insignias",
+        "search_no_results": "Non se atoparon insignias para \"{query}\"",
+        "filter_no_results": "Non hai insignias cos filtros seleccionados",
+        "default": "Non hai insignias dispoñibles"
+      },
+      "badge_detail": {
+        "unlocked_on": "Desbloqueada o {date}",
+        "mission_label": "Misión: {name}",
+        "class_label": "Clase: {name}",
+        "progress_label": "Progreso actual",
+        "close": "Pechar"
+      }
+    },
+    "leaderboard": {
+      "meta": {
+        "title": "Ranking | ITAKAI",
+        "description": "O ranking de estudantes está dispoñible dentro de cada clase."
+      }
+    },
+    "ai_assistant": {
+      "meta": {
+        "title": "Asistente IA | ITAKAI",
+        "description": "Conversa co teu asistente de IA para resolver dúbidas sobre misións, progreso e a plataforma."
+      },
+      "suggestions": {
+        "how_to_complete_mission": "Como completo unha misión?",
+        "where_to_see_progress": "Onde podo ver o meu progreso?",
+        "how_xp_works": "Como funciona o sistema de XP?",
+        "how_to_join_class": "Como me uno a unha clase?"
+      }
+    },
+    "profile": {
+      "meta": {
+        "title": "O Meu Perfil | ITAKAI",
+        "description": "Xestiona o teu perfil de estudante, configura a seguridade e personaliza a túa experiencia."
+      },
+      "breadcrumb_home": "Inicio",
+      "breadcrumb_profile": "O meu perfil",
+      "page_title": "O Meu Perfil",
+      "tabs": {
+        "security": "Seguridade",
+        "settings": "Configuración"
+      },
+      "security": {
+        "password_title": "Contrasinal",
+        "current_password": "Contrasinal actual",
+        "new_password": "Novo contrasinal",
+        "confirm_password": "Confirmar contrasinal",
+        "update_button": "Actualizar",
+        "passwords_mismatch": "Os contrasinais non coinciden",
+        "password_too_short": "O contrasinal debe ter polo menos 6 caracteres",
+        "email_title": "Email",
+        "new_email_placeholder": "Novo email",
+        "email_invalid": "Introduce un email válido",
+        "sessions_title": "Sesións",
+        "close_all_sessions": "Pechar todas",
+        "current_session": "Actual",
+        "close_session": "Pechar"
+      },
+      "settings": {
+        "theme_title": "Tema",
+        "theme_description": "Elixe o estilo visual da plataforma",
+        "theme_college": "Modo Colexio",
+        "theme_college_desc": "Visual gamificado",
+        "theme_university": "Modo Universidade",
+        "theme_university_desc": "Visual profesional",
+        "language_title": "Idioma",
+        "language_updated": "Idioma actualizado",
+        "theme_updated": "Tema actualizado",
+        "danger_zone_title": "Zona perigosa",
+        "danger_zone_description": "Unha vez eliminada a túa conta, non hai volta atrás. Por favor, asegúrate de estar seguro.",
+        "delete_account_button": "Eliminar conta"
+      },
+      "delete_modal": {
+        "title": "Eliminar conta",
+        "confirm_prompt": "Para confirmar, introduce o teu contrasinal:",
+        "password_placeholder": "O teu contrasinal",
+        "cancel_button": "Cancelar",
+        "delete_button": "Eliminar a miña conta",
+        "password_required": "Introduce o teu contrasinal"
+      },
+      "languages": {
+        "es": "Español",
+        "en": "English",
+        "ca": "Catalán",
+        "eu": "Éuscaro",
+        "gl": "Galego"
+      }
+    },
+    "components": {
+      "mission_card": {
+        "progress": "Progreso",
+        "view_mission": "Ver Misión"
+      },
+      "recent_activity_card": {
+        "title": "Actividade Recente",
+        "empty": "Non hai actividade recente",
+        "user_fallback": "Usuario"
+      },
+      "submission_modal": {
+        "title": "Entregar Enigma",
+        "file_label": "Ficheiro de entrega",
+        "file_required": "*",
+        "drag_hint": "Arrastra o teu ficheiro aquí ou fai clic para seleccionar",
+        "file_types": "ZIP, RAR, 7Z (máx. 50MB)",
+        "cancel_button": "Cancelar",
+        "submit_button": "Entregar",
+        "submitting_button": "Enviando...",
+        "validation": {
+          "invalid_type": "Só se permiten ficheiros ZIP, RAR ou 7Z",
+          "file_too_large": "O ficheiro non pode superar os 50MB",
+          "file_required": "Debes seleccionar un ficheiro"
+        }
+      },
+      "class_guide_markdown": {
+        "empty_title": "Sen contido",
+        "empty_student": "O profesor aínda non engadiu a guía desta clase.",
+        "empty_teacher": "Aínda non engadiches a guía desta clase.",
+        "add_guide_button": "Engadir Guía",
+        "last_updated": "Última actualización: {date}"
+      },
+      "rarity_badge": {
+        "comun": "Común",
+        "rara": "Rara",
+        "epica": "Épica",
+        "legendaria": "Legendaria"
+      },
+      "class_ranking_section": {
+        "podium_title": "Podio de Campións",
+        "stats_title": "Estatísticas",
+        "rest_title": "Resto do Ranking",
+        "level_abbr": "Nv.",
+        "missions_suffix": "misións",
+        "you_badge": "Ti",
+        "avg_xp": "XP Medio",
+        "avg_progress": "Progreso Medio",
+        "avg_missions": "Misións Medias",
+        "total_xp": "XP Total Clase"
+      }
+    }
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "admin": {
+    "dashboard": {
+      "title": "Panel de Administrador",
+      "subtitle": "Panel de control do sistema ITAKAI",
+      "activity": {
+        "title": "Actividade do Sistema",
+        "period_24h": "Últimas 24 horas",
+        "period_week": "Última semana",
+        "period_month": "Último mes"
+      },
+      "quick_actions": {
+        "manage_users": "Xestionar Usuarios"
+      },
+      "system_status": {
+        "title": "Estado do Sistema",
+        "operational": "Operativo",
+        "degraded": "Degradado",
+        "down": "Fóra de servizo",
+        "unknown": "Descoñecido",
+        "empty": "Non hai servizos dispoñibles"
+      },
+      "meta": {
+        "title": "Panel Admin | ITAKAI",
+        "description": "Panel de control do sistema ITAKAI. Xestiona usuarios, institucións e monitoriza o estado da plataforma."
+      }
+    },
+    "users": {
+      "title": "Xestión de Usuarios",
+      "meta": {
+        "title": "Xestión de Usuarios | ITAKAI Admin",
+        "description": "Administra todos os usuarios do sistema, crea novos perfís, edita roles e monitoriza a actividade."
+      },
+      "subtitle": "Administra todos os usuarios da plataforma",
+      "filters": {
+        "search_placeholder": "Buscar por nome ou email...",
+        "all_roles": "Todos os roles",
+        "students": "Estudantes",
+        "teachers": "Profesores",
+        "admins": "Administradores",
+        "all_statuses": "Todos os estados",
+        "active": "Activo",
+        "suspended": "Suspendido",
+        "inactive": "Inactivo",
+        "clear": "Limpar filtros"
+      },
+      "roles": {
+        "student": "Estudante",
+        "teacher": "Profesor",
+        "admin": "Admin"
+      },
+      "card": {
+        "status": "Estado",
+        "classes": "Clases",
+        "last_login": "Últ. acceso"
+      },
+      "empty": {
+        "title": "Non se atoparon usuarios",
+        "description": "Non hai usuarios que coincidan cos filtros seleccionados."
+      },
+      "actions": {
+        "suspend_title": "Suspender usuario",
+        "suspend_message": "Seguro que queres suspender a {name}? Non poderá acceder á plataforma.",
+        "suspend_confirm": "Suspender",
+        "delete_title": "Eliminar usuario",
+        "delete_message": "Seguro que queres eliminar a {name}? Esta acción non se pode desfacer.",
+        "delete_confirm": "Eliminar"
+      }
+    },
+    "classes": {
+      "title": "Xestión de Clases",
+      "meta": {
+        "title": "Xestión de Clases | ITAKAI Admin"
+      },
+      "subtitle": "Visualiza todas as clases da plataforma",
+      "filters": {
+        "search_placeholder": "Buscar clases..."
+      },
+      "empty": {
+        "title": "Non se atoparon clases",
+        "description": "Non hai clases que coincidan cos filtros seleccionados."
+      }
+    },
+    "missions": {
+      "title": "Xestión de Misións",
+      "meta": {
+        "title": "Xestión de Misións | ITAKAI Admin"
+      },
+      "subtitle": "Visualiza todas as misións da plataforma",
+      "filters": {
+        "search_placeholder": "Buscar misións..."
+      },
+      "empty": {
+        "title": "Non se atoparon misións",
+        "description": "Non hai misións que coincidan cos filtros seleccionados."
+      }
+    },
+    "schools": {
+      "title": "Xestión de Institucións",
+      "meta": {
+        "title": "Xestión de Institucións | ITAKAI Admin",
+        "description": "Administra todas as institucións educativas do sistema, crea novas escolas e monitoriza a súa actividade."
+      },
+      "subtitle": "Administra as institucións educativas",
+      "filters": {
+        "search_placeholder": "Buscar institución...",
+        "all_statuses": "Todos os estados",
+        "active": "Activa",
+        "inactive": "Inactiva"
+      },
+      "form": {
+        "create_title": "Nova institución",
+        "edit_title": "Editar institución",
+        "name": "Nome",
+        "name_placeholder": "Nome da institución",
+        "city": "Cidade",
+        "city_placeholder": "Cidade",
+        "country": "País",
+        "country_placeholder": "País",
+        "save": "Gardar",
+        "cancel": "Cancelar"
+      },
+      "actions": {
+        "create": "Crear institución",
+        "delete_title": "Eliminar institución",
+        "delete_message": "Seguro que queres eliminar a {name}?",
+        "delete_confirm": "Eliminar"
+      },
+      "empty": {
+        "title": "Non se atoparon institucións",
+        "description": "Non hai institucións que coincidan cos filtros seleccionados."
+      }
+    },
+    "analytics": {
+      "title": "Analíticas do Sistema",
+      "subtitle": "Métricas e estatísticas da plataforma",
+      "period": {
+        "week": "Semana",
+        "month": "Mes",
+        "quarter": "Trimestre"
+      },
+      "kpis": {
+        "avg_response": "Tempo de resposta",
+        "requests_per_min": "Peticións/min",
+        "error_rate": "Taxa de erro",
+        "uptime": "Dispoñibilidade"
+      },
+      "overview": {
+        "total_users": "Usuarios Totais",
+        "missions_completed": "Misións Completadas",
+        "completion_rate": "Taxa de Completado",
+        "active_today": "Activos hoxe"
+      },
+      "sections": {
+        "system_resources": "Recursos do Sistema",
+        "service_health": "Estado de Servizos",
+        "response_time": "Tempo de Resposta",
+        "active_users": "Usuarios Activos",
+        "requests": "Peticións",
+        "tokens_over_time": "Tokens Consumidos",
+        "users_by_role": "Usuarios por Rol",
+        "missions_by_status": "Misións por Estado",
+        "missions_by_rarity": "Misións por Rareza",
+        "ai_usage": "Uso de IA (Asistentes)"
+      },
+      "system": {
+        "memory": "Memoria",
+        "disk": "Disco",
+        "db_latency": "Latencia BD"
+      },
+      "ai": {
+        "total_tokens": "Tokens totais",
+        "avg_tokens_user": "Media por usuario",
+        "total_conversations": "Conversas",
+        "avg_conversations_user": "Conv. por usuario"
+      },
+      "table": {
+        "service": "Servizo",
+        "status": "Estado",
+        "uptime": "Uptime",
+        "latency": "Latencia"
+      },
+      "status": {
+        "operational": "OK",
+        "degraded": "Degradado",
+        "down": "Caído"
+      },
+      "meta": {
+        "title": "Analíticas do Sistema | ITAKAI Admin",
+        "description": "Visualiza métricas avanzadas, gráficos de rendemento e análises detalladas da plataforma."
+      }
+    },
+    "logs": {
+      "title": "Logs do Sistema",
+      "meta": {
+        "title": "Logs do Sistema | ITAKAI Admin",
+        "description": "Revisa os rexistros de actividade do sistema, audita accións de usuarios e diagnostica problemas técnicos."
+      },
+      "tab": "Actividade",
+      "subtitle": "Rexistros de actividade do sistema",
+      "filters": {
+        "search_placeholder": "Buscar nos logs...",
+        "period_24h": "Últimas 24 horas",
+        "period_week": "Última semana",
+        "period_month": "Último mes",
+        "all_severities": "Todas",
+        "info": "Info",
+        "warning": "Warning",
+        "error": "Error",
+        "success": "Success",
+        "all_types": "Todos os tipos",
+        "new_school": "Nova institución",
+        "new_users": "Novos usuarios",
+        "alert": "Alerta",
+        "system_update": "Actualización",
+        "missions_completed": "Misións completadas",
+        "user_action": "Acción de usuario"
+      },
+      "empty": {
+        "title": "Non se atoparon logs",
+        "description": "Non hai rexistros que coincidan cos filtros seleccionados."
+      }
+    },
+    "system_logs": {
+      "tab": "Sistema",
+      "filters": {
+        "search_placeholder": "Buscar nos logs do sistema...",
+        "all_levels": "Todos os niveis",
+        "all_categories": "Todas as categorías"
+      },
+      "levels": {
+        "info": "Info",
+        "warning": "Aviso",
+        "error": "Erro",
+        "success": "OK"
+      },
+      "categories": {
+        "health_check": "Health Check",
+        "service_status": "Estado de Servizo",
+        "security": "Seguridade",
+        "performance": "Rendemento",
+        "maintenance": "Mantemento",
+        "backup": "Backup"
+      },
+      "empty": {
+        "title": "Non se atoparon logs do sistema",
+        "description": "Non hai rexistros do sistema que coincidan cos filtros seleccionados."
+      }
+    }
+  }
+}

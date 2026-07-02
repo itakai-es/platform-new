@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="bronze-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#CD7F32"/>
+      <stop offset="100%" style="stop-color:#8B4513"/>
+    </linearGradient>
+    <linearGradient id="bronze-metal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#CD9B5A"/>
+      <stop offset="50%" style="stop-color:#CD7F32"/>
+      <stop offset="100%" style="stop-color:#8B4513"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="url(#bronze-bg)"/>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#fff" stroke-width="2" opacity="0.3"/>
+  <!-- Spartan helmet -->
+  <ellipse cx="50" cy="45" rx="18" ry="22" fill="url(#bronze-metal)"/>
+  <!-- Helmet crest -->
+  <path d="M50 18 Q45 25 45 35 L45 55 Q50 58 55 55 L55 35 Q55 25 50 18" fill="#8B0000"/>
+  <!-- Helmet face opening -->
+  <path d="M38 40 L38 55 Q38 62 50 65 Q62 62 62 55 L62 40" fill="#2D2D2D"/>
+  <!-- Eye slits -->
+  <ellipse cx="43" cy="48" rx="4" ry="2" fill="#1a1a1a"/>
+  <ellipse cx="57" cy="48" rx="4" ry="2" fill="#1a1a1a"/>
+  <!-- Nose guard -->
+  <rect x="48" y="42" width="4" height="18" fill="url(#bronze-metal)"/>
+  <!-- Helmet cheek guards -->
+  <path d="M35 45 Q30 50 32 60 L38 58" fill="url(#bronze-metal)"/>
+  <path d="M65 45 Q70 50 68 60 L62 58" fill="url(#bronze-metal)"/>
+  <!-- Number 10 -->
+  <text x="50" y="82" font-family="serif" font-size="10" font-weight="bold" fill="#FFE066" text-anchor="middle">X</text>
+  <!-- Stars -->
+  <circle cx="18" cy="25" r="1.5" fill="#fff"/>
+  <circle cx="82" cy="28" r="1.5" fill="#fff"/>
+  <circle cx="15" cy="70" r="1" fill="#fff" opacity="0.7"/>
+  <circle cx="85" cy="72" r="1" fill="#fff" opacity="0.7"/>
+</svg>

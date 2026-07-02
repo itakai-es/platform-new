@@ -1,0 +1,196 @@
+{
+  "common": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "my_classes": "Nire Klaseak",
+      "missions": "Misioak",
+      "badges": "Dominak",
+      "students": "Ikasleak",
+      "users": "Erabiltzaileak",
+      "classes": "Klaseak",
+      "analytics": "Analitikak",
+      "logs": "Logak",
+      "features": "Ezaugarriak",
+      "blog": "Bloga",
+      "section_management": "Kudeaketa",
+      "section_system": "Sistema"
+    },
+    "actions": {
+      "rename": "Berrizendatu",
+      "delete": "Ezabatu",
+      "open_menu": "Menua ireki",
+      "close_menu": "Menua itxi",
+      "toggle_menu": "Menua aldatu",
+      "back_to_dashboard": "Dashboard-era itzuli",
+      "create_new_account": "Kontu Berria Sortu",
+      "enter": "Sartu"
+    },
+    "status": {
+      "under_development": "Garapenean"
+    },
+    "time": {
+      "now": "Orain",
+      "ago_min_short": "Duela {count} min",
+      "ago_hours_short": "Duela {count}h",
+      "ago_days": "Duela {count} egun",
+      "ago_weeks": "Duela {count} aste",
+      "yesterday": "Atzo"
+    },
+    "toast": {
+      "enigma_updated": "Enigma behar bezala eguneratu da",
+      "enigma_added": "Enigma behar bezala gehitu da",
+      "enigma_save_error": "Errorea enigma gordetzean",
+      "enigma_deleted": "Enigma behar bezala ezabatu da",
+      "enigma_delete_error": "Errorea enigma ezabatzean",
+      "document_updated": "Dokumentua behar bezala eguneratu da",
+      "document_added": "Dokumentua behar bezala gehitu da",
+      "document_save_error": "Errorea dokumentua gordetzean",
+      "document_deleted": "Dokumentua behar bezala ezabatu da",
+      "document_delete_error": "Errorea dokumentua ezabatzean",
+      "badge_assigned": "Domina behar bezala esleitu da",
+      "badge_removed": "Domina misiotik kendu da",
+      "submission_student_approved": "{name}-(r)en entrega onartu da (+{xp} XP)",
+      "download_not_found": "Ez da deskargatzeko fitxategia aurkitu",
+      "download_error": "Ezin izan da fitxategia deskargatu",
+      "join_request_accepted": "{name} klasera onartua izan da",
+      "join_request_rejected": "Eskaera baztertuta",
+      "join_request_accept_error": "Eskaera onartzean errore bat gertatu da",
+      "join_request_reject_error": "Eskaera baztertzean errore bat gertatu da"
+    },
+    "notifications": {
+      "title": "Jakinarazpenak",
+      "panel_label": "Jakinarazpenen panela",
+      "view_all": "Ikusi guztiak",
+      "empty": "Ez duzu jakinarazpenik",
+      "unread_label": "Irakurri gabea",
+      "aria_label": "Jakinarazpenak",
+      "aria_label_unread": "Jakinarazpenak ({count} irakurri gabe)"
+    },
+    "errors": {
+      "generic": "Errore bat gertatu da. Mesedez, saiatu berriro."
+    },
+    "roles": {
+      "student": "Ikaslea",
+      "teacher": "Irakaslea",
+      "admin": "Administratzailea",
+      "admin_system": "Sistemaren Administratzailea"
+    },
+    "user_dropdown": {
+      "my_profile": "Nire Profila",
+      "logout": "Saioa Itxi",
+      "user_menu_label": "Erabiltzailearen menua"
+    },
+    "sidebar": {
+      "new_conversation": "Elkarrizketa berria",
+      "no_conversations": "Oraindik ez dago elkarrizketarik.",
+      "start_new": "Hasi berri bat!",
+      "chat_with": "Txateatu {name}-(r)ekin",
+      "chat_with_god": "Txateatu jainko batekin",
+      "chat_with_label": "Txatea honekin:"
+    },
+    "mobile_sidebar": {
+      "join_class": "Klasera Batu"
+    },
+    "landing": {
+      "hero_title": "Ikasteko abentura",
+      "hero_subtitle": "Hezkuntza kudeaketa sistema gamifikazioarekin ikasle eta irakasleentzat",
+      "cta_start": "Hasi",
+      "features_title": "Zer egin dezakezu ITAKAI-rekin?",
+      "features_subtitle": "Ezagutu hezkuntza esperientzia bakarra bihurtzen duten tresna eta funtzionaltasun guztiak",
+      "feature_gamification_title": "Gamifikazio Osoa",
+      "feature_gamification_desc": "Puntu, maila, dominari eta sari sistema etengabeko ikaskuntza bultzatzen duena",
+      "feature_narrative_title": "Narratiba Murgilgarria",
+      "feature_narrative_desc": "Klase bakoitza pertsonaia eta istorioekin arreta hartzen duen abentura bakarra da",
+      "feature_teamwork_title": "Talde Lana",
+      "feature_teamwork_desc": "Talde lana eta etengabeko hobekuntza sustatzen duten erronka kolaboratiboak eta rankingak",
+      "feature_analytics_title": "Analisi Adimentsua",
+      "feature_analytics_desc": "Ikasleen aurrerapenaren jarraipena eta analisi tresna aurreratuak",
+      "feature_access_title": "Sarbide Unibertsala",
+      "feature_access_desc": "Edozein gailutan funtzionatzen du, munduko edozein lekutatik",
+      "feature_ai_title": "Hezkuntza AA",
+      "feature_ai_desc": "Ikasle bakoitzarentzat ikaskuntza pertsonalizatzen duten laguntzaileak",
+      "profiles_title": "Aukeratu zure profila hasteko",
+      "about_title": "Zer da ITAKAI?",
+      "about_description_1": "ITAKAI <strong>MyClassGame</strong>-ren bilakaera da, <strong>Adimen Artifizialarekin</strong> indartua. Lanbide heziketa esperientzia murgilgarri bihurtzen duen hezkuntza plataforma gamifikatua.",
+      "about_description_2": "Edukien sorrera automatikoa, ikasle bakoitzarentzat AA laguntzaile pertsonalizatuak eta errendimenduaren analisi prediktiboa. Dena ikastea abentura bat den ekosistema batean integratuta.",
+      "stat_students": "Ikasleak",
+      "stat_teachers": "Irakasleak",
+      "stat_centers": "Ikastetxeak",
+      "partners_title": "Nor gara?",
+      "gods_title": "Zure Olinpoko Mentoreak",
+      "gods_subtitle": "Jainko greko gaietan oinarritutako 5 AA laguntzaile, bakoitza bere alorrean aditua",
+      "cta_final_title": "Prest zure Abentura Epikora?",
+      "cta_final_subtitle": "Batu dagoeneko ITAKAI-rekin ikaskuntza eraldatzen ari diren milaka ikasletara",
+      "cta_final_button": "Hasi Orain Doan",
+      "footer_copyright_alt": "(c) {year} ITAKAI. Hezkuntza sistema gamifikatua"
+    },
+    "footer": {
+      "legal": "Legala",
+      "platform": "Plataforma",
+      "support": "Laguntza",
+      "contact": "Kontaktua",
+      "terms_of_service": "Zerbitzu baldintzak",
+      "privacy_policy": "Pribatutasun politika",
+      "cookies": "Cookieak",
+      "licenses": "Lizentziak",
+      "system_access": "Sistemarako sarbidea",
+      "teacher_panel": "Irakaslearen panela",
+      "student_panel": "Ikaslearen panela",
+      "help_center": "Laguntza zentroa",
+      "documentation": "Dokumentazioa"
+    },
+    "level_up": {
+      "title": "Maila igo duzu!",
+      "congratulations": "Zorionak! {level} maila lortu duzu",
+      "congratulations_class": "Zorionak! {level} maila lortu duzu {className} klasean",
+      "rewards_title": "Lortutako Sariak",
+      "continue": "Jarraitu!"
+    },
+    "join_class_modal": {
+      "title": "Klase batera Batu",
+      "description": "Sartu zure irakasleak eman dizun klase kodea",
+      "placeholder": "ABC123",
+      "joining": "Batzen...",
+      "join_button": "Klasera batu",
+      "error_required": "Klase kodea beharrezkoa da",
+      "error_min_length": "Kodeak gutxienez 4 karaktere izan behar ditu",
+      "error_not_found": "Ez da kode horrekin klaserik aurkitu",
+      "error_invalid_code": "Klase kode baliogabea",
+      "error_already_enrolled": "Dagoeneko klase honetan matrikulatuta zaude",
+      "error_generic": "Errorea klasera batzean. Saiatu berriro.",
+      "error_generic_short": "Errorea klasera batzean",
+      "success": "{className} klasera batu zara"
+    },
+    "invite_students_modal": {
+      "title": "Ikasleak Gonbidatu",
+      "description": "Partekatu kode hau zure ikasleekin klasera batu daitezen:",
+      "copy_code": "Kodea Kopiatu",
+      "code_copied": "Kodea arbelean kopiatu da",
+      "copy_error": "Errorea kodea kopiatzean"
+    },
+    "under_development": {
+      "back_to_dashboard": "Dashboard-era itzuli"
+    },
+    "docs": {
+      "title": "Laguntza Zentroa eta Dokumentazioa",
+      "description": "Hemen gida osoak, pausoz pausoko tutorialak, ohiko galderak eta laguntza baliabideak kontsultatu ahal izango dituzu ITAKAI plataformari ahalik eta etekin handiena ateratzeko.",
+      "btn_back": "Hasierako orrialdera itzuli",
+      "meta": {
+        "title": "Dokumentazioa - ITAKAI",
+        "description": "ITAKAI-ren laguntza zentroa eta dokumentazioa"
+      }
+    },
+    "meta": {
+      "site_title": "ITAKAI - Ikasteko abentura | Hezkuntza Plataforma Gamifikatua",
+      "site_description": "Eraldatu hezkuntza ITAKAI-rekin, ikasleak, irakasleak eta familiak inspiratzen, motibatzen eta konektatzen dituen plataforma gamifikatua. Batu 50.000 ikasle baino gehiagotara.",
+      "og_title": "ITAKAI - Ikasteko abentura",
+      "og_description": "AA-rekin hezkuntza plataforma gamifikatua, narratiba murgilgarriak eta analisi adimentsua."
+    },
+    "resources": {
+      "xp": "Esperientzia (XP)",
+      "coins": "Txanponak",
+      "mana": "Mana",
+      "lives": "Bizi puntuak"
+    }
+  }
+}

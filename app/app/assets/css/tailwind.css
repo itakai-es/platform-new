@@ -1,0 +1,761 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Prose list styles — override Tailwind preflight reset (list-style: none) */
+.prose ul { list-style-type: disc; padding-left: 1.25em; }
+.prose ol { list-style-type: decimal; padding-left: 1.25em; }
+.prose ul > li::marker { color: #ac74fd; }
+.prose ol > li::marker { color: #ac74fd; }
+.prose li { margin-top: 0.25em; margin-bottom: 0.25em; }
+
+/**
+ * Global markdown rendered content styles
+ * Used everywhere: class history, guide, mission narrative, editor preview, AI modal
+ * Single source of truth — change here to update all markdown views
+ */
+.md-rendered {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: var(--color-text-primary);
+}
+.md-rendered h1 { font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; }
+.md-rendered h2 { font-size: 1.25rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.75rem; }
+.md-rendered h3 { font-size: 1.1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+.md-rendered h4 { font-size: 1rem; font-weight: 600; margin-top: 1.25rem; margin-bottom: 0.5rem; }
+.md-rendered h1:first-child, .md-rendered h2:first-child, .md-rendered h3:first-child, .md-rendered h4:first-child { margin-top: 0; }
+.md-rendered p { margin-bottom: 1rem; }
+.md-rendered p:last-child { margin-bottom: 0; }
+.md-rendered ul { list-style-type: disc; margin: 0.75rem 0; padding-left: 1.5rem; }
+.md-rendered ol { list-style-type: decimal; margin: 0.75rem 0; padding-left: 1.5rem; }
+.md-rendered li { margin-bottom: 0.5rem; line-height: 1.7; }
+.md-rendered strong { font-weight: 700; }
+.md-rendered em { font-style: italic; }
+.md-rendered blockquote { border-left: 3px solid currentColor; padding-left: 1rem; margin: 1rem 0; opacity: 0.7; font-style: italic; }
+.md-rendered hr { margin: 1.5rem 0; border: none; border-top: 1px solid #e5e7eb; }
+.md-rendered a { color: var(--color-navy-700); text-decoration: underline; }
+.md-rendered code { background: #f3f4f6; padding: 0.15rem 0.4rem; border-radius: 0.25rem; font-size: 0.85em; }
+.md-rendered pre { background: #1a1f3a; color: #e5e7eb; padding: 1rem; border-radius: 0.75rem; overflow-x: auto; margin: 1rem 0; }
+.md-rendered pre code { background: none; padding: 0; font-size: 0.85em; }
+.md-rendered table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+.md-rendered th, .md-rendered td { border: 1px solid #e5e7eb; padding: 0.5rem 0.75rem; text-align: left; }
+.md-rendered th { background: #f9fafb; font-weight: 600; }
+.md-rendered img { max-width: 100%; border-radius: 0.5rem; margin: 1rem 0; }
+.md-rendered del { text-decoration: line-through; opacity: 0.7; }
+
+/**
+ * ITAKAI Design System
+ * Light Mode Gamificado - Estilo Duolingo/Kahoot
+ *
+ * Este archivo contiene todas las variables CSS del sistema.
+ * Modificar aquí aplicará cambios globalmente en toda la app.
+ */
+
+@layer base {
+  :root {
+    /* ============================================
+       COLORES - Light Mode Base
+       ============================================ */
+
+    /* Backgrounds - Fondos principales ITAKAI */
+    --color-bg-primary: #FFFFFF;
+    --color-bg-secondary: #f2f2f4;      /* Gris fondo UI claro */
+    --color-bg-tertiary: #f3f6f7;       /* Gris contenedores suaves */
+
+    /* Surface - Cards, containers */
+    --color-surface: #FFFFFF;
+    --color-surface-hover: #F8F9FA;
+    --color-surface-active: #E9ECEF;
+
+    /* Text - Textos ITAKAI */
+    --color-text-primary: #23245d;      /* Navy 700 - texto principal */
+    --color-text-secondary: #959fa9;    /* Gris texto secundario */
+    --color-text-tertiary: #6C757D;
+    --color-text-muted: #90919F;        /* Gris placeholder inputs */
+    --color-text-inverse: #FFFFFF;
+
+    /* ============================================
+       ITAKAI OFFICIAL BRAND COLORS (from mockups + PDF)
+       ============================================ */
+
+    /* Primary Navy - App Background */
+    --color-primary: #000144;           /* Azul noche, fondo principal app */
+    --color-primary-hover: #000133;
+    --color-primary-active: #000122;
+
+    /* Navy Base - Login Hero Background */
+    --color-navy-base: #03003C;         /* Navy oscuro para hero login */
+    --color-navy-base-light: #0a0a52;   /* Variante más clara para onda */
+
+    /* Navy 700 - Text & Headers & Primary Buttons */
+    --color-navy-700: #23245d;          /* Texto, headers, botones primary */
+    --color-navy-700-hover: #1a1b47;
+    --color-navy-700-active: #131431;
+
+    /* Purple Brand - Accent, Buttons, Labels */
+    --color-purple: #ac74fd;            /* Púrpura marca */
+    --color-purple-hover: #9d5ffd;
+    --color-purple-active: #8d49fd;
+    --color-purple-light: #e5d5fe;
+
+    /* Lilac Panel - Login Panels, Light Surfaces */
+    --color-lilac: #d6bcfd;             /* Panel de login */
+    --color-lilac-hover: #c9a8fc;
+    --color-lilac-active: #bc94fb;
+
+    /* Purple Dark - Social Buttons on Login */
+    --color-purple-dark: #5a3a8d;       /* Botones sociales en login */
+    --color-purple-dark-hover: #4e3278;
+    --color-purple-dark-active: #422a63;
+
+    /* Yellow Brand - AI Success, Chips, CTAs */
+    --color-yellow: #ffc338;            /* Amarillo marca */
+    --color-yellow-hover: #f5b825;
+    --color-yellow-active: #ebad12;
+    --color-yellow-light: #ffedd9;
+
+    /* Mint Brand - Positive States, Success, Cards Info */
+    --color-mint: #B0EAE1;              /* Menta suave info/selección */
+    --color-mint-hover: #9ed9d1;
+    --color-mint-active: #8cc8c1;
+    --color-mint-light: #e5f5f2;
+
+    /* Peach Brand - KPI/Fechas Cards */
+    --color-peach: #FBE5D6;             /* Melocotón KPI/fechas */
+    --color-peach-hover: #f9dac5;
+    --color-peach-active: #f7cfb4;
+    --color-peach-light: #fdf5ed;
+
+    /* Sky Blue Brand - Stats Cards, Info */
+    --color-sky: #00aafc;               /* Azul cielo marca */
+    --color-sky-hover: #0099e6;
+    --color-sky-active: #0088d0;
+    --color-sky-light: #d2efff;
+    --color-sky-light-alt: #9ad9f8;
+
+    /* Red/Pink Brand - Urgent Badges, Errors */
+    --color-red: #ff3c52;               /* Rojo/rosa marca */
+    --color-red-hover: #ff2341;
+    --color-red-active: #f00a30;
+    --color-red-light: #ff9aab;
+    --color-red-light-alt: #fb687a;
+
+    /* Green Brand - Active States, Success Vivid */
+    --color-green: #6CF3AF;             /* Verde vivo estados activos */
+    --color-green-light: #B8F5D8;       /* Verde claro fondos */
+
+    /* Yellow Dark - Text on Yellow Backgrounds */
+    --color-yellow-dark: #996515;       /* Texto dorado oscuro */
+
+    /* ============================================
+       SEMANTIC MAPPINGS (backwards compatibility)
+       ============================================ */
+
+    /* Secondary maps to purple brand */
+    --color-secondary: var(--color-purple);
+    --color-secondary-hover: var(--color-purple-hover);
+    --color-secondary-active: var(--color-purple-active);
+    --color-secondary-light: var(--color-purple-light);
+
+    /* Accent maps to yellow brand */
+    --color-accent: var(--color-yellow);
+    --color-accent-hover: var(--color-yellow-hover);
+    --color-accent-active: var(--color-yellow-active);
+    --color-accent-light: var(--color-yellow-light);
+
+    /* Semantic - Estados ITAKAI */
+    --color-success: var(--color-mint);
+    --color-success-light: var(--color-mint-light);
+    --color-success-dark: var(--color-mint-active);
+
+    --color-warning: var(--color-yellow);
+    --color-warning-light: var(--color-yellow-light);
+    --color-warning-dark: var(--color-yellow-active);
+
+    --color-error: var(--color-red);
+    --color-error-light: var(--color-red-light);
+    --color-error-dark: var(--color-red-active);
+
+    --color-info: var(--color-sky);
+    --color-info-light: var(--color-sky-light);
+    --color-info-dark: var(--color-sky-active);
+
+    /* Borders ITAKAI */
+    --color-border-primary: #E6E3E5;    /* Gris borde inputs */
+    --color-border-secondary: #D1D5DB;
+    --color-border-tertiary: #9CA3AF;
+
+    /* ============================================
+       BADGES - Status & State Colors
+       ============================================ */
+
+    /* Badge States - Mission Status */
+    --color-badge-urgente: var(--color-red);        /* #ff3c52 - Urgente */
+    --color-badge-activa: var(--color-mint);        /* #6cf3af - Activa/Al día */
+    --color-badge-pendiente: var(--color-red-light);/* #ff9aab - Pendiente */
+    --color-badge-bloqueada: #9ea3ba;               /* Gris azulado - Bloqueada */
+
+    /* Badge Rarities - Mission Rarity */
+    --color-badge-epica: var(--color-purple);       /* #ac74fd - Épica */
+    --color-badge-rara: var(--color-purple);        /* #ac74fd - Rara (mismo color) */
+
+    /* Badge Text Colors */
+    --color-badge-text-light: #ffffff;              /* Texto claro para fondos oscuros */
+    --color-badge-text-dark: var(--color-text-primary); /* #23245d - Texto oscuro para fondos claros */
+
+    /* ============================================
+       PROGRESS BARS - ITAKAI Official
+       ============================================ */
+
+    /* Linear Progress Bar Colors */
+    --color-progress-track: #e6e3e5;               /* Track gris claro oficial */
+    --color-progress-fill: var(--color-navy-700);  /* Fill navy 700 indigo #23245d */
+
+    /* ============================================
+       TIPOGRAFÍA
+       ============================================ */
+
+    /* Font Families - ITAKAI Official (Design System 2.0) */
+    --font-sans: 'DM Sans', ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+    --font-display: 'DM Sans', ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    /* Font Sizes */
+    --text-xs: 0.75rem;      /* 12px */
+    --text-sm: 0.875rem;     /* 14px */
+    --text-base: 1rem;       /* 16px */
+    --text-lg: 1.125rem;     /* 18px */
+    --text-xl: 1.25rem;      /* 20px */
+    --text-2xl: 1.5rem;      /* 24px */
+    --text-3xl: 1.875rem;    /* 30px */
+    --text-4xl: 2.25rem;     /* 36px */
+    --text-5xl: 3rem;        /* 48px */
+
+    /* Heading Sizes - Design System 2.0 */
+    --text-h1: 2.75rem;      /* 44px - Portadas/landing */
+    --text-h2: 2rem;         /* 32px - Encabezados de vista */
+    --text-h3: 1.5rem;       /* 24px - Bloques/section */
+    --text-h4: 1.25rem;      /* 20px - Subcabeceras/etiquetas */
+
+    /* Line Heights */
+    --leading-none: 1;
+    --leading-tight: 1.25;
+    --leading-snug: 1.375;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.625;
+    --leading-loose: 2;
+
+    /* Heading Line Heights - Design System 2.0 */
+    --leading-h1: 1.15;      /* H1 impacto máximo */
+    --leading-h2: 1.2;       /* H2 encabezados */
+    --leading-h3: 1.25;      /* H3 secciones */
+    --leading-h4: 1.3;       /* H4 subtítulos */
+    --leading-body: 1.6;     /* Body legibilidad mejorada */
+
+    /* Font Weights */
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+
+    /* Letter Spacing (Tracking) - Design System 2.0 */
+    --tracking-tighter: -0.005em;    /* -0.5% para H1 */
+    --tracking-tight: -0.0025em;     /* -0.25% para H2 */
+    --tracking-normal: 0em;          /* 0% para H3/H4 */
+
+    /* ============================================
+       SPACING
+       ============================================ */
+
+    --spacing-xs: 0.25rem;   /* 4px */
+    --spacing-sm: 0.5rem;    /* 8px */
+    --spacing-md: 1rem;      /* 16px */
+    --spacing-lg: 1.5rem;    /* 24px */
+    --spacing-xl: 2rem;      /* 32px */
+    --spacing-2xl: 3rem;     /* 48px */
+    --spacing-3xl: 4rem;     /* 64px */
+
+    /* ============================================
+       BORDER RADIUS
+       ============================================ */
+
+    --radius-none: 0;
+    --radius-sm: 0.375rem;   /* 6px */
+    --radius-md: 0.5rem;     /* 8px */
+    --radius-lg: 0.75rem;    /* 12px */
+    --radius-xl: 1rem;       /* 16px */
+    --radius-2xl: 1.5rem;    /* 24px */
+    --radius-full: 9999px;
+
+    /* ============================================
+       SHADOWS
+       ============================================ */
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+    /* ============================================
+       TRANSITIONS
+       ============================================ */
+
+    --transition-fast: 150ms ease-in-out;
+    --transition-base: 200ms ease-in-out;
+    --transition-slow: 300ms ease-in-out;
+
+    /* ============================================
+       Z-INDEX SCALE
+       ============================================ */
+
+    --z-base: 0;
+    --z-dropdown: 1000;
+    --z-sticky: 1100;
+    --z-fixed: 1200;
+    --z-modal-backdrop: 1300;
+    --z-modal: 1400;
+    --z-popover: 1500;
+    --z-tooltip: 1600;
+
+    /* Card backgrounds */
+    --color-card-ia: #FFC338;
+    --color-card-stats: #ac74fd;
+    --color-card-pending: #FF9CA7;
+    --color-card-clases: #6CF3AF;
+    --color-card-info: #6CF3AF;
+
+    /* Section backgrounds (MissionDetailTemplate articles) */
+    --color-section-purple: var(--color-purple);
+    --color-section-enigmas: #6CF3AF;
+    --color-section-atenea: var(--color-yellow);
+    --color-section-heading: var(--color-navy-700);
+
+    /* Card border (college: sin borde, sin accent) */
+    --card-border-width: 0px;
+    --card-accent-left: 0px;
+    --color-card-accent: transparent;
+    --color-card-xpbar: var(--color-sky-light-alt);
+
+    /* XP badge (college: amarillo) */
+    --color-badge-xp-bg: var(--color-yellow);
+    --color-badge-xp-text: var(--color-navy-700);
+
+    /* Skeleton bars (college: sobre bg-white, contraste suficiente) */
+    --color-skeleton: #e5e7eb; /* gray-200 */
+
+    /* Mission progress bar colors by rarity (college: colores vivos) */
+    --color-progress-comun: #6cf3af;
+    --color-progress-rara: #E8B4D8;
+    --color-progress-epica: #ac74fd;
+    --color-progress-legendaria: #F59E0B;
+  }
+
+  /* ============================================
+     TEMA UNIVERSITY - Profesional, limpio, sobrio
+     Para estudiantes universitarios y entornos maduros
+     ============================================ */
+  [data-theme="university"] {
+    /* Solo colores de contenedores/tarjetas - más sobrios y profesionales */
+
+    /* Purple → Azul acero */
+    --color-purple: #6B7DB8;
+    --color-purple-hover: #5C6FA8;
+    --color-purple-active: #4D6198;
+    --color-purple-light: #E0E4F0;
+
+    /* Lilac → Gris azulado suave */
+    --color-lilac: #C8CCDA;
+    --color-lilac-hover: #B8BDCE;
+    --color-lilac-active: #A8AEC2;
+
+    /* Mint → Verde sage */
+    --color-mint: #8CB4AD;
+    --color-mint-hover: #7DA6A0;
+    --color-mint-active: #6E9893;
+    --color-mint-light: #E5EFED;
+
+    /* Peach → Beige neutro */
+    --color-peach: #E8DDD4;
+    --color-peach-hover: #DED2C8;
+    --color-peach-active: #D4C7BC;
+    --color-peach-light: #F5F1ED;
+
+    /* Sky → Azul corporate */
+    --color-sky: #3B82B0;
+    --color-sky-hover: #33749E;
+    --color-sky-active: #2B668C;
+    --color-sky-light: #DCEAF4;
+
+    /* Red → Rojo sobrio */
+    --color-red: #DC3545;
+    --color-red-hover: #C82333;
+    --color-red-active: #B41D21;
+    --color-red-light: #D8D8DB; /* gris oscuro — filter bars, se marcan como contenedor */
+
+    /* Green → Verde apagado */
+    --color-green: #7BAF9E;
+    --color-green-light: #D4E8E0;
+
+    /* Card backgrounds — 3 niveles con saltos visibles:
+       Fondo página: #F2F2F4
+       Oscuro:       #D8D8DB  → filter bars
+       Medio:        #EAEAEC  → cards secundarias
+       Claro:        #FFFFFF  → cards principales (blanco puro destaca sobre fondo gris) */
+    --color-card-ia:      #FFFFFF;
+    --color-card-stats:   #EAEAEC;
+    --color-card-pending: #FFFFFF;
+    --color-card-clases:  #EAEAEC;
+    --color-card-info:    #EAEAEC;
+
+    /* Section backgrounds */
+    --color-section-purple:  #EAEAEC;
+    --color-section-enigmas: #D8D8DB;
+    --color-section-atenea:  #FFFFFF;
+    --color-section-heading: var(--color-navy-700);
+
+    /* Card accent border izquierdo (patrón enterprise) */
+    --card-border-width: 0px;
+    --card-accent-left: 0px;
+    --color-card-accent: var(--color-navy-700);
+    --color-card-xpbar: var(--color-bg-secondary);
+
+    /* XP badge (university: navy + blanco) */
+    --color-badge-xp-bg: var(--color-navy-700);
+    --color-badge-xp-text: #FFFFFF;
+
+    /* Skeleton bars (university: más oscuro para contrastar sobre #f2f2f4) */
+    --color-skeleton: #d1d5db; /* gray-300 */
+
+    /* Mission progress bar → navy en todos los rarities */
+    --color-progress-comun: var(--color-navy-700);
+    --color-progress-rara: var(--color-navy-700);
+    --color-progress-epica: var(--color-navy-700);
+    --color-progress-legendaria: var(--color-navy-700);
+
+    /* Yellow → navy (botones Atenea, progress bar, iconos reward) */
+    --color-yellow: var(--color-navy-700);
+    --color-yellow-hover: var(--color-navy-700-hover);
+    --color-yellow-active: var(--color-navy-700-active);
+    --color-yellow-light: #E8EAF0;
+    /* --color-yellow-dark NO se sobreescribe: sigue siendo #996515 (dorado oscuro)
+       para que text-yellow-dark sea legible sobre bg-yellow/25 en badges de rareza */
+  }
+
+  /* Texto blanco en elementos bg-yellow en university (navy sobre navy = invisible sin esto) */
+  [data-theme="university"] .bg-yellow {
+    color: #FFFFFF;
+  }
+
+  /* ============================================
+     BASE STYLES
+     ============================================ */
+
+  * {
+    @apply border-border-primary;
+  }
+
+  html {
+    @apply antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary font-sans;
+    @apply text-base;
+    line-height: var(--leading-body); /* 1.6 - Design System 2.0 */
+
+    /* Disable text selection globally */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  /* Headings - Design System 2.0 ITAKAI */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-text-primary;
+  }
+
+  h1 {
+    font-size: var(--text-h1);         /* 44px */
+    line-height: var(--leading-h1);    /* 1.15 */
+    font-weight: var(--font-bold);     /* 700 */
+    letter-spacing: var(--tracking-tighter); /* -0.5% */
+  }
+
+  h2 {
+    font-size: var(--text-h2);         /* 32px */
+    line-height: var(--leading-h2);    /* 1.2 */
+    font-weight: var(--font-bold);     /* 700 */
+    letter-spacing: var(--tracking-tight);   /* -0.25% */
+  }
+
+  h3 {
+    font-size: var(--text-h3);         /* 24px */
+    line-height: var(--leading-h3);    /* 1.25 */
+    font-weight: var(--font-semibold); /* 600 */
+    letter-spacing: var(--tracking-normal); /* 0% */
+  }
+
+  h4 {
+    font-size: var(--text-h4);         /* 20px */
+    line-height: var(--leading-h4);    /* 1.3 */
+    font-weight: var(--font-semibold); /* 600 */
+    letter-spacing: var(--tracking-normal); /* 0% */
+  }
+
+  h5 {
+    @apply text-lg leading-normal font-semibold;
+  }
+
+  h6 {
+    @apply text-base leading-normal font-semibold;
+  }
+
+  /* Paragraphs - Negro por defecto */
+  p {
+    @apply text-text-primary;
+  }
+
+  /* Labels - Negro para formularios */
+  label {
+    @apply text-text-primary font-medium;
+  }
+
+  /* Spans - Heredan del padre por defecto */
+  span {
+    @apply text-current;
+  }
+
+  /* Divs - Heredan del padre */
+  div {
+    @apply text-current;
+  }
+
+  /* Strong - Negro y bold */
+  strong, b {
+    @apply text-text-primary font-bold;
+  }
+
+  /* Inputs, Selects, Textareas */
+  input, select, textarea {
+    @apply text-text-primary;
+    /* Re-enable text selection in form fields */
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    @apply text-text-muted;
+  }
+
+  /* Links - Design System 2.0 (Sin subrayado por defecto) */
+  a {
+    @apply text-text-primary no-underline;
+    @apply transition-all duration-200;
+  }
+
+  a:hover {
+    opacity: 0.85;
+  }
+
+  a:active {
+    opacity: 0.9;
+  }
+
+  a:focus-visible {
+    outline: 2px solid rgba(35, 36, 93, 0.2); /* #23245D33 */
+    outline-offset: 2px;
+  }
+
+  /* Focus states generales */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2;
+  }
+}
+
+@layer components {
+  /* ============================================
+     COMPONENT UTILITIES
+     Clases base reutilizables para componentes
+     ============================================ */
+
+  /* Buttons Base */
+  .btn-base {
+    @apply inline-flex items-center justify-center;
+    @apply px-4 py-2 rounded-lg;
+    @apply font-medium text-sm;
+    @apply transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn-base;
+    @apply bg-primary text-text-inverse;
+    @apply hover:bg-primary-hover;
+    @apply focus:ring-primary;
+  }
+
+  .btn-secondary {
+    @apply btn-base;
+    @apply bg-secondary text-text-inverse;
+    @apply hover:bg-secondary-hover;
+    @apply focus:ring-secondary;
+  }
+
+  .btn-outline {
+    @apply btn-base;
+    @apply border-2 border-primary text-primary;
+    @apply hover:bg-primary-light;
+    @apply focus:ring-primary;
+  }
+
+  .btn-ghost {
+    @apply btn-base;
+    @apply text-primary;
+    @apply hover:bg-primary-light;
+    @apply focus:ring-primary;
+  }
+
+  /* Link Variants - Design System 2.0 */
+  /* Variante con subrayado para links específicos (ej: "¿Olvidaste tu contraseña?") */
+  .link-underline {
+    @apply underline;
+    text-underline-offset: 2px;
+  }
+
+  .link-underline:hover {
+    opacity: 0.7;
+  }
+
+  /* Input Base - ITAKAI Official (Píldora) */
+  .input-base {
+    @apply w-full px-4 py-3;
+    @apply bg-surface border border-border-primary rounded-full;
+    @apply text-text-primary placeholder:text-text-muted;
+    @apply transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+    @apply disabled:bg-bg-tertiary disabled:cursor-not-allowed;
+  }
+
+  .input-error {
+    @apply border-error focus:ring-error;
+  }
+
+  /* Card Base */
+  .card-base {
+    @apply bg-surface border border-border-primary rounded-xl;
+    @apply shadow-md;
+  }
+
+  .card-hover {
+    @apply card-base;
+    @apply transition-all duration-200;
+    @apply hover:shadow-lg hover:border-border-secondary;
+  }
+
+  /* Badge Base */
+  .badge-base {
+    @apply inline-flex items-center;
+    @apply px-2.5 py-0.5 rounded-full;
+    @apply text-xs font-medium;
+  }
+}
+
+@layer utilities {
+  /* ============================================
+     CUSTOM UTILITIES
+     Utilidades personalizadas
+     ============================================ */
+
+  /* Scrollbar estilo macOS/iOS: invisible en reposo, aparece sutil al pasar el
+     ratón por el contenedor (revela que hay scroll). En táctil (sin hover) el
+     gesto natural sustituye al indicador visual. Usar en tabs y filtros pill. */
+  .scrollbar-subtle {
+    scrollbar-width: thin; /* Firefox: barra fina */
+    scrollbar-color: transparent transparent;
+    transition: scrollbar-color 0.2s ease;
+  }
+  .scrollbar-subtle:hover {
+    scrollbar-color: rgb(127 127 127 / 0.45) transparent;
+  }
+  .scrollbar-subtle::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+  .scrollbar-subtle::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-subtle::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 9999px;
+    transition: background-color 0.2s ease;
+  }
+  .scrollbar-subtle:hover::-webkit-scrollbar-thumb {
+    background-color: rgb(127 127 127 / 0.45);
+  }
+  .scrollbar-subtle::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(127 127 127 / 0.7);
+  }
+
+  /* Scrollbar personalizado */
+  .scrollbar-custom {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border-secondary) transparent;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background: var(--color-border-secondary);
+    border-radius: var(--radius-full);
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    background: var(--color-border-tertiary);
+  }
+
+  /* Truncate text with ellipsis */
+  .truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .truncate-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Glassmorphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  }
+}

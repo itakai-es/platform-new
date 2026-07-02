@@ -1,0 +1,68 @@
+{
+  "chat": {
+    "assistant": {
+      "default_name": "AA Laguntzailea",
+      "default_title": "Laguntzeko prest",
+      "default_description": "Hemen nago zure ikasketekin laguntzeko.",
+      "itakai_assistant": "ITAKAI Assistant"
+    },
+    "interface": {
+      "welcome_greeting": "Kaixo! {name} naiz",
+      "welcome_greeting_default": "Kaixo! Zure laguntzailea naiz",
+      "ask_about": "Honako hauei buruz galdetu ahal didazu:",
+      "input_placeholder": "Idatzi zure galdera hemen...",
+      "input_typing": "Laguntzailea idazten ari da...",
+      "input_sending": "Mezua bidaltzen...",
+      "attach_file": "Fitxategia erantsi",
+      "attach_image": "Irudia erantsi",
+      "mention": "Aipatu",
+      "ask_anything_placeholder": "Galdetu edozer...",
+      "suggested_questions_label": "Iradokitako galderak:",
+      "message_input_placeholder": "Idatzi zure mezua hemen...",
+      "default_suggestions": [
+        "Nola osatzen dut misio bat?",
+        "Non ikusi dezaket nire aurrerapena?",
+        "Nola funtzionatzen du XP sistemak?",
+        "Nola batzen naiz klase batera?"
+      ],
+      "teacher_suggestions": [
+        "Nola sortzen dut misio berri bat?",
+        "Nola kudeatzen dut nire klasea?",
+        "Nola berrikusten dut ikasleen aurrerapena?",
+        "Nola esleitzen ditut puntu gehigarriak?"
+      ]
+    },
+    "god_messages": {
+      "student": [
+        "Laguntza behar duzu zure misioarekin?",
+        "Goazen elkarrekin ikasten!",
+        "Zalantzarik atazarekin?",
+        "Galdetu nahi duzuna!",
+        "Hemen nago laguntzeko",
+        "Trabatuta? Hitz egin dezagun!",
+        "Menderatu erronka hori!",
+        "Nola doa zure aurrerapena?"
+      ],
+      "teacher": [
+        "Nola doaz zure klaseak?",
+        "Misio bat sortu behar duzu?",
+        "Zalantzarik zure ikasleei buruz?",
+        "Hemen nago laguntzeko",
+        "Zerbait berrikusi dezagun elkarrekin?",
+        "Idearik zure klasearentzat?",
+        "Planifika dezagun ikasgaia!",
+        "Nola lagundu dezaket gaur?"
+      ],
+      "admin": [
+        "Laguntza behar duzu?",
+        "Zure zerbitzura",
+        "Zertan lagundu?",
+        "Hemen nago!"
+      ]
+    },
+    "user_subtitles": {
+      "teacher": "Irakaslea",
+      "default": "Erabiltzailea"
+    }
+  }
+}

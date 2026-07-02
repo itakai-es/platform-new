@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="poseidon-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0077B6"/>
+      <stop offset="50%" style="stop-color:#023E8A"/>
+      <stop offset="100%" style="stop-color:#03045E"/>
+    </linearGradient>
+    <linearGradient id="trident-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700"/>
+      <stop offset="50%" style="stop-color:#FFC338"/>
+      <stop offset="100%" style="stop-color:#DAA520"/>
+    </linearGradient>
+    <linearGradient id="ocean-wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#48CAE4"/>
+      <stop offset="50%" style="stop-color:#90E0EF"/>
+      <stop offset="100%" style="stop-color:#48CAE4"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="url(#poseidon-bg)"/>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#fff" stroke-width="2" opacity="0.3"/>
+  <!-- Ocean waves at bottom -->
+  <path d="M15 75 Q25 70 35 75 Q45 80 55 75 Q65 70 75 75 Q85 80 95 75"
+        stroke="url(#ocean-wave)" stroke-width="3" fill="none" opacity="0.6"/>
+  <path d="M10 82 Q22 77 34 82 Q46 87 58 82 Q70 77 82 82 Q94 87 100 82"
+        stroke="url(#ocean-wave)" stroke-width="2" fill="none" opacity="0.4"/>
+  <!-- Trident shaft -->
+  <rect x="47" y="35" width="6" height="45" fill="url(#trident-gold)"/>
+  <rect x="48" y="38" width="2" height="40" fill="#fff" opacity="0.3"/>
+  <!-- Trident crossbar -->
+  <rect x="35" y="32" width="30" height="5" rx="2" fill="url(#trident-gold)"/>
+  <!-- Center prong -->
+  <path d="M47 32 L50 12 L53 32 Z" fill="url(#trident-gold)"/>
+  <path d="M49 30 L50 16 L51 30 Z" fill="#fff" opacity="0.4"/>
+  <!-- Left prong -->
+  <path d="M35 35 L32 18 Q30 15 32 12 L38 20 L40 35 Z" fill="url(#trident-gold)"/>
+  <path d="M36 32 L34 22 L37 28 Z" fill="#fff" opacity="0.3"/>
+  <!-- Right prong -->
+  <path d="M65 35 L68 18 Q70 15 68 12 L62 20 L60 35 Z" fill="url(#trident-gold)"/>
+  <path d="M64 32 L66 22 L63 28 Z" fill="#fff" opacity="0.3"/>
+  <!-- Decorative bands on shaft -->
+  <rect x="46" y="50" width="8" height="3" rx="1" fill="#DAA520"/>
+  <rect x="46" y="60" width="8" height="3" rx="1" fill="#DAA520"/>
+  <!-- Power glow around trident head -->
+  <circle cx="50" cy="25" r="12" fill="#48CAE4" opacity="0.2"/>
+  <circle cx="50" cy="25" r="8" fill="#90E0EF" opacity="0.15"/>
+  <!-- Sparkles -->
+  <circle cx="30" cy="25" r="1.5" fill="#fff" opacity="0.8"/>
+  <circle cx="70" cy="22" r="1.5" fill="#fff" opacity="0.8"/>
+  <circle cx="25" cy="40" r="1" fill="#fff" opacity="0.6"/>
+  <circle cx="75" cy="38" r="1" fill="#fff" opacity="0.6"/>
+</svg>

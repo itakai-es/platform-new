@@ -1,0 +1,12 @@
+# GitHub Sponsors configuration
+# https://help.github.com/en/github/administering-a-repository/displaying-a-sponsor-button
+
+github: # [itakai-es] # Añadir cuando tengas GitHub Sponsors
+patreon: # itakai # Añadir si usas Patreon
+open_collective: # itakai # Añadir si usas Open Collective
+ko_fi: # itakai # Añadir si usas Ko-fi
+tidelift: # npm/itakai
+community_bridge: # project-name
+liberapay: # user
+issuehunt: # username
+custom: ['https://itakai.es/donate'] # URL personalizada para donaciones

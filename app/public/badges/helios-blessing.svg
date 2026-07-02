@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="helios-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9A56"/>
+      <stop offset="100%" style="stop-color:#FF6B35"/>
+    </linearGradient>
+    <linearGradient id="sun-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFEC3D"/>
+      <stop offset="50%" style="stop-color:#FFD700"/>
+      <stop offset="100%" style="stop-color:#FFA500"/>
+    </linearGradient>
+    <radialGradient id="sun-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFFFFF"/>
+      <stop offset="40%" style="stop-color:#FFEC3D"/>
+      <stop offset="100%" style="stop-color:#FFD700"/>
+    </radialGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="url(#helios-bg)"/>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#fff" stroke-width="2" opacity="0.3"/>
+  <!-- Sun rays (long) -->
+  <g stroke="url(#sun-gold)" stroke-width="3" stroke-linecap="round">
+    <line x1="50" y1="15" x2="50" y2="25"/>
+    <line x1="50" y1="75" x2="50" y2="85"/>
+    <line x1="15" y1="50" x2="25" y2="50"/>
+    <line x1="75" y1="50" x2="85" y2="50"/>
+  </g>
+  <!-- Sun rays (diagonal) -->
+  <g stroke="url(#sun-gold)" stroke-width="2.5" stroke-linecap="round">
+    <line x1="22" y1="22" x2="30" y2="30"/>
+    <line x1="78" y1="22" x2="70" y2="30"/>
+    <line x1="22" y1="78" x2="30" y2="70"/>
+    <line x1="78" y1="78" x2="70" y2="70"/>
+  </g>
+  <!-- Sun rays (small between) -->
+  <g stroke="url(#sun-gold)" stroke-width="2" stroke-linecap="round" opacity="0.8">
+    <line x1="35" y1="17" x2="38" y2="26"/>
+    <line x1="65" y1="17" x2="62" y2="26"/>
+    <line x1="17" y1="35" x2="26" y2="38"/>
+    <line x1="17" y1="65" x2="26" y2="62"/>
+    <line x1="83" y1="35" x2="74" y2="38"/>
+    <line x1="83" y1="65" x2="74" y2="62"/>
+    <line x1="35" y1="83" x2="38" y2="74"/>
+    <line x1="65" y1="83" x2="62" y2="74"/>
+  </g>
+  <!-- Main sun circle -->
+  <circle cx="50" cy="50" r="18" fill="url(#sun-glow)"/>
+  <circle cx="50" cy="50" r="14" fill="url(#sun-gold)"/>
+  <!-- Sun face features (stylized) -->
+  <circle cx="50" cy="50" r="10" fill="#fff" opacity="0.3"/>
+  <!-- Helios eye suggestion -->
+  <ellipse cx="45" cy="47" rx="2" ry="1.5" fill="#FF8C00"/>
+  <ellipse cx="55" cy="47" rx="2" ry="1.5" fill="#FF8C00"/>
+  <!-- Serene smile -->
+  <path d="M45 54 Q50 58 55 54" stroke="#FF8C00" stroke-width="1.5" fill="none"/>
+</svg>

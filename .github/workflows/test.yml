@@ -1,0 +1,169 @@
+name: Tests
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main, dev]
+
+# Cancel previous runs of the same workflow on the same ref when a new push lands.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  frontend-lint:
+    name: Frontend Lint & Typecheck
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+          cache-dependency-path: app/pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: cd app && pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: cd app && pnpm lint
+
+      - name: Typecheck
+        run: cd app && pnpm typecheck
+
+  frontend-build:
+    name: Frontend Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+          cache-dependency-path: app/pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: cd app && pnpm install --frozen-lockfile
+
+      - name: Build (Nuxt)
+        run: cd app && pnpm build
+
+  backend-tests:
+    name: Backend Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    # Job-level env so prisma generate (which reads prisma.config.ts) and
+    # vitest both see DATABASE_URL. The previous setup only exposed it to
+    # the test step, so `prisma generate` failed before tests ever ran.
+    env:
+      DATABASE_URL: postgresql://itakai_test:test_password@localhost:5432/itakai_test
+      JWT_ACCESS_SECRET: test-access-secret-key-for-ci
+      JWT_REFRESH_SECRET: test-refresh-secret-key-for-ci
+
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: itakai_test
+          POSTGRES_PASSWORD: test_password
+          POSTGRES_DB: itakai_test
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+          cache-dependency-path: |
+            api/pnpm-lock.yaml
+            app/pnpm-lock.yaml
+
+      - name: Install API dependencies
+        run: cd api && pnpm install --frozen-lockfile
+
+      # tests/utils/xp-parity.test.ts imports the frontend xp-calculator
+      # to enforce that backend and frontend never drift. vitest needs the
+      # frontend's resolved tsconfig (.nuxt/tsconfig.*.json), which only
+      # exists after `nuxt prepare`.
+      - name: Install app dependencies
+        run: cd app && pnpm install --frozen-lockfile
+
+      - name: Prepare Nuxt (generates .nuxt tsconfigs)
+        run: cd app && pnpm exec nuxt prepare
+
+      - name: Generate Prisma Client
+        run: cd api && pnpm db:generate
+
+      - name: Run tests
+        run: cd api && pnpm test
+
+  backend-lint:
+    name: Backend Lint & Typecheck
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+          cache-dependency-path: api/pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: cd api && pnpm install --frozen-lockfile
+
+      - name: Typecheck
+        run: cd api && pnpm lint
+
+  i18n-validation:
+    name: i18n Validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: JSON parsea + claves en sync + sin código muerto ni roto
+        run: python3 scripts/i18n-check.py

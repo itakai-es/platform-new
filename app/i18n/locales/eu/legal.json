@@ -1,0 +1,456 @@
+{
+  "legal": {
+    "terms": {
+      "title": "Baldintzak",
+      "last_updated": "Azken eguneraketa: 2026ko urtarrilean",
+      "sections": {
+        "acceptance": {
+          "title": "1. Baldintzen Onarpena",
+          "p1": "Ongi etorri ITAKAI-ra. Gure hezkuntza plataforma gamifikatua sartu eta erabiltzean, Baldintza hauek (\"Baldintzak\") onartzen dituzu. Baldintza hauen zati batekin ados ez bazaude, ez duzu gure zerbitzuak erabili behar.",
+          "p2": "Baldintza hauek zu (\"Erabiltzailea\") eta ITAKAI (\"Plataforma\", \"gu\", \"gure\") arteko legezko akordioa osatzen dute. Erregistratu aurretik baldintza hauek arretaz irakurtzea gomendatzen dizugu."
+        },
+        "service_description": {
+          "title": "2. Zerbitzuaren Deskribapena",
+          "intro": "ITAKAI mitologia greziarrean inspiratutako hezkuntza plataforma gamifikatua da, honako hauek eskaintzen dituena:",
+          "features": {
+            "missions": "Hezkuntza misio interaktiboak (ataza gamifikatuak)",
+            "ai_assistants": "Pertsonaia mitologikoetan oinarritutako bost adimen artifizialeko laguntzaile (Atenea, Odiseo, Penelope, Polifemo, Poseidon)",
+            "progress": "Esperientzia (XP), mailak eta lorpenekin aurrerapen sistema",
+            "management": "Irakasle eta administratzaileentzako kudeaketa tresnak",
+            "chat": "Hezkuntza laguntzarako AA laguntzaileekin denbora errealeko txata"
+          },
+          "disclaimer": "Zerbitzuaren edozein alderdi aldatzeko, eteteko edo deuseztatzeko eskubidea gordetzen dugu, aurrez abisatu gabe edo abisuz."
+        },
+        "accounts": {
+          "title": "3. Erregistroa eta Erabiltzaile Kontuak",
+          "eligibility_title": "3.1 Hautagarritasuna",
+          "eligibility_text": "ITAKAI erabiltzeko, gutxienez 13 urte izan behar dituzu. 18 urtetik beherakoek guraso, ama edo legezko tutorearen baimena izan behar dute erregistratzeko. Adingabeen erabilerak hezkuntza erakunde edo tutore baten gainbegiratzea izan behar du.",
+          "account_types_title": "3.2 Kontu Motak",
+          "account_student": "Ikaslea: Misioak egiten eta plataformaren bidez ikasten duten erabiltzaileentzat",
+          "account_teacher": "Irakaslea: Misioak sortzen, klaseak kudeatzen eta ikasleen aurrerapena monitorizatzen duten hezitzaileentzat",
+          "account_admin": "Administratzailea: ITAKAI-ko barne langileentzat, sistemaren administrazio funtzioetarako sarbidea dutenak",
+          "security_title": "3.3 Kontuaren Segurtasuna",
+          "security_intro": "Zu zara honako hauen arduraduna:",
+          "security_password": "Zure pasahitzaren konfidentzialtasuna mantentzea",
+          "security_activity": "Zure kontuan gertatzen diren jarduera guztiak",
+          "security_notify": "Zure kontuaren baimenik gabeko edozein erabileraren berri berehala ematea",
+          "security_info": "Erregistro informazio zehatza, osoa eta eguneratua ematea"
+        },
+        "acceptable_use": {
+          "title": "4. Erabilera Onargarria",
+          "permitted_title": "4.1 Baimendutako Jokabidea",
+          "permitted_intro": "ITAKAI erabiltzean, honako hauetan konprometitzen zara:",
+          "permitted_educational": "Plataforma soilik hezkuntza helburu legitimoetarako erabiltzea",
+          "permitted_respect": "Beste erabiltzaile, irakasle eta administratzaileak errespetatzea",
+          "permitted_content": "Eduki egokia eta errespetuzkoa ematea",
+          "permitted_laws": "Aplikagarriak diren lege eta araudia guztiak betetzea",
+          "prohibited_title": "4.2 Debekatutako Jokabidea",
+          "prohibited_intro": "Zorrozki debekatuta dago:",
+          "prohibited_hacking": "Hackeatzea, alderantzizko ingeniaritza egitea edo baimenik gabeko sistemetara sartzen saiatzea",
+          "prohibited_offensive": "Eduki iraingarria, libeluzko, legez kontrakoa edo desegokia igotzea",
+          "prohibited_harassment": "Beste erabiltzaileak jazartzea, larderiatzea edo mehatxatzea",
+          "prohibited_cheating": "Tranpak egitea edo puntuen, XP edo lorpenen sistema manipulatzea",
+          "prohibited_sharing": "Zure kontua hirugarrenekin partekatzea",
+          "prohibited_bots": "Bot, script edo tresna automatizatuak baimenik gabe erabiltzea",
+          "prohibited_ip": "Hirugarrenen jabetza intelektualaren eskubideak urratzea",
+          "prohibited_data": "Beste erabiltzaileen datuak haien baimenik gabe biltzea"
+        },
+        "intellectual_property": {
+          "title": "5. Jabetza Intelektuala",
+          "content_title": "5.1 ITAKAI-ren Edukia",
+          "content_text": "Plataformako eduki guztia, baina ez horregatik mugatuta, diseinua, grafikoak, logotipoak, testua, iturburu kodea, funtzionaltasunak, egokitutako pertsonaia mitologikoak, AA laguntzaileak eta misioen egitura barne, ITAKAI-ren jabetza esklusiboa da eta egile eskubide, marka erregistratu eta jabetza intelektualaren beste lege batzuek babesten dute.",
+          "license_title": "5.2 Erabilera Lizentzia",
+          "license_text": "ITAKAI sartu eta erabiltzeko lizentzia mugatua, ez-esklusiboa, transferigarria ez dena eta errebokagarria ematen dizugu, soilik zure hezkuntza helburu pertsonaletarako. Ezin duzu plataformaren zati bat kopiatu, aldatu, banatu, saldu edo komertzialki ustiatu gure aldez aurretiko idatzizko baimenik gabe."
+        },
+        "user_content": {
+          "title": "6. Erabiltzailearen Edukia",
+          "p1": "ITAKAI-ra edukia bidaltzean (hala nola misioen erantzunak, txateko mezuak, iruzkinak), munduko lizentzia bat ematen diguzu, erregaliarik gabekoa, azpilizentziatzeko eta transferitzeko modukoa, eduki hori erabiltzeko, erreproduzitzeko, banatzeko, erakusteko eta aldatzeko gure zerbitzuak emateko eta hobetzeko helburuarekin.",
+          "p2": "Zu zara argitaratzen duzun edukiaren erantzule bakarra eta bermatzen duzu lizentzia hau emateko beharrezko eskubide guztiak dituzula. Ez dugu hirugarrenen eskubideak edo aplikagarriak diren legeak urratzen dituen edukirik argitaratzen."
+        },
+        "liability": {
+          "title": "7. Erantzukizunaren Mugaketa",
+          "availability_title": "7.1 Zerbitzuaren Eskuragarritasuna",
+          "availability_text": "ITAKAI \"dagoen bezala\" eta \"eskuragarritasunaren arabera\" ematen da. Ez dugu bermatzen zerbitzua etenik gabe, seguru edo akatsik gabe eskuragarri egongo denik. Mantentze-lan, eguneratze edo arazo teknikoengatik etenaldiak izan ditzakegu.",
+          "educational_title": "7.2 Hezkuntza Edukia",
+          "educational_text": "Kalitatezko hezkuntza edukia emateko ahaleginak egiten baditugu ere, ez dugu eduki guztiaren zehaztasuna, osotasuna edo eguneraketa bermatzen. AA laguntzaileak hezkuntza laguntza tresnak dira eta ez dute irakasle kualifikatu baten gainbegiratzerik ordezkatzen.",
+          "warranty_title": "7.3 Bermeen Baztertzea",
+          "warranty_text": "Legeak baimendutako neurri handienean, ITAKAI-k berme guztiak baztertzen ditu, adieraziak zein inplizituak, komertzializagarritasunaren, helburu jakin baterako egokitasunaren eta ez-urratzearen bermeak barne."
+        },
+        "modifications": {
+          "title": "8. Zerbitzu eta Baldintzen Aldaketak",
+          "p1": "Zerbitzua (edo bere zati bat) aldatzeko edo deuseztatzeko eskubidea gordetzen dugu, aldi baterako edo behin betiko, aurrez abisatu gabe edo abisuz. Ez gara zure aurrean edo hirugarrenen aurrean erantzule izango zerbitzuaren edozein aldaketa, eten edo deuseztatzeren ondorioz.",
+          "p2": "Baldintza hauek noizean behin eguneratu ditzakegu. Aldaketa garrantzitsuei buruz jakinaraziko dizugu plataformako abisu baten edo posta elektronikoaren bidez. Jakinarazpenaren ondoren zerbitzua erabiltzen jarraitzea baldintza berrien onarpena da."
+        },
+        "termination": {
+          "title": "9. Kontuaren Deuseztapena",
+          "by_user_title": "9.1 Erabiltzaileak Egindako Deuseztapena",
+          "by_user_text": "Zure kontua edozein unetan ezabatu dezakezu zure profilaren ezarpenetatik edo soporte{'@'}itakai.com-en bidez gurekin harremanetan jarriz. Zure kontua ezabatzeak zure datu, aurrerapen, lorpen eta lotutako eduki guztien galera iraunkorra ekarriko du.",
+          "by_itakai_title": "9.2 ITAKAI-k Egindako Deuseztapena",
+          "by_itakai_intro": "Zure kontua eteteko edo deuseztatzeko eskubidea gordetzen dugu honako kasu hauetan:",
+          "by_itakai_violation": "Baldintza hauek urratzen badituzu",
+          "by_itakai_fraud": "Jokabide iruzurtzuan edo legez kontrakoan parte hartzen baduzu",
+          "by_itakai_inactivity": "Zure kontua denbora luzez inaktibo badago",
+          "by_itakai_legal": "Legezko edo araudiaren arrazoiengatik eskatzen badugu"
+        },
+        "jurisdiction": {
+          "title": "10. Aplikatu Beharreko Legea eta Jurisdikzioa",
+          "text": "Baldintza hauek Espainiako legearen arabera araupetuko eta interpretatuko dira, lege-gatazkako printzipio bati ere eraginik eman gabe. Baldintza hauetatik sortzen den edo hauekin zerikusia duen edozein eztabaida Espainiako auzitegien jurisdikzio esklusibopean egongo da."
+        },
+        "general": {
+          "title": "11. Xedapen Orokorrak",
+          "complete_title": "11.1 Akordio Osoa",
+          "complete_text": "Baldintza hauek, gure Pribatutasun Politikarekin eta Cookie Politikarekin batera, zure eta ITAKAI-ren arteko akordio osoa osatzen dute.",
+          "severability_title": "11.2 Bereizgarritasuna",
+          "severability_text": "Baldintza hauetako xedapen bat baliogabetzat edo aplikaezintzat jotzen bada, gainerako xedapenek indar eta eragin osoan jarraituko dute.",
+          "waiver_title": "11.3 Uko Egitea",
+          "waiver_text": "Baldintza hauetako edozein eskubide edo xedapen ez betearaziteak ez du eskubide edo xedapen horri uko egitea esan nahiko."
+        },
+        "contact": {
+          "title": "12. Kontaktua",
+          "intro": "Baldintza hauei buruzko galderak edo kezkak badituzu, honako helbidean jar zaitezke gurekin harremanetan:",
+          "company": "ITAKAI",
+          "email_label": "Emaila:",
+          "support_label": "Laguntza:"
+        }
+      },
+      "meta": {
+        "title": "Zerbitzu Baldintzak | ITAKAI",
+        "description": "ITAKAI hezkuntza plataformaren erabilera baldintzak."
+      }
+    },
+    "privacy_policy": {
+      "title": "Pribatutasun Politika",
+      "last_updated": "Azken eguneraketa: 2026ko urtarrilean",
+      "sections": {
+        "introduction": {
+          "title": "1. Sarrera",
+          "p1": "ITAKAI-n (\"gu\", \"gure\" edo \"plataforma\"), zure pribatutasuna eta datu pertsonalak babesten konprometitzen gara. Pribatutasun Politika honek gure erabiltzaileen (ikasleen, irakasleen eta administratzaileen) informazio pertsonala nola biltzen, erabiltzen, partekatzen eta babesten dugun deskribatzen du.",
+          "p2": "ITAKAI erabiltzean, politika honetan deskribatutako praktikak onartzen dituzu. Politika honen zati batekin ados ez bazaude, mesedez ez erabili gure zerbitzuak."
+        },
+        "information_collected": {
+          "title": "2. Biltzen Dugun Informazioa",
+          "account_title": "2.1 Kontuaren Informazioa",
+          "account_intro": "ITAKAI-n erregistratzen zarenean, honako hauek biltzen ditugu:",
+          "account_name": "Izen-abizenak",
+          "account_email": "Helbide elektronikoa",
+          "account_password": "Pasahitza (enkriptatua)",
+          "account_role": "Rola (ikaslea, irakaslea, administratzailea)",
+          "account_avatar": "Avatarra edo profileko argazkia (aukerakoa)",
+          "usage_title": "2.2 Erabileraren Informazioa",
+          "usage_intro": "Plataformaren erabileran zehar, honako hauek biltzen ditugu:",
+          "usage_missions": "Amaitutako misioak eta hezkuntza aurrerapena",
+          "usage_xp": "Esperientzia puntuak (XP) eta lortutako mailak",
+          "usage_ai": "AA laguntzaileekin interakzioak",
+          "usage_chat": "Irakasle eta laguntzaileekin txateko mezuak",
+          "usage_badges": "Lorpenak eta desblokeatutako badge-ak",
+          "usage_stats": "Errendimendu akademikoaren estatistikak",
+          "technical_title": "2.3 Informazio Teknikoa",
+          "technical_intro": "Automatikoki biltzen dugu:",
+          "technical_ip": "IP helbidea",
+          "technical_browser": "Nabigatzaile mota eta bertsioa",
+          "technical_os": "Sistema eragilea",
+          "technical_pages": "Bisitatutako orrialdeak eta nabigazio denbora",
+          "technical_cookies": "Cookieak eta antzeko teknologiak"
+        },
+        "how_we_use": {
+          "title": "3. Nola Erabiltzen Dugun Zure Informazioa",
+          "intro": "Zure informazio pertsonala honako helburuetarako erabiltzen dugu:",
+          "educational": "Hezkuntza zerbitzua eman: Zure kontua kudeatu, eduki pertsonalizatua eman eta zure aurrerapen akademikoa jarraitu",
+          "personalization": "AA bidezko pertsonalizazioa: Gure AA laguntzaileen gomendioak zure maila eta beharretara egokitu",
+          "communication": "Komunikazioa: Jakinarazpen garrantzitsuak, misioen eguneraketak eta irakasleen mezuak bidali",
+          "improvement": "Zerbitzuaren hobekuntza: Plataformaren erabilera aztertu funtzionaltasunak eta erabiltzaile esperientzia hobetzeko",
+          "security": "Segurtasuna: Iruzurra, gehiegikeria edo baimenik gabeko jarduerak detektatu eta prebenitu",
+          "legal": "Legezko betetzea: Aplikagarriak diren legezko eta araudiaren betebeharrak bete"
+        },
+        "sharing": {
+          "title": "4. Informazioa Partekatzea",
+          "intro": "Ez dugu zure informazio pertsonala hirugarrenei saltzen edo alokatzen. Zure datuak honako egoeretan partekatu ditzakegu:",
+          "teachers": "Irakasleekin: Ikaslea bazara, zure irakasleek zure aurrerapen akademikoa eta errendimendu estatistikak ikus ditzakete",
+          "providers": "Zerbitzu hornitzaileak: Plataforma operatzen laguntzen diguten hornitzaileekin informazioa partekatzen dugu (hosting, analisia, AA)",
+          "legal_requirements": "Legezko eskakizunak: Legeak, epai-aginduak edo gobernu agintariek eskatzen dutenean",
+          "rights": "Eskubideen babesa: ITAKAI-ren, erabiltzaileen edo besteen eskubideak, jabetza edo segurtasuna babesteko"
+        },
+        "data_security": {
+          "title": "5. Datuen Segurtasuna",
+          "intro": "Segurtasun neurri tekniko eta antolatzaile egokiak ezartzen ditugu zure informazio pertsonala baimenik gabeko sarbidearen, galera, suntsiketa edo aldaketaren aurka babesteko. Honek honako hauek barne hartzen ditu:",
+          "encryption": "Pasahitzen enkriptazioa algoritmo seguruekin",
+          "https": "HTTPS/SSL konexioak datu transmisio guztietarako",
+          "access": "Datu pertsonaletarako sarbide mugatua soilik baimendutako langileentzat",
+          "audits": "Segurtasun auditoria erregularrak",
+          "backup": "Datuen babeskopia eta berreskurapena"
+        },
+        "gdpr_rights": {
+          "title": "6. Zure Eskubideak (GDPR)",
+          "intro": "Datuak Babesteko Erregelamendu Orokorrarekin (GDPR) bat, honako eskubide hauek dituzu:",
+          "access": "Sarbidea: Zure datu pertsonalen kopia bat eskatzea",
+          "rectification": "Zuzentzea: Datu zehatzak ez direnak edo osatugabeak zuzentzea",
+          "erasure": "Ezabatzea: Zure datuen ezabatzea eskatzea (\"ahanzturaren eskubidea\")",
+          "portability": "Eramangarritasuna: Zure datuak formatu egituratuan jasotzea eta beste zerbitzu batera transferitzea",
+          "objection": "Aurka egitea: Zure datuen prozesamenduari helburu jakin batzuetarako aurka egitea",
+          "restriction": "Mugatzea: Zure datuen prozesamenduaren murrizketa eskatzea",
+          "contact": "Eskubide hauek gauzatzeko, jar zaitez gurekin harremanetan privacidad{'@'}itakai.com helbidean"
+        },
+        "cookies_section": {
+          "title": "7. Cookieak eta Antzeko Teknologiak",
+          "text": "Cookieak eta antzeko teknologiak erabiltzen ditugu ITAKAI-n zure esperientzia hobetzeko. Gure cookieen erabilerari buruzko informazio gehiagorako, kontsultatu gure Cookie Politika."
+        },
+        "data_retention": {
+          "title": "8. Datuen Kontserbazioa",
+          "text": "Zure informazio pertsonala gordetzen dugu zure kontua aktibo dagoen bitartean edo gure zerbitzuak emateko beharrezkoa den bitartean. Zure kontua ezabatzen baduzu, datu jakin batzuk gordeko ditugu legeak eskatutako aldian edo negozio helburu legitimoetarako (adibidez, iruzurraren prebentzioa, eztabaiden ebazpena)."
+        },
+        "minors": {
+          "title": "9. Adingabeak",
+          "text": "ITAKAI hezkuntza erabilerarako diseinatuta dago eta 18 urtetik beherako erabiltzaileak izan ditzake irakasleen edo hezkuntza erakundeen gainbegiratzepean. Guraso/tutore bazara eta adingabeen datuak nola kudeatzen ditugun jakiteko galderak badituzu, jar zaitez gurekin harremanetan soporte{'@'}itakai.com helbidean"
+        },
+        "policy_changes": {
+          "title": "10. Politika Honen Aldaketak",
+          "text": "Pribatutasun Politika hau noizean behin eguneratu dezakegu. Aldaketa garrantzitsuei buruz jakinaraziko dizugu plataformako abisu baten edo posta elektronikoaren bidez. Politika honen hasierako \"Azken eguneraketa\" datak aldaketa berrienak noiz egin ziren adieraziko du."
+        },
+        "contact": {
+          "title": "11. Kontaktua",
+          "intro": "Pribatutasun Politika honekin zerikusia duten galderak, kezkak edo eskaerak badituzu, honako helbidean jar zaitezke gurekin harremanetan:",
+          "company": "ITAKAI",
+          "email_label": "Emaila:",
+          "support_label": "Laguntza:"
+        }
+      },
+      "meta": {
+        "title": "Pribatutasun Politika | ITAKAI",
+        "description": "Ezagutu nola babesten eta kudeatzen dugun zure informazio pertsonala ITAKAI-n."
+      }
+    },
+    "cookies": {
+      "title": "Cookie Politika",
+      "last_updated": "Azken eguneraketa: 2026ko urtarrilean",
+      "sections": {
+        "what_are": {
+          "title": "1. Zer dira Cookieak?",
+          "p1": "Cookieak zure gailuan (ordenagailua, tableta edo mugikorra) gordetzen diren testu-fitxategi txikiak dira webgune bat bisitatzean. Cookieek webguneari zure ekintzak eta hobespenak gogoratzeko aukera ematen diote denbora-tarte batean, gunerako itzultzen zaren edo orrialde batetik bestera nabigatzen duzun bakoitzean berriro konfiguratu behar ez ditzazun.",
+          "p2": "ITAKAI-n cookieak eta antzeko teknologiak erabiltzen ditugu gure hezkuntza plataformako zure esperientzia hobetzeko, funtsezko funtzionaltasunak emateko eta gure zerbitzua nola erabiltzen den aztertzeko."
+        },
+        "types": {
+          "title": "2. Erabiltzen ditugun Cookie Motak",
+          "essential_title": "2.1 Funtsezko Cookieak (Erabat Beharrezkoak)",
+          "essential_text": "Cookie hauek ezinbestekoak dira ITAKAI-n nabigatu eta bere funtzionaltasunak erabili ahal izateko. Cookie hauek gabe, saioa hastea, orrialdeen arteko nabigazioa edo eremu seguruetarako sarbidea bezalako zerbitzuek ez lukete behar bezala funtzionatuko.",
+          "essential_examples_title": "Erabilera adibideak:",
+          "essential_session": "Zure saioa aktibo mantentzea plataforman nabigatzen duzun bitartean",
+          "essential_auth": "Zure autentifikazioa gogoratzea (sarbide tokenak)",
+          "essential_security": "Segurtasuna eta iruzurraren prebentzioa",
+          "essential_load": "Zerbitzariaren karga orekatzea",
+          "essential_note": "Cookie hauek ezin dira desaktibatu ITAKAI-ren oinarrizko funtzionamendurako beharrezkoak baitira.",
+          "functionality_title": "2.2 Funtzionalitate Cookieak",
+          "functionality_text": "Cookie hauek ITAKAI-ri egiten dituzun aukerak gogoratzeko aukera ematen diote (hala nola zure erabiltzaile izena, hizkuntza edo eskualdea) eta funtzionalitate hobetu eta pertsonalizatuagoak eskaintzen dituzte.",
+          "functionality_examples_title": "Erabilera adibideak:",
+          "functionality_preferences": "Zure bistaratzeko hobespenak gogoratzea (gaia, letra-tamaina)",
+          "functionality_progress": "Zure aurrerapena misioetan gordetzea",
+          "functionality_assistant": "Zure AA laguntzaile gogokoena mantentzea",
+          "functionality_chat": "Zure azken txat-elkarrizketa aktiboa gogoratzea",
+          "functionality_note": "Cookie hauek zure nabigatzailearen ezarpenen bidez kontrola ditzakezu, baina desaktibatzeak plataformaren funtzionaltasunean eragin dezake.",
+          "analytics_title": "2.3 Errendimendu eta Analitika Cookieak",
+          "analytics_text": "Cookie hauek erabiltzaileek ITAKAI nola erabiltzen duten informazioa biltzen dute, hala nola zein orrialde bisitatzen dituzten maizago edo errore-mezuak jasotzen dituzten. Cookie hauek biltzen duten informazio guztia agregatua eta anonimoa da.",
+          "analytics_examples_title": "Erabilera adibideak:",
+          "analytics_patterns": "Nabigazio-patroiak eta plataformaren erabilera aztertzea",
+          "analytics_visitors": "Bisitariak kontatzea eta gunean nola nabigatzen duten ulertzea",
+          "analytics_effectiveness": "Misioen eta hezkuntza-edukiaren eraginkortasuna neurtzea",
+          "analytics_errors": "Akats teknikoak detektatzea eta konpontzea",
+          "analytics_performance": "Gunearen errendimendua hobetzea",
+          "analytics_note": "Analisi-tresnak erabiltzen ditugu erabiltzailearen esperientzia nola hobetu hobeto ulertzeko. Analitika-jarraipenean ez parte hartzea aukera dezakezu zure nabigatzailearen ezarpenen bidez.",
+          "third_party_title": "2.4 Hirugarrenen Cookieak",
+          "third_party_text": "Gure zerbitzu batzuek konfiantzazko hirugarrenek ezarritako cookieak erabiltzen dituzte funtzionalitate gehigarriak emateko:",
+          "third_party_google": "Google OAuth: Zure Google kontuarekin saioa hasteko aukera emateko",
+          "third_party_ai": "AA Zerbitzuak: Gure laguntzaile mitologikoen erantzunak emateko",
+          "third_party_cdn": "CDN eta Hosting: Gunearen kargatzeko abiadura hobetzeko",
+          "third_party_note": "Hirugarrenen cookie hauek dagozkien hornitzaileen pribatutasun-politiken mende daude."
+        },
+        "duration": {
+          "title": "3. Cookieen Iraupena",
+          "session_title": "3.1 Saio Cookieak",
+          "session_text": "Behin-behineko cookieak dira, automatikoki ezabatzen direnak nabigatzailea ixten duzunean. Batez ere zure saioa aktibo mantentzeko erabiltzen dira ITAKAI-n nabigatzen duzun bitartean.",
+          "persistent_title": "3.2 Cookie Iraunkorrak",
+          "persistent_text": "Zure gailuan geratzen dira denbora-tarte zehatz batean edo eskuz ezabatzen dituzun arte. ITAKAI-n, cookie iraunkorrak normalean ondorengo epe hauetan iraungitzen dira:",
+          "persistent_auth": "Autentifikazioa: 30 egun (\"Gogoratu nazazu\" hautatzen baduzu)",
+          "persistent_preferences": "Hobespenak: Urte 1",
+          "persistent_analytics": "Analitikak: 2 urte"
+        },
+        "manage": {
+          "title": "4. Cookieak Kudeatu eta Ezabatzeko Modua",
+          "intro": "Cookieak onartu edo baztertzea erabakitzeko eskubidea duzu. Zure cookie-hobespenak modu hauetan gauzatu ditzakezu:",
+          "browser_title": "4.1 Nabigatzailearen Ezarpenak",
+          "browser_text": "Web nabigatzaile gehienek automatikoki onartzen dituzte cookieak, baina zure nabigatzailearen ezarpenak alda ditzakezu baztertzeko nahiago baduzu:",
+          "browser_chrome": "Google Chrome: Ezarpenak → Pribatutasuna eta segurtasuna → Cookieak eta guneetako beste datu batzuk",
+          "browser_firefox": "Firefox: Aukerak → Pribatutasuna eta segurtasuna → Cookieak eta guneetako datuak",
+          "browser_safari": "Safari: Hobespenak → Pribatutasuna → Cookieak eta webguneetako datuak",
+          "browser_edge": "Microsoft Edge: Ezarpenak → Cookieak eta gunearen baimenak → Cookieak",
+          "tools_title": "4.2 Hirugarrenen Tresnak",
+          "tools_text": "Cookieak kudeatzeko aukera ematen dizuten hirugarrenen tresnak daude, hala nola:",
+          "blocking_title": "4.3 Cookieak Blokeatzeak duen Eragina",
+          "blocking_warning_title": "Abisua",
+          "blocking_warning_text": "Cookieak blokeatzea edo ezabatzea erabakitzen baduzu, ITAKAI-ren funtzionalitate batzuek agian ez dute behar bezala funtzionatuko. Adibidez, ezin izango duzu zure saioa aktibo mantendu, zure aurrerapena misioetan gorde edo eduki pertsonalizatura sartu."
+        },
+        "changes": {
+          "title": "5. Cookie Politika honetako Aldaketak",
+          "p1": "Cookie Politika hau noizean behin eguneratu dezakegu erabiltzen ditugun cookieetan izandako aldaketak islatzeko edo arrazoi operatibo, legal edo araudiaren ondorioz. Orrialde hau aldian-aldian berrikustea gomendatzen dizugu gure cookieen erabilerari buruz informatuta egon zaitezen.",
+          "p2": "Politika honen hasieran dagoen \"Azken eguneraketa\" datak adierazten du noiz egin ziren azken aldaketak."
+        },
+        "more_info": {
+          "title": "6. Informazio Gehiago",
+          "p1": "Zure pribatutasuna nola babesten dugun eta zure datu pertsonalak nola kudeatzen ditugun jakiteko informazio gehiago lortzeko, kontsultatu gure Pribatutasun Politika.",
+          "p2": "Gure Cookie Politikari buruzko galdera edo kezka badituzu, jarri gurekin harremanetan hemen:",
+          "company": "ITAKAI",
+          "email_label": "Emaila:",
+          "support_label": "Laguntza:"
+        },
+        "summary_table": {
+          "title": "7. Cookieen Laburpen Taula",
+          "col_type": "Mota",
+          "col_purpose": "Helburua",
+          "col_duration": "Iraupena",
+          "col_required": "Beharrezkoa",
+          "essential_type": "Funtsezkoak",
+          "essential_purpose": "Autentifikazioa, segurtasuna, nabigazioa",
+          "essential_duration": "Saioa / 30 egun",
+          "essential_required": "Bai",
+          "functionality_type": "Funtzionalitatea",
+          "functionality_purpose": "Hobespenak, ezarpenak, pertsonalizazioa",
+          "functionality_duration": "Urte 1",
+          "functionality_required": "Ez",
+          "analytics_type": "Analitikak",
+          "analytics_purpose": "Erabilera-analisia, errendimendua, hobekuntzak",
+          "analytics_duration": "2 urte",
+          "analytics_required": "Ez",
+          "third_party_type": "Hirugarrenak",
+          "third_party_purpose": "OAuth, AA, CDN",
+          "third_party_duration": "Aldakorra",
+          "third_party_required": "Partziala"
+        }
+      },
+      "meta": {
+        "title": "Cookie Politika | ITAKAI",
+        "description": "ITAKAI plataforman cookieen erabilerari buruzko informazioa."
+      }
+    },
+    "legal_notice": {
+      "title": "Lege Oharra",
+      "last_updated": "Azken eguneraketa: 2026ko urtarrilean",
+      "sections": {
+        "identification": {
+          "title": "1. Titularraren Identifikazio Datuak",
+          "intro": "34/2002 Legearen, uztailaren 11koaren, Informazioaren Gizartearen Zerbitzuei eta Merkataritza Elektronikoari buruzkoaren (LSSICE) 10. artikuluan jasotako informazio-betebeharrarekin bat etorriz, webgune honen titularrak honako hau jakinarazten dizu:",
+          "company_name": "Sozietate izena: ITAKAI",
+          "domain": "Domeinua: itakai.com",
+          "email_legal": "Harremanetarako emaila:",
+          "email_support": "Laguntza emaila:"
+        },
+        "purpose": {
+          "title": "2. Xedea",
+          "p1": "ITAKAI mitologia greziarrean oinarritutako hezkuntza plataforma gamifikatua da, hezkuntza-misioen, adimen artifizialeko laguntzaileen eta aurrerapen-sistema gamifikatu baten bidez ikaskuntza interaktiboko zerbitzuak eskaintzen dituena. Lege Ohar honek itakai.com webgunearen erabilera arautzen du (aurrerantzean, \"Webgunea\").",
+          "p2": "Webgunera sartzeak eta hura erabiltzeak Lege Ohar honetan, Baldintzetan, Pribatutasun Politikan eta Cookie Politikan ezarritako baldintza guztien berariazko eta erreserbarik gabeko onarpena dakar."
+        },
+        "conditions": {
+          "title": "3. Erabilera Baldintzak",
+          "access_title": "3.1 Sarbidea eta Nabigazioa",
+          "access_text": "Erabiltzaileak Webgunera sartzea doakoa da. Erabiltzaile gisa erregistratzea eta zerbitzu jakin batzuk erabiltzea baldintza espezifikoei lotuta egon daiteke eta Erabiltzailearen aldez aurreko erregistroa behar dezake.",
+          "correct_use_title": "3.2 Erabilera Zuzena",
+          "correct_use_text": "Erabiltzaileak Webgunea eta zerbitzuak legearen, Lege Ohar honen, Baldintzen eta ohitura onen arabera erabiltzeko konpromisoa hartzen du. Erabiltzaileak zerbitzuen erabilera arduratsua egitera eta legez kontrako jardueretarako edo fede onaren kontrako jardueretarako ez erabiltzera behartzen da.",
+          "prohibitions_title": "3.3 Debekuak",
+          "prohibitions_intro": "Berariaz debekatuta dago:",
+          "prohibitions_damage": "Webgunea kaltetu, ezgaitu, gainkargatu edo hondatu dezaketen ekintzak egitea",
+          "prohibitions_impede": "Beste erabiltzaileek Webgunea normalean erabiltzea eragoztea",
+          "prohibitions_impersonate": "Beste erabiltzaileen nortasuna ordeztea",
+          "prohibitions_illegal_content": "Legez kontrako, arrazista, xenofobo, pornografiko edukiak, terrorismoaren apologia egiten dutenak edo giza eskubideen aurkakoak zabaltzea",
+          "prohibitions_malware": "Konputagailu-birusak, troiarrak, harrak, bonba logikoak edo beste edozein programa edo material kaltegarri sartzea",
+          "prohibitions_unauthorized_access": "ITAKAI-ren edo hirugarrenen sistema informatikoetako eremu mugatuetara sartzen saiatzea"
+        },
+        "intellectual_property": {
+          "title": "4. Jabetza Intelektuala eta Industriala",
+          "p1": "Webguneko eduki guztiak, mugarik gabe, testuak, argazkiak, grafikoak, irudiak, ikonoak, teknologia, softwarea, estekak, diseinu grafikoak, iturburu-kodea, egokitutako pertsonaia mitologikoak eta gainerako ikus-entzunezko edo soinu-edukiak, bai eta bere diseinu grafikoa eta iturburu-kodeak (aurrerantzean, \"Edukiak\"), ITAKAI-ren edo hirugarrenen jabetza intelektuala dira, indarreko jabetza intelektualeko araudiak aitortzen dituen ustiapen-eskubideetako bat ere Erabiltzaileari lagata ulertu gabe.",
+          "p2": "Markak, izen komertzialak edo bereizgarriak ITAKAI-ren edo hirugarrenen titulartasunekoak dira, Webgunera sartzeak aipatutako marken, izen komertzialen eta/edo zeinu bereizgarrien gaineko eskubiderik ematen duenik ulertu gabe.",
+          "p3": "Edukien gaineko jabetza intelektual eta industrial eskubide guztiak erreserbatuta daude. Berariaz debekatuta dago Edukien guztien edo zati baten erreprodukzioa, banaketa, komunikazio publikoa, eraldaketa edo edozein ustiapen-forma, edozein prozeduraren bidez, ITAKAI-ren aldez aurreko, berariazko eta idatzizko baimenik gabe."
+        },
+        "third_party_links": {
+          "title": "5. Hirugarrenen Guneetarako Estekak (Linkak)",
+          "p1": "Webguneak hirugarrenen webguneetarako estekak izan ditzake. ITAKAI-k ez du inolako kontrolik aipatutako webguneen gainean eta, ondorioz, ez du erantzukizunik bere gain hartzen horietan dauden edukiei, zerbitzuei edo beste edozein materialei dagokienez.",
+          "p2": "Esteka hauen inklusioak helburu informatiboa soilik du eta inola ere ez du iradokizunik, gonbitik edo gomendiorik suposatzen horien inguruan. Erabiltzaileak gune horietara bere erantzukizun esklusibopean sartzen da."
+        },
+        "liability_exclusion": {
+          "title": "6. Erantzukizunaren Baztertzea",
+          "availability_title": "6.1 Webgunearen Eskuragarritasuna",
+          "availability_text": "ITAKAI-k ez du Webgunearen funtzionamenduaren eskuragarritasuna eta jarraitutasuna bermatzen. Ondorioz, ITAKAI ez da inola ere erantzule izango Webgunearen eskuragarritasun ezagatik edo funtzionamenduaren jarraitutasun ezagatik sor daitezkeen kalte-ordainengatik.",
+          "content_title": "6.2 Edukiak",
+          "content_text": "ITAKAI-k ez du Edukien zehaztasuna, egiatasuna, sakontasuna edo eguneraketa bermatzen. Erabiltzailea da Webgunean agertzen den informazioa egiaztatzeko arduraduna. ITAKAI-k edozein izaerako kalte-ordainen erantzukizuna baztertzen du, Edukien egiatasun, zehaztasun, sakontasun eta/edo eguneraketa ezagatik sor daitezkeenak.",
+          "security_title": "6.3 Birusak eta Segurtasuna",
+          "security_text": "ITAKAI-k ez du Webgunean Erabiltzailearen sistema informatikoan aldaketak eragin ditzaketen birusen edo bestelako elementuen gabeziarik bermatzen. ITAKAI-k edozein izaerako kalte-ordainen erantzukizuna baztertzen du, birusen presentziagatik edo bestelako elementu kaltegarrien presentziagatik sor daitezkeenak.",
+          "user_content_title": "6.4 Erabiltzaileek Sortutako Edukia",
+          "user_content_text": "ITAKAI ez da Erabiltzaileek iruzkinetan, foroetan, txatean edo beste parte-hartze tresna batzuen bidez adierazitako iritzien erantzule. ITAKAI-k desegokitzat jotzen duen edozein eduki ezabatzeko eskubidea gordetzen du."
+        },
+        "modifications": {
+          "title": "7. Aldaketak",
+          "p1": "ITAKAI-k aldez aurretik abisatu gabe egokitzat jotzen dituen aldaketak egiteko eskubidea gordetzen du Webgunean, haren bidez eskaintzen diren edukiak eta zerbitzuak zein hauek aurkezten edo kokatzen diren modua aldatu, kendu edo gehitu ahal izanez.",
+          "p2": "Era berean, ITAKAI-k edozein unetan Lege Ohar honen baldintzak aldatu ahal izango ditu. Erabiltzaileari Lege Ohar hau aldian-aldian kontsultatzea gomendatzen zaio aldaketa posibleez jabetzeko."
+        },
+        "data_protection": {
+          "title": "8. Datu Pertsonalen Babesa",
+          "p1": "ITAKAI-k Datuak Babesteko Erregelamendu Orokorra (DBEO) EB 2016/679 eta 3/2018 Lege Organikoa, abenduaren 5ekoa, Datu Pertsonalen Babesari eta eskubide digitalen bermeari buruzkoa (LOPDGDD) betetzen ditu.",
+          "p2": "Datu pertsonalen tratamenduari buruzko informazio xehatua lortzeko, mesedez kontsultatu gure Pribatutasun Politika."
+        },
+        "cookies_section": {
+          "title": "9. Cookieak",
+          "p1": "Webguneak cookie propioak eta hirugarrenenak erabiltzen ditu Erabiltzailearen esperientzia hobetzeko eta bere intereseko edukiak eta zerbitzuak eskaintzeko.",
+          "p2": "Cookieen erabilerari buruzko informazio gehiago lortzeko, kontsultatu gure Cookie Politika."
+        },
+        "jurisdiction": {
+          "title": "10. Aplikatu Beharreko Legeria eta Jurisdikzioa",
+          "p1": "ITAKAI eta Erabiltzailearen arteko harremana indarrean dagoen Espainiako araudiak arautuko du. Eztabaidaren kasuan, aldeek beren gatazkak arbitrajera aurkeztu ahal izango dituzte edo ohiko jurisdikziora jo, Espainiako Epaitegia eta Auzitegiak izanik edozein eztabaida ebazteko eskudunak.",
+          "p2": "Lege Ohar honen klausula bat deuseztzat jotzen bada, gainerako klausulek indarrean jarraituko dute eta aldeen borondatea eta Lege Ohar honen beraren helburua kontuan hartuz interpretatuko dira."
+        },
+        "dispute_resolution": {
+          "title": "11. Auzi-ebazpena Linean",
+          "p1": "(EB) 524/2013 Erregelamenduaren arabera, Europako Batzordeak doako sarbideko plataforma bat eskaintzen du enpresaburuaren eta kontsumitzailearen arteko gatazken ordezko ebazpenerako, justizia-auzitegietara jo beharrik gabe, hirugarren baten esku-hartzearen bidez, Auzi-ebazpen Alternatiborako Erakundea deiturikoa.",
+          "p2": "Informazio gehiago lortzeko, auzi-ebazpenerako Europako lineako plataformara sar zaitezke esteka honen bidez:"
+        },
+        "contact": {
+          "title": "12. Kontaktua",
+          "intro": "Lege Ohar honi buruzko edozein kontsulta, erreklamazio edo argibiderako, gurekin harremanetan jar zaitezke honako bide hauen bidez:",
+          "company": "ITAKAI",
+          "email_legal": "Email legala:",
+          "email_support": "Laguntza emaila:",
+          "email_privacy": "Pribatutasun emaila:"
+        },
+        "acceptance": {
+          "title": "Lege Oharraren Onarpena",
+          "text": "Webgunera sartzeak eta hura erabiltzeak Lege Ohar honen berariazko eta osoko onarpena dakar, baita Baldintzen, Pribatutasun Politikaren eta Cookie Politikaren onarpena ere. Dokumentu hauetatiko batekin ados ez bazaude, Webgunea erabiltzeaz abstitu behar duzu."
+        }
+      },
+      "meta": {
+        "title": "Lege Oharra | ITAKAI",
+        "description": "ITAKAI hezkuntza plataformaren erabilerari buruzko legezko informazioa."
+      }
+    },
+    "licenses": {
+      "title": "Lizentziak",
+      "description": "Hemen ITAKAI plataforman erabilitako software lizentziei, hirugarrenen liburutegiei eta egozpenei buruzko informazio guztia kontsultatu ahal izango duzu.",
+      "btn_back": "Hasierako orrialdera itzuli",
+      "meta": {
+        "title": "Lizentziak - ITAKAI",
+        "description": "ITAKAI-ren lizentziei buruzko informazioa"
+      }
+    },
+    "notifications": {
+      "title": "Jakinarazpenak",
+      "btn_mark_all_read": "Denak irakurritako gisa markatu",
+      "tabs": {
+        "all": "Denak",
+        "unread": "Irakurri gabeak"
+      },
+      "unread_label": "Irakurri gabea",
+      "btn_view": "Ikusi",
+      "btn_delete": "Jakinarazpena ezabatu",
+      "empty_unread": "Ez duzu irakurri gabeko jakinarazpenik",
+      "empty_all": "Ez duzu jakinarazpenik",
+      "meta": {
+        "title": "Jakinarazpenak | ITAKAI",
+        "description": "Berrikusi zure jakinarazpenak eta egon eguneratuta zure misioen eta klaseen azken eguneraketekin."
+      }
+    }
+  }
+}

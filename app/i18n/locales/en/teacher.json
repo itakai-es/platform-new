@@ -1,0 +1,640 @@
+{
+  "teacher": {
+    "dashboard": {
+      "title": "Teacher Dashboard",
+      "subtitle": "Welcome, {name}!",
+      "new_class": "New Class",
+      "new_mission": "New Mission",
+      "stats": {
+        "total_students": "Total Students",
+        "active_classes": "Active Classes",
+        "active_missions": "Active Missions"
+      },
+      "my_classes": "My Classes",
+      "view_all": "View all",
+      "no_classes_yet": "You don't have any classes yet",
+      "recent_missions": "Latest Missions",
+      "no_missions_description": "Create your first mission for your students",
+      "meta": {
+        "title": "Teacher Dashboard | ITAKAI",
+        "description": "Teacher main dashboard. Manage your classes, missions, and review your students' progress."
+      }
+    },
+    "classes": {
+      "index": {
+        "title": "My Classes",
+        "subtitle": "Manage your classes and review your students' progress",
+        "new_class": "New Class",
+        "create_first": "Create First Class",
+        "no_classes_description": "You haven't created any classes yet",
+        "meta": {
+          "title": "My Classes | ITAKAI Teacher",
+          "description": "Manage all your classes, enrolled students, and assigned missions."
+        }
+      },
+      "create": {
+        "breadcrumb_classes": "My Classes",
+        "breadcrumb_new": "New",
+        "btn_creating": "Creating...",
+        "btn_create": "Create Class",
+        "success_title": "Class created!",
+        "success_message": "Your class \"{name}\" is ready.",
+        "invite_code_label": "Invitation code",
+        "invite_code_hint": "Share this code with your students",
+        "btn_view_classes": "View classes",
+        "btn_copied": "Copied!",
+        "btn_copy_code": "Copy code",
+        "validation": {
+          "name_required": "Class name is required",
+          "name_min_length": "Name must be at least 3 characters",
+          "create_error": "Error creating the class. Please try again."
+        },
+        "preview_label": "This is how your class will look",
+        "onboarding": {
+          "ask_idea": "Hi {name}! I'm {god}. Tell me, what do you want your class to be about?",
+          "review_approach": "Here's what I've prepared for you, do you like it?",
+          "pick_title": "What title should we give your class?",
+          "ask_schedule": "What schedule will your class have?",
+          "ask_image": "I've created this cover for your class",
+          "placeholder_idea": "E.g.: I want to create a physics class for 10th grade with Greek mythology theme, focused on mechanics and thermodynamics...",
+          "generating_approach": "I'm creating the narrative for your class...",
+          "narrative_feedback_placeholder": "E.g.: I want more Hogwarts house references...",
+          "btn_change_something": "I want to change something",
+          "custom_title_placeholder": "Or write your own title...",
+          "title_feedback_placeholder": "E.g.: I want shorter titles, with more Harry Potter references...",
+          "placeholder_schedule": "E.g.: Monday and Wednesday 10:00-12:00",
+          "generating_cover": "Generating cover...",
+          "cover_error": "Could not generate the cover. You can skip this step.",
+          "image_feedback_placeholder": "I want it more colorful, with blue background...",
+          "thinking": "Thinking...",
+          "btn_back": "Back",
+          "btn_next": "Next",
+          "btn_skip": "Skip",
+          "btn_accept_plan": "Yes, go ahead"
+        },
+        "meta": {
+          "title": "Create New Class | ITAKAI Teacher"
+        }
+      },
+      "detail": {
+        "breadcrumb_classes": "My classes",
+        "not_found_title": "Class not found",
+        "not_found_description": "The class you're looking for doesn't exist or you don't have access",
+        "btn_back": "Back to my classes",
+        "btn_invite": "Invite",
+        "tabs": {
+          "summary": "Summary",
+          "narrative": "Story",
+          "guide": "Guide",
+          "missions": "Missions",
+          "ranking": "Ranking",
+          "tienda": "Shop",
+          "behaviors": "Behaviors",
+          "settings": "Settings"
+        },
+        "stats_title": "Class Statistics",
+        "pending_reviews": "Submissions to Review",
+        "guide_editor": {
+          "toast_saved": "Guide saved successfully",
+          "toast_error": "Error saving the guide"
+        },
+        "ranking": {
+          "no_students_title": "No students",
+          "no_students_description": "There are no students in this class yet"
+        },
+        "missions_tab": {
+          "no_missions_title": "No missions",
+          "no_missions_description": "There are no missions assigned to this class yet",
+          "create_first": "Create First Mission",
+          "new_mission": "New Mission",
+          "no_results": "No results",
+          "empty_search": "No missions found for \"{query}\"",
+          "empty_status": "There are no missions with the selected statuses",
+          "empty_rarity": "There are no missions with the selected rarities",
+          "empty_default": "There are no missions in this class"
+        },
+        "meta": {
+          "title": "Class Detail | ITAKAI Teacher",
+          "description": "Manage the class. Review students, assigned missions, and overall progress."
+        },
+        "behaviors": {
+          "new_button": "New behavior",
+          "new_button_short": "New",
+          "library_button": "Library",
+          "library_title": "Behavior library",
+          "library_subtitle": "Add suggested behaviors in one tap. You can edit or delete them later.",
+          "library_add": "Add",
+          "empty_title": "No behaviors yet",
+          "empty_description": "Create one from scratch or add from the library.",
+          "edit_aria": "Edit behavior",
+          "section_positives": "Positive",
+          "section_negatives": "Negative",
+          "filter_all": "All",
+          "apply_title": "Apply \"{name}\"",
+          "pick_student": "Choose the student you'll apply it to.",
+          "applied_toast": "{behavior} applied to {student}",
+          "empty_students": "There are no students in this class yet.",
+          "form_new_title": "New behavior",
+          "form_edit_title": "Edit behavior",
+          "form_type": "Type",
+          "type_positive": "Positive",
+          "type_negative": "Negative",
+          "form_name": "Name",
+          "form_name_placeholder": "E.g. Good participation",
+          "form_description": "Description",
+          "form_description_placeholder": "What does this behavior reward or correct?",
+          "form_impacts": "Impacts",
+          "form_impacts_hint": "Absolute amount; the sign comes from the type (positive = +, negative = −).",
+          "form_cancel": "Cancel",
+          "form_save": "Save",
+          "form_create": "Create",
+          "form_delete": "Delete",
+          "delete_title": "Delete \"{name}\"?",
+          "delete_description": "It will no longer appear in the catalog. This action cannot be undone.",
+          "toast_created": "Behavior created",
+          "toast_updated": "Behavior updated",
+          "toast_deleted": "Behavior deleted",
+          "toast_save_error": "The behavior could not be saved.",
+          "toast_delete_error": "The behavior could not be deleted.",
+          "fetch_error": "Could not load behaviors.",
+          "apply_error": "Could not apply the behavior."
+        },
+        "shop": {
+          "tab_items": "Items",
+          "tab_uses": "Uses",
+          "uses_empty_title": "No uses yet",
+          "new_item": "New item",
+          "library_button": "Library",
+          "library_title": "Item library",
+          "library_subtitle": "Add suggested items in one tap. You can edit or delete them later.",
+          "library_add": "Add",
+          "empty_title": "No items yet",
+          "empty_description": "Create the first reward your students can redeem.",
+          "hidden": "Hidden",
+          "purchases_empty_title": "No redemptions yet",
+          "form_edit_title": "Edit item",
+          "form_new_title": "New item",
+          "form_name": "Name",
+          "form_name_placeholder": "E.g. Skip a task",
+          "form_description": "Description",
+          "form_description_placeholder": "What does the student get when redeeming it?",
+          "form_price": "Price",
+          "form_visible": "Visible to students",
+          "form_cancel": "Cancel",
+          "form_delete": "Delete",
+          "form_save": "Save",
+          "form_create": "Create",
+          "delete_title": "Delete \"{name}\"?",
+          "delete_description": "Students will no longer see it in the shop. This action cannot be undone.",
+          "toast_created": "Item created",
+          "toast_updated": "Item updated",
+          "toast_deleted": "Item deleted",
+          "toast_save_error": "The item could not be saved.",
+          "toast_delete_error": "The item could not be deleted.",
+          "form_type": "Type",
+          "type_reward": "Reward",
+          "type_power": "Power",
+          "form_mana_cost": "Mana cost (to use)",
+          "form_usage": "Usage",
+          "usage_single": "Single use",
+          "usage_unlimited": "Unlimited",
+          "form_life_restore": "Life restored",
+          "form_life_restore_hint": "Life points added when redeeming (rewards) or using (powers). 0 = no life restored.",
+          "tab_history": "History",
+          "history_purchases": "Purchases",
+          "view_student_profile": "View student",
+          "mana_disabled_chip": "Mana disabled"
+        },
+        "settings": {
+          "toast_error": "Couldn't save the settings",
+          "items": {
+            "shop": {
+              "label": "Shop",
+              "desc": "Rewards and powers students redeem."
+            },
+            "coins": {
+              "label": "Coins",
+              "desc": "Shows coin balance and prices."
+            },
+            "mana": {
+              "label": "Mana",
+              "desc": "Energy to use shop powers."
+            },
+            "rankings": {
+              "label": "Ranking",
+              "desc": "Class leaderboard of students."
+            },
+            "xp": {
+              "label": "Experience (XP)",
+              "desc": "Levels and XP progress bar."
+            },
+            "behaviors": {
+              "label": "Behaviors",
+              "desc": "Apply positive/negative actions that grant or remove resources."
+            },
+            "lives": {
+              "label": "Lives",
+              "desc": "Class life points (changed by behaviors)."
+            },
+            "visualEffects": {
+              "label": "Visual effects",
+              "desc": "Animations like confetti on level up."
+            },
+            "sounds": {
+              "label": "Sounds",
+              "desc": "Sound effects when leveling up, completing missions, etc."
+            }
+          },
+          "requires": "Needs {feature}",
+          "requires_resource": "Needs at least one resource enabled (XP, coins, mana or lives)",
+          "general": {
+            "title": "General details",
+            "name_label": "Name",
+            "schedule_label": "Schedule",
+            "background_label": "Background image",
+            "background_hint": "Public URL of an image used as the class header background.",
+            "save": "Save changes",
+            "discard": "Discard",
+            "toast_saved": "Details saved",
+            "toast_error": "Could not save details",
+            "name_required": "Name cannot be empty",
+            "schedule_add": "Add session",
+            "schedule_remove": "Remove session",
+            "schedule_preview": "Preview",
+            "background_generate": "Generate with AI",
+            "background_regenerate": "Regenerate with AI",
+            "background_clear": "Remove image",
+            "background_error": "Could not generate the image"
+          },
+          "features": {
+            "title": "Features"
+          }
+        }
+      }
+    },
+    "missions": {
+      "index": {
+        "meta": {
+          "title": "My Missions | ITAKAI Teacher",
+          "description": "Manage all your created missions, edit them, or create new ones for your students."
+        }
+      },
+      "create": {
+        "meta": {
+          "title": "Create Mission | ITAKAI Teacher"
+        }
+      },
+      "detail": {
+        "delete_confirm_btn": "Delete",
+        "toast": {
+          "enigma_has_submissions": "Cannot delete an enigma that already has student submissions"
+        },
+        "meta": {
+          "title": "Mission Detail | ITAKAI Teacher",
+          "title_loading": "Loading mission... | ITAKAI Teacher",
+          "description_fallback": "Mission detail on ITAKAI"
+        }
+      }
+    },
+    "badges": {
+      "title": "My Badges",
+      "subtitle": "Create and manage custom badges to reward your students' achievements",
+      "new_badge": "New badge",
+      "btn_delete": "Delete",
+      "no_badges_title": "No badges",
+      "no_badges_description": "Create your first badge to reward your students",
+      "create_first": "Create first badge",
+      "form": {
+        "edit_title": "Edit Badge",
+        "create_title": "New Badge",
+        "label_name": "Name",
+        "label_description": "Description",
+        "label_image": "Image",
+        "image_optional": "(optional)",
+        "placeholder_name": "E.g.: Master of Equations",
+        "placeholder_description": "Describe what achievement this badge represents...",
+        "btn_remove_image": "Remove image",
+        "preview_label": "Preview:",
+        "btn_cancel": "Cancel",
+        "btn_saving": "Saving...",
+        "btn_save_changes": "Save changes",
+        "btn_create": "Create badge"
+      },
+      "detail": {
+        "btn_edit": "Edit",
+        "btn_close": "Close"
+      },
+      "delete_title": "Delete Badge",
+      "delete_confirm": "Are you sure you want to delete the badge '{name}'? This action cannot be undone.",
+      "validation": {
+        "name_required": "Name is required",
+        "name_min_length": "Name must be at least 3 characters",
+        "image_size": "Image cannot exceed 2MB",
+        "image_type": "Only PNG, JPG, SVG, or WebP files are allowed"
+      },
+      "meta": {
+        "title": "My Badges | ITAKAI Teacher",
+        "description": "Create, edit, and manage custom badges to reward your students' achievements."
+      }
+    },
+    "students": {
+      "index": {
+        "title": "My Students",
+        "subtitle": "Manage and view your students' progress",
+        "search_placeholder": "Search by name or email...",
+        "filter_all_classes": "All classes",
+        "filter_all_progress": "All progress",
+        "progress_excellent": "Excellent (≥80%)",
+        "progress_good": "Good (50-79%)",
+        "progress_in_progress": "In progress (20-49%)",
+        "progress_initial": "Initial (<20%)",
+        "sort_name_asc": "Name A-Z",
+        "sort_name_desc": "Name Z-A",
+        "sort_progress_desc": "Highest progress",
+        "sort_progress_asc": "Lowest progress",
+        "sort_missions_desc": "Most missions",
+        "no_students_title": "No students",
+        "no_students_filtered": "No students found with these filters",
+        "no_students_default": "There are no students in your classes",
+        "btn_view": "View",
+        "stat_missions": "Missions",
+        "meta": {
+          "title": "My Students | ITAKAI Teacher",
+          "description": "Manage all your students, review their progress, and academic performance statistics."
+        }
+      },
+      "detail": {
+        "breadcrumb_students": "Students",
+        "loading": "Loading...",
+        "error_title": "Error loading student",
+        "error_default": "Error loading student data",
+        "btn_retry": "Retry",
+        "stat_classes": "Classes",
+        "stat_missions": "Missions",
+        "stat_completed": "Completed",
+        "enrolled_classes_title": "Enrolled Classes",
+        "enrolled_classes_count": "{count} classes",
+        "not_enrolled": "Not enrolled in any of your classes",
+        "label_progress": "Completed",
+        "stat_coins": "Coins",
+        "stat_mana": "Mana",
+        "stat_lives": "Life points",
+        "no_activity": "No recent activity",
+        "meta": {
+          "title": "Student Profile | ITAKAI Teacher",
+          "description": "Detailed student profile with performance statistics, mission progress, and recent activity."
+        }
+      }
+    },
+    "ai_assistant": {
+      "meta": {
+        "title": "Teacher AI Assistant | ITAKAI",
+        "description": "AI assistant specialized for teachers. Get help with class and mission management."
+      }
+    },
+    "profile": {
+      "breadcrumb_home": "Home",
+      "breadcrumb_profile": "My profile",
+      "title": "My Profile",
+      "tabs": {
+        "security": "Security",
+        "settings": "Settings"
+      },
+      "security": {
+        "password_title": "Password",
+        "placeholder_current": "Current password",
+        "placeholder_new": "New password",
+        "placeholder_confirm": "Confirm password",
+        "btn_update": "Update",
+        "email_title": "Email",
+        "placeholder_new_email": "New email",
+        "sessions_title": "Sessions",
+        "sessions_close_all": "Close all",
+        "session_current": "Current",
+        "session_close": "Close",
+        "validation": {
+          "passwords_mismatch": "Passwords do not match",
+          "password_min_length": "Password must be at least 6 characters",
+          "email_invalid": "Enter a valid email",
+          "password_required": "Enter your password"
+        }
+      },
+      "settings": {
+        "theme_title": "Theme",
+        "theme_description": "Choose the visual style of the platform",
+        "theme_college": "School Mode",
+        "theme_college_desc": "Gamified visual",
+        "theme_university": "University Mode",
+        "theme_university_desc": "Professional visual",
+        "language_title": "Language",
+        "language_updated": "Language updated",
+        "theme_updated": "Theme updated",
+        "danger_zone_title": "Danger zone",
+        "danger_zone_description": "Once your account is deleted, there is no going back. Please make sure you are certain.",
+        "btn_delete_account": "Delete account",
+        "delete_modal_title": "Delete account",
+        "delete_modal_confirm_prompt": "To confirm, enter your password:",
+        "placeholder_password": "Your password",
+        "btn_cancel": "Cancel",
+        "btn_delete_confirm": "Delete my account",
+        "languages": {
+          "es": "Español",
+          "en": "English",
+          "ca": "Català",
+          "eu": "Euskara",
+          "gl": "Galego"
+        }
+      },
+      "meta": {
+        "title": "My Profile | ITAKAI",
+        "description": "Manage your teacher profile, configure security, and personalize your experience."
+      }
+    },
+    "components": {
+      "enigma_form_modal": {
+        "edit_title": "Edit Enigma",
+        "add_title": "Add Enigma",
+        "label_title": "Enigma title",
+        "placeholder_title": "E.g.: The Awakening of the Machines",
+        "label_xp": "XP",
+        "label_rewards": "Rewards on completion",
+        "rewards_locked_hint": "You can only increase the rewards: a student has already earned them.",
+        "label_description": "Description",
+        "placeholder_description": "Describe what the student must do...",
+        "label_objectives": "Objectives",
+        "label_objectives_optional": "(optional)",
+        "placeholder_objective": "Write an objective...",
+        "btn_remove_objective": "Remove objective",
+        "btn_add_objective": "Add objective",
+        "is_optional": "This enigma is optional",
+        "btn_cancel": "Cancel",
+        "btn_saving": "Saving...",
+        "btn_save": "Save",
+        "btn_add": "Add",
+        "validation": {
+          "title_required": "Title is required",
+          "description_required": "Description is required"
+        },
+        "label_mana": "Mana",
+        "label_coins": "Coins",
+        "no_mana": "No mana"
+      },
+      "document_form_modal": {
+        "edit_title": "Edit Document",
+        "add_title": "Add Document",
+        "label_title": "Title",
+        "placeholder_title": "E.g.: Systems of Equations Guide",
+        "btn_upload_file": "Upload file",
+        "btn_add_link": "Add link",
+        "label_file": "File",
+        "drop_hint": "Drag a file or click to select",
+        "file_types_hint": "PDF, Word, Video, Images (max 50MB)",
+        "label_url": "URL",
+        "label_description": "Description",
+        "label_description_optional": "(optional)",
+        "placeholder_description": "Brief description of the document...",
+        "label_tags": "Tags",
+        "placeholder_tags": "Type a tag and press Enter...",
+        "btn_cancel": "Cancel",
+        "btn_saving": "Saving...",
+        "btn_save": "Save",
+        "btn_add": "Add",
+        "validation": {
+          "title_required": "Title is required",
+          "url_required": "URL is required for links",
+          "file_required": "You must select a file",
+          "file_too_large": "File cannot exceed 50MB"
+        }
+      },
+      "class_filter_bar": {
+        "search_placeholder": "Search classes...",
+        "sort": {
+          "name_asc": "Name A-Z",
+          "name_desc": "Name Z-A",
+          "most_students": "Most students",
+          "least_students": "Fewest students",
+          "most_missions": "Most missions",
+          "least_missions": "Fewest missions"
+        }
+      },
+      "mission_filter_bar": {
+        "search_placeholder": "Search missions...",
+        "all_classes": "All classes",
+        "plural_classes": "classes",
+        "all_statuses": "All statuses",
+        "plural_statuses": "statuses",
+        "all_rarities": "All rarities",
+        "plural_rarities": "rarities",
+        "rarity": {
+          "common": "Common",
+          "rare": "Rare",
+          "epic": "Epic",
+          "legendary": "Legendary"
+        },
+        "status": {
+          "active": "Active",
+          "urgent": "Urgent",
+          "completed": "Completed",
+          "expired": "Expired",
+          "locked": "Locked"
+        },
+        "sort": {
+          "deadline_asc": "Date ↑",
+          "deadline_desc": "Date ↓",
+          "name_asc": "Name A-Z",
+          "name_desc": "Name Z-A",
+          "xp_desc": "XP ↓",
+          "xp_asc": "XP ↑",
+          "rarity_desc": "Rarity ↓",
+          "rarity_asc": "Rarity ↑",
+          "completion_desc": "Completion ↓",
+          "completion_asc": "Completion ↑"
+        }
+      },
+      "rewards_form_modal": {
+        "title": "Edit Rewards",
+        "badge_label": "Reward badge",
+        "remove_badge": "Remove badge",
+        "no_badge_title": "No badge assigned",
+        "no_badge_description": "Select or create a badge for this mission",
+        "btn_select_existing": "Select existing",
+        "btn_create_new": "Create new",
+        "select_hint": "Select a badge from your collection:",
+        "no_badges_created": "You have no badges created",
+        "btn_create_first": "Create your first badge",
+        "label_name": "Name",
+        "label_description": "Description",
+        "label_image": "Image",
+        "image_optional": "(optional)",
+        "placeholder_name": "E.g.: Master of Equations",
+        "placeholder_description": "Describe what achievement this badge represents...",
+        "image_selected": "Image selected",
+        "btn_remove_image": "Remove image",
+        "upload_prompt": "Click to upload an image",
+        "upload_hint": "PNG, JPG, SVG or WebP (max 2MB)",
+        "label_rarity": "Rarity",
+        "btn_cancel": "Cancel",
+        "btn_saving": "Saving...",
+        "btn_save": "Save",
+        "validation": {
+          "name_required": "Name is required",
+          "description_required": "Description is required",
+          "image_size": "Image cannot exceed 2MB",
+          "image_type": "Only PNG, JPG, SVG or WebP files are allowed"
+        },
+        "rarity": {
+          "common": "Common",
+          "rare": "Rare",
+          "epic": "Epic",
+          "legendary": "Legendary"
+        }
+      },
+      "class_detail_layout": {
+        "error_title": "Error loading the class",
+        "not_found": "The class you're looking for doesn't exist or you don't have access",
+        "btn_back": "Back to my classes",
+        "breadcrumb_classes": "My classes"
+      },
+      "mission_detail_template": {
+        "error_title": "Error loading the mission",
+        "btn_back": "Back to missions",
+        "breadcrumb_classes": "My classes",
+        "deadline_none": "No deadline",
+        "deadline_edit": "Edit deadline",
+        "deadline_save": "Save",
+        "deadline_clear": "Remove deadline",
+        "deadline_cancel": "Cancel",
+        "narrative_title": "Mission Story",
+        "btn_see_more": "See more",
+        "btn_see_less": "See less",
+        "btn_edit": "Edit",
+        "enigmas_title": "Enigmas",
+        "btn_add": "Add",
+        "optional_label": "Optional",
+        "objectives_label": "Objectives:",
+        "no_enigmas": "There are no enigmas in this mission",
+        "btn_add_first_enigma": "Add first enigma",
+        "documents_title": "Supporting Documents",
+        "no_documents": "No supporting documents",
+        "btn_view_submissions": "View submissions ({count})",
+        "btn_submit": "Submit",
+        "status_available": "Available",
+        "status_in_review": "Under review",
+        "status_completed": "Completed",
+        "global_progress": "Global Progress",
+        "class_average": "Class average",
+        "rewards_title": "Rewards",
+        "xp_enigmas": "Enigma XP",
+        "xp_mission": "Mission XP",
+        "complete_all_enigmas": "Complete all enigmas",
+        "badge_rarity": {
+          "common": "Common",
+          "rare": "Rare",
+          "epic": "Epic",
+          "legendary": "Legendary"
+        },
+        "btn_close": "Close"
+      }
+    }
+  }
+}

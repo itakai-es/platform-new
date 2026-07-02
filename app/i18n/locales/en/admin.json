@@ -1,0 +1,251 @@
+{
+  "admin": {
+    "dashboard": {
+      "title": "Administrator Dashboard",
+      "subtitle": "ITAKAI system control panel",
+      "activity": {
+        "title": "System Activity",
+        "period_24h": "Last 24 hours",
+        "period_week": "Last week",
+        "period_month": "Last month"
+      },
+      "quick_actions": {
+        "manage_users": "Manage Users"
+      },
+      "system_status": {
+        "title": "System Status",
+        "operational": "Operational",
+        "degraded": "Degraded",
+        "down": "Down",
+        "unknown": "Unknown",
+        "empty": "No services available"
+      },
+      "meta": {
+        "title": "Admin Dashboard | ITAKAI",
+        "description": "ITAKAI system control panel. Manage users, institutions and monitor platform status."
+      }
+    },
+    "users": {
+      "title": "User Management",
+      "meta": {
+        "title": "User Management | ITAKAI Admin",
+        "description": "Manage all system users, create new profiles, edit roles and monitor activity."
+      },
+      "subtitle": "Manage all platform users",
+      "filters": {
+        "search_placeholder": "Search by name or email...",
+        "all_roles": "All roles",
+        "students": "Students",
+        "teachers": "Teachers",
+        "admins": "Administrators",
+        "all_statuses": "All statuses",
+        "active": "Active",
+        "suspended": "Suspended",
+        "inactive": "Inactive",
+        "clear": "Clear filters"
+      },
+      "roles": {
+        "student": "Student",
+        "teacher": "Teacher",
+        "admin": "Admin"
+      },
+      "card": {
+        "status": "Status",
+        "classes": "Classes",
+        "last_login": "Last login"
+      },
+      "empty": {
+        "title": "No users found",
+        "description": "No users match the selected filters."
+      },
+      "actions": {
+        "suspend_title": "Suspend user",
+        "suspend_message": "Are you sure you want to suspend {name}? They will not be able to access the platform.",
+        "suspend_confirm": "Suspend",
+        "delete_title": "Delete user",
+        "delete_message": "Are you sure you want to delete {name}? This action cannot be undone.",
+        "delete_confirm": "Delete"
+      }
+    },
+    "classes": {
+      "title": "Class Management",
+      "meta": {
+        "title": "Class Management | ITAKAI Admin"
+      },
+      "subtitle": "View all platform classes",
+      "filters": {
+        "search_placeholder": "Search classes..."
+      },
+      "empty": {
+        "title": "No classes found",
+        "description": "No classes match the selected filters."
+      }
+    },
+    "missions": {
+      "title": "Mission Management",
+      "meta": {
+        "title": "Mission Management | ITAKAI Admin"
+      },
+      "subtitle": "View all platform missions",
+      "filters": {
+        "search_placeholder": "Search missions..."
+      },
+      "empty": {
+        "title": "No missions found",
+        "description": "No missions match the selected filters."
+      }
+    },
+    "schools": {
+      "title": "Institution Management",
+      "meta": {
+        "title": "Institution Management | ITAKAI Admin",
+        "description": "Manage all educational institutions in the system, create new schools and monitor their activity."
+      },
+      "subtitle": "Manage educational institutions",
+      "filters": {
+        "search_placeholder": "Search schools...",
+        "all_statuses": "All statuses",
+        "active": "Active",
+        "inactive": "Inactive"
+      },
+      "form": {
+        "create_title": "New school",
+        "edit_title": "Edit school",
+        "name": "Name",
+        "name_placeholder": "School name",
+        "city": "City",
+        "city_placeholder": "City",
+        "country": "Country",
+        "country_placeholder": "Country",
+        "save": "Save",
+        "cancel": "Cancel"
+      },
+      "actions": {
+        "create": "Create school",
+        "delete_title": "Delete school",
+        "delete_message": "Are you sure you want to delete {name}?",
+        "delete_confirm": "Delete"
+      },
+      "empty": {
+        "title": "No schools found",
+        "description": "No schools match the selected filters."
+      }
+    },
+    "analytics": {
+      "title": "System Analytics",
+      "subtitle": "Platform metrics and statistics",
+      "period": {
+        "week": "Week",
+        "month": "Month",
+        "quarter": "Quarter"
+      },
+      "kpis": {
+        "avg_response": "Response Time",
+        "requests_per_min": "Requests/min",
+        "error_rate": "Error Rate",
+        "uptime": "Uptime"
+      },
+      "overview": {
+        "total_users": "Total Users",
+        "missions_completed": "Missions Completed",
+        "completion_rate": "Completion Rate",
+        "active_today": "Active today"
+      },
+      "sections": {
+        "system_resources": "System Resources",
+        "service_health": "Service Health",
+        "response_time": "Response Time",
+        "active_users": "Active Users",
+        "requests": "Requests",
+        "tokens_over_time": "Tokens Used",
+        "users_by_role": "Users by Role",
+        "missions_by_status": "Missions by Status",
+        "missions_by_rarity": "Missions by Rarity",
+        "ai_usage": "AI Usage (Assistants)"
+      },
+      "system": {
+        "memory": "Memory",
+        "disk": "Disk",
+        "db_latency": "DB Latency"
+      },
+      "ai": {
+        "total_tokens": "Total tokens",
+        "avg_tokens_user": "Avg per user",
+        "total_conversations": "Conversations",
+        "avg_conversations_user": "Conv. per user"
+      },
+      "table": {
+        "service": "Service",
+        "status": "Status",
+        "uptime": "Uptime",
+        "latency": "Latency"
+      },
+      "status": {
+        "operational": "OK",
+        "degraded": "Degraded",
+        "down": "Down"
+      },
+      "meta": {
+        "title": "System Analytics | ITAKAI Admin",
+        "description": "View advanced metrics, performance graphs and detailed platform analysis."
+      }
+    },
+    "logs": {
+      "title": "System Logs",
+      "meta": {
+        "title": "System Logs | ITAKAI Admin",
+        "description": "Review system activity logs, audit user actions and diagnose technical issues."
+      },
+      "tab": "Activity",
+      "subtitle": "System activity logs",
+      "filters": {
+        "search_placeholder": "Search logs...",
+        "period_24h": "Last 24 hours",
+        "period_week": "Last week",
+        "period_month": "Last month",
+        "all_severities": "All",
+        "info": "Info",
+        "warning": "Warning",
+        "error": "Error",
+        "success": "Success",
+        "all_types": "All types",
+        "new_school": "New institution",
+        "new_users": "New users",
+        "alert": "Alert",
+        "system_update": "Update",
+        "missions_completed": "Missions completed",
+        "user_action": "User action"
+      },
+      "empty": {
+        "title": "No logs found",
+        "description": "No logs match the selected filters."
+      }
+    },
+    "system_logs": {
+      "tab": "System",
+      "filters": {
+        "search_placeholder": "Search system logs...",
+        "all_levels": "All levels",
+        "all_categories": "All categories"
+      },
+      "levels": {
+        "info": "Info",
+        "warning": "Warning",
+        "error": "Error",
+        "success": "OK"
+      },
+      "categories": {
+        "health_check": "Health Check",
+        "service_status": "Service Status",
+        "security": "Security",
+        "performance": "Performance",
+        "maintenance": "Maintenance",
+        "backup": "Backup"
+      },
+      "empty": {
+        "title": "No system logs found",
+        "description": "No system logs match the selected filters."
+      }
+    }
+  }
+}

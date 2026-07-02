@@ -1,0 +1,68 @@
+{
+  "chat": {
+    "assistant": {
+      "default_name": "Assistent IA",
+      "default_title": "Disponible per ajudar-te",
+      "default_description": "Sóc aquí per ajudar-te amb els teus estudis.",
+      "itakai_assistant": "ITAKAI Assistant"
+    },
+    "interface": {
+      "welcome_greeting": "Hola! Sóc {name}",
+      "welcome_greeting_default": "Hola! Sóc el teu assistent",
+      "ask_about": "Pots preguntar-me sobre:",
+      "input_placeholder": "Escriu la teva pregunta aquí...",
+      "input_typing": "L'assistent està escrivint...",
+      "input_sending": "Enviant missatge...",
+      "attach_file": "Adjuntar fitxer",
+      "attach_image": "Adjuntar imatge",
+      "mention": "Mencionar",
+      "ask_anything_placeholder": "Pregunta qualsevol cosa...",
+      "suggested_questions_label": "Preguntes suggerides:",
+      "message_input_placeholder": "Escriu el teu missatge aquí...",
+      "default_suggestions": [
+        "Com completo una missió?",
+        "On puc veure el meu progrés?",
+        "Com funciona el sistema de XP?",
+        "Com em puc unir a una classe?"
+      ],
+      "teacher_suggestions": [
+        "Com creo una nova missió?",
+        "Com gestiono la meva classe?",
+        "Com reviso el progrés dels estudiants?",
+        "Com assigno punts extra?"
+      ]
+    },
+    "god_messages": {
+      "student": [
+        "Necessites ajuda amb la teva missió?",
+        "Anem a aprendre junts!",
+        "Dubtes amb la tasca?",
+        "Pregunta'm el que vulguis!",
+        "Sóc aquí per ajudar-te",
+        "T'has encallat? Parlem-ne!",
+        "Conquesta aquest repte!",
+        "Com va el teu progrés?"
+      ],
+      "teacher": [
+        "Com van les teves classes?",
+        "Necessites crear una missió?",
+        "Dubtes sobre els teus estudiants?",
+        "Sóc aquí per assistir-te",
+        "Revisem alguna cosa junts?",
+        "Idees per a la teva classe?",
+        "Planifiquem la lliçó!",
+        "Com et puc ajudar avui?"
+      ],
+      "admin": [
+        "Necessites ajuda?",
+        "Al teu servei",
+        "En què t'ajudo?",
+        "Sóc aquí!"
+      ]
+    },
+    "user_subtitles": {
+      "teacher": "Professor",
+      "default": "Usuari"
+    }
+  }
+}

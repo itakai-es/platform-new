@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="iniciado-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#56ab2f"/>
+      <stop offset="100%" style="stop-color:#a8e063"/>
+    </linearGradient>
+    <linearGradient id="scroll-paper" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF8DC"/>
+      <stop offset="50%" style="stop-color:#F5DEB3"/>
+      <stop offset="100%" style="stop-color:#DEB887"/>
+    </linearGradient>
+    <linearGradient id="scroll-gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE066"/>
+      <stop offset="100%" style="stop-color:#DAA520"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="url(#iniciado-bg)"/>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#fff" stroke-width="2" opacity="0.3"/>
+  <!-- Scroll body -->
+  <rect x="28" y="28" width="44" height="50" rx="2" fill="url(#scroll-paper)"/>
+  <!-- Top scroll roll -->
+  <ellipse cx="50" cy="28" rx="24" ry="6" fill="url(#scroll-gold)"/>
+  <ellipse cx="50" cy="28" rx="22" ry="4" fill="#DAA520"/>
+  <ellipse cx="50" cy="28" rx="20" ry="3" fill="url(#scroll-paper)"/>
+  <!-- Bottom scroll roll -->
+  <ellipse cx="50" cy="78" rx="24" ry="6" fill="url(#scroll-gold)"/>
+  <ellipse cx="50" cy="78" rx="22" ry="4" fill="#DAA520"/>
+  <!-- Scroll end caps -->
+  <circle cx="26" cy="28" r="4" fill="url(#scroll-gold)"/>
+  <circle cx="74" cy="28" r="4" fill="url(#scroll-gold)"/>
+  <circle cx="26" cy="78" r="4" fill="url(#scroll-gold)"/>
+  <circle cx="74" cy="78" r="4" fill="url(#scroll-gold)"/>
+  <!-- Greek letter Omega (beginning) on scroll -->
+  <text x="50" y="58" font-family="serif" font-size="24" font-weight="bold" fill="#8B4513" text-anchor="middle">I</text>
+  <!-- Decorative lines on scroll -->
+  <line x1="35" y1="40" x2="65" y2="40" stroke="#8B4513" stroke-width="1" opacity="0.4"/>
+  <line x1="35" y1="68" x2="65" y2="68" stroke="#8B4513" stroke-width="1" opacity="0.4"/>
+  <!-- Small laurel leaves -->
+  <ellipse cx="38" cy="52" rx="3" ry="6" fill="#228B22" transform="rotate(-20 38 52)" opacity="0.7"/>
+  <ellipse cx="62" cy="52" rx="3" ry="6" fill="#228B22" transform="rotate(20 62 52)" opacity="0.7"/>
+  <!-- Stars -->
+  <circle cx="18" cy="22" r="1.5" fill="#fff"/>
+  <circle cx="82" cy="25" r="1.5" fill="#fff"/>
+  <circle cx="15" cy="75" r="1" fill="#fff" opacity="0.7"/>
+  <circle cx="85" cy="72" r="1" fill="#fff" opacity="0.7"/>
+</svg>

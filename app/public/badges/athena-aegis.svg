@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="athena-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667EEA"/>
+      <stop offset="100%" style="stop-color:#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="shield-bronze" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#CD7F32"/>
+      <stop offset="30%" style="stop-color:#B8860B"/>
+      <stop offset="70%" style="stop-color:#DAA520"/>
+      <stop offset="100%" style="stop-color:#CD7F32"/>
+    </linearGradient>
+    <linearGradient id="shield-center" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A5568"/>
+      <stop offset="50%" style="stop-color:#2D3748"/>
+      <stop offset="100%" style="stop-color:#1A202C"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="url(#athena-bg)"/>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#fff" stroke-width="2" opacity="0.3"/>
+  <!-- Shield outer ring -->
+  <circle cx="50" cy="48" r="28" fill="url(#shield-bronze)"/>
+  <circle cx="50" cy="48" r="25" fill="url(#shield-center)"/>
+  <circle cx="50" cy="48" r="22" fill="none" stroke="url(#shield-bronze)" stroke-width="2"/>
+  <!-- Medusa/Gorgon face (stylized) -->
+  <circle cx="50" cy="45" r="10" fill="#4A5568"/>
+  <!-- Gorgon eyes -->
+  <ellipse cx="46" cy="43" rx="2.5" ry="2" fill="#EF4444"/>
+  <ellipse cx="54" cy="43" rx="2.5" ry="2" fill="#EF4444"/>
+  <circle cx="46" cy="43" r="1" fill="#fff"/>
+  <circle cx="54" cy="43" r="1" fill="#fff"/>
+  <!-- Gorgon mouth -->
+  <path d="M45 50 Q50 53 55 50" stroke="#EF4444" stroke-width="1.5" fill="none"/>
+  <!-- Snake hair (simplified) -->
+  <g stroke="#10B981" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M40 38 Q35 32 38 28"/>
+    <path d="M45 35 Q43 28 46 24"/>
+    <path d="M50 34 Q50 26 50 22"/>
+    <path d="M55 35 Q57 28 54 24"/>
+    <path d="M60 38 Q65 32 62 28"/>
+  </g>
+  <!-- Snake heads -->
+  <circle cx="38" cy="27" r="2" fill="#10B981"/>
+  <circle cx="46" cy="23" r="2" fill="#10B981"/>
+  <circle cx="50" cy="21" r="2" fill="#10B981"/>
+  <circle cx="54" cy="23" r="2" fill="#10B981"/>
+  <circle cx="62" cy="27" r="2" fill="#10B981"/>
+  <!-- Shield rim highlight -->
+  <path d="M25 40 Q30 35 35 38" stroke="#FFD700" stroke-width="1" fill="none" opacity="0.5"/>
+  <!-- Owl silhouette at bottom (Athena's symbol) -->
+  <path d="M45 72 L50 65 L55 72 Z" fill="#FFD700" opacity="0.6"/>
+  <circle cx="48" cy="70" r="1.5" fill="#FFD700" opacity="0.8"/>
+  <circle cx="52" cy="70" r="1.5" fill="#FFD700" opacity="0.8"/>
+</svg>

@@ -1,0 +1,196 @@
+{
+  "common": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "my_classes": "Les Meves Classes",
+      "missions": "Missions",
+      "badges": "Insígnies",
+      "students": "Estudiants",
+      "users": "Usuaris",
+      "classes": "Classes",
+      "analytics": "Analítiques",
+      "logs": "Logs",
+      "features": "Característiques",
+      "blog": "Blog",
+      "section_management": "Gestió",
+      "section_system": "Sistema"
+    },
+    "actions": {
+      "rename": "Reanomenar",
+      "delete": "Eliminar",
+      "open_menu": "Obrir menú",
+      "close_menu": "Tancar menú",
+      "toggle_menu": "Toggle menú",
+      "back_to_dashboard": "Tornar al Dashboard",
+      "create_new_account": "Crear Compte Nou",
+      "enter": "Entrar"
+    },
+    "status": {
+      "under_development": "En Desenvolupament"
+    },
+    "time": {
+      "now": "Ara",
+      "ago_min_short": "Fa {count} min",
+      "ago_hours_short": "Fa {count}h",
+      "ago_days": "Fa {count} dies",
+      "ago_weeks": "Fa {count} setmanes",
+      "yesterday": "Ahir"
+    },
+    "toast": {
+      "enigma_updated": "Enigma actualitzat correctament",
+      "enigma_added": "Enigma afegit correctament",
+      "enigma_save_error": "Error en desar l'enigma",
+      "enigma_deleted": "Enigma eliminat correctament",
+      "enigma_delete_error": "Error en eliminar l'enigma",
+      "document_updated": "Document actualitzat correctament",
+      "document_added": "Document afegit correctament",
+      "document_save_error": "Error en desar el document",
+      "document_deleted": "Document eliminat correctament",
+      "document_delete_error": "Error en eliminar el document",
+      "badge_assigned": "Insígnia assignada correctament",
+      "badge_removed": "Insígnia eliminada de la missió",
+      "submission_student_approved": "Lliurament de {name} aprovat (+{xp} XP)",
+      "download_not_found": "No s'ha trobat el fitxer per descarregar",
+      "download_error": "No s'ha pogut descarregar el fitxer",
+      "join_request_accepted": "{name} ha estat acceptat a la classe",
+      "join_request_rejected": "Sol·licitud rebutjada",
+      "join_request_accept_error": "Error en acceptar la sol·licitud",
+      "join_request_reject_error": "Error en rebutjar la sol·licitud"
+    },
+    "notifications": {
+      "title": "Notificacions",
+      "panel_label": "Panell de notificacions",
+      "view_all": "Veure totes",
+      "empty": "No tens notificacions",
+      "unread_label": "No llegida",
+      "aria_label": "Notificacions",
+      "aria_label_unread": "Notificacions ({count} sense llegir)"
+    },
+    "errors": {
+      "generic": "S'ha produït un error. Si us plau, torna-ho a provar."
+    },
+    "roles": {
+      "student": "Estudiant",
+      "teacher": "Professor",
+      "admin": "Administrador",
+      "admin_system": "Administrador del Sistema"
+    },
+    "user_dropdown": {
+      "my_profile": "El Meu Perfil",
+      "logout": "Tancar Sessió",
+      "user_menu_label": "Menú d'usuari"
+    },
+    "sidebar": {
+      "new_conversation": "Nova conversa",
+      "no_conversations": "No hi ha converses encara.",
+      "start_new": "Inicia'n una de nova!",
+      "chat_with": "Xateja amb {name}",
+      "chat_with_god": "Xateja amb un déu",
+      "chat_with_label": "Xat amb"
+    },
+    "mobile_sidebar": {
+      "join_class": "Unir-se a Classe"
+    },
+    "landing": {
+      "hero_title": "L'aventura d'aprendre",
+      "hero_subtitle": "Sistema de gestió educativa amb elements de gamificació per a estudiants i professors",
+      "cta_start": "Començar",
+      "features_title": "Què pots fer amb ITAKAI?",
+      "features_subtitle": "Descobreix totes les eines i funcionalitats que transformen l'educació en una experiència única",
+      "feature_gamification_title": "Gamificació Completa",
+      "feature_gamification_desc": "Sistema de punts, nivells, insígnies i recompenses que motiva l'aprenentatge continu",
+      "feature_narrative_title": "Narrativa Immersiva",
+      "feature_narrative_desc": "Cada classe és una aventura única amb personatges i històries que capturen l'atenció",
+      "feature_teamwork_title": "Treball en Equip",
+      "feature_teamwork_desc": "Reptes col·laboratius i ranquings que fomenten el treball en equip i la superació constant",
+      "feature_analytics_title": "Anàlisi Intel·ligent",
+      "feature_analytics_desc": "Eines avançades de seguiment i anàlisi del progrés estudiantil",
+      "feature_access_title": "Accés Universal",
+      "feature_access_desc": "Funciona en qualsevol dispositiu, des de qualsevol lloc del món",
+      "feature_ai_title": "IA Educativa",
+      "feature_ai_desc": "Assistents que personalitzen l'aprenentatge per a cada estudiant",
+      "profiles_title": "Tria el teu perfil per començar",
+      "about_title": "Què és ITAKAI?",
+      "about_description_1": "ITAKAI és l'evolució de <strong>MyClassGame</strong>, potenciada amb <strong>Intel·ligència Artificial</strong>. Una plataforma educativa gamificada que transforma la formació professional en una experiència immersiva.",
+      "about_description_2": "Generació automàtica de continguts, assistents IA personalitzats per a cada estudiant, i anàlisi predictiva del rendiment. Tot integrat en un ecosistema on aprendre és una aventura.",
+      "stat_students": "Estudiants",
+      "stat_teachers": "Professors",
+      "stat_centers": "Centres",
+      "partners_title": "Qui som?",
+      "gods_title": "Els Teus Mentors Olímpics",
+      "gods_subtitle": "5 assistents IA inspirats en déus grecs, cadascun expert en el seu domini",
+      "cta_final_title": "Preparat per a la Teva Aventura Èpica?",
+      "cta_final_subtitle": "Uneix-te a milers d'estudiants que ja estan transformant el seu aprenentatge amb ITAKAI",
+      "cta_final_button": "Començar Gratis Ara",
+      "footer_copyright_alt": "© {year} ITAKAI. Sistema educatiu gamificat"
+    },
+    "footer": {
+      "legal": "Legal",
+      "platform": "Plataforma",
+      "support": "Suport",
+      "contact": "Contacte",
+      "terms_of_service": "Termes del servei",
+      "privacy_policy": "Política de privacitat",
+      "cookies": "Cookies",
+      "licenses": "Llicències",
+      "system_access": "Accés al sistema",
+      "teacher_panel": "Panell del professor",
+      "student_panel": "Panell de l'estudiant",
+      "help_center": "Centre d'ajuda",
+      "documentation": "Documentació"
+    },
+    "level_up": {
+      "title": "Has Pujat de Nivell!",
+      "congratulations": "Felicitats! Has assolit el nivell {level}",
+      "congratulations_class": "Felicitats! Has assolit el nivell {level} a {className}",
+      "rewards_title": "Recompenses Obtingudes",
+      "continue": "Continuar!"
+    },
+    "join_class_modal": {
+      "title": "Unir-se a una Classe",
+      "description": "Introdueix el codi de classe que t'ha proporcionat el teu professor",
+      "placeholder": "ABC123",
+      "joining": "Unint-se...",
+      "join_button": "Unir-se a la classe",
+      "error_required": "El codi de classe és obligatori",
+      "error_min_length": "El codi ha de tenir almenys 4 caràcters",
+      "error_not_found": "No s'ha trobat una classe amb aquest codi",
+      "error_invalid_code": "Codi de classe no vàlid",
+      "error_already_enrolled": "Ja estàs inscrit en aquesta classe",
+      "error_generic": "Error en unir-se a la classe. Torna-ho a provar.",
+      "error_generic_short": "Error en unir-se a la classe",
+      "success": "T'has unit a {className}"
+    },
+    "invite_students_modal": {
+      "title": "Convidar Estudiants",
+      "description": "Comparteix aquest codi amb els teus estudiants perquè s'uneixin a la classe:",
+      "copy_code": "Copiar Codi",
+      "code_copied": "Codi copiat al porta-retalls",
+      "copy_error": "Error en copiar el codi"
+    },
+    "under_development": {
+      "back_to_dashboard": "Tornar al Dashboard"
+    },
+    "docs": {
+      "title": "Centre d'Ajuda i Documentació",
+      "description": "Aquí podràs accedir a guies completes, tutorials pas a pas, preguntes freqüents i recursos d'ajuda per treure el màxim profit de la plataforma ITAKAI.",
+      "btn_back": "Tornar a la pàgina principal",
+      "meta": {
+        "title": "Documentació - ITAKAI",
+        "description": "Centre d'ajuda i documentació d'ITAKAI"
+      }
+    },
+    "meta": {
+      "site_title": "ITAKAI - L'aventura d'aprendre | Plataforma Educativa Gamificada",
+      "site_description": "Transforma l'educació amb ITAKAI, la plataforma gamificada que inspira, motiva i connecta estudiants, professors i famílies. Uneix-te a més de 50.000 estudiants.",
+      "og_title": "ITAKAI - L'aventura d'aprendre",
+      "og_description": "Plataforma educativa gamificada amb IA, narratives immersives i anàlisi intel·ligent."
+    },
+    "resources": {
+      "xp": "Experiència (XP)",
+      "coins": "Monedes",
+      "mana": "Mana",
+      "lives": "Punts de vida"
+    }
+  }
+}

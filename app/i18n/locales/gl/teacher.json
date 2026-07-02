@@ -1,0 +1,640 @@
+{
+  "teacher": {
+    "dashboard": {
+      "title": "Dashboard do Profesor",
+      "subtitle": "Benvido, {name}!",
+      "new_class": "Nova Clase",
+      "new_mission": "Nova Misión",
+      "stats": {
+        "total_students": "Estudantes Totais",
+        "active_classes": "Clases Activas",
+        "active_missions": "Misións Activas"
+      },
+      "my_classes": "As Miñas Clases",
+      "view_all": "Ver todas",
+      "no_classes_yet": "Aínda non tes clases",
+      "recent_missions": "Últimas Misións",
+      "no_missions_description": "Crea a túa primeira misión para os teus estudantes",
+      "meta": {
+        "title": "Dashboard Profesor | ITAKAI",
+        "description": "Dashboard principal do profesor. Xestiona as túas clases, misións e revisa o progreso dos teus estudantes."
+      }
+    },
+    "classes": {
+      "index": {
+        "title": "As Miñas Clases",
+        "subtitle": "Xestiona as túas clases e revisa o progreso dos teus estudantes",
+        "new_class": "Nova Clase",
+        "create_first": "Crear Primeira Clase",
+        "no_classes_description": "Aínda non creaches ningunha clase",
+        "meta": {
+          "title": "As Miñas Clases | ITAKAI Profesor",
+          "description": "Xestiona todas as túas clases, estudantes inscritos e misións asignadas."
+        }
+      },
+      "create": {
+        "breadcrumb_classes": "As Miñas Clases",
+        "breadcrumb_new": "Nova",
+        "btn_creating": "Creando...",
+        "btn_create": "Crear Clase",
+        "success_title": "Clase creada!",
+        "success_message": "A túa clase \"{name}\" está lista.",
+        "invite_code_label": "Código de convite",
+        "invite_code_hint": "Comparte este código cos teus estudantes",
+        "btn_view_classes": "Ver clases",
+        "btn_copied": "Copiado!",
+        "btn_copy_code": "Copiar código",
+        "validation": {
+          "name_required": "O nome da clase é obrigatorio",
+          "name_min_length": "O nome debe ter polo menos 3 caracteres",
+          "create_error": "Erro ao crear a clase. Por favor, téntao de novo."
+        },
+        "meta": {
+          "title": "Crear Nova Clase | ITAKAI Profesor"
+        },
+        "preview_label": "Así se verá a túa clase",
+        "onboarding": {
+          "ask_idea": "Ola {name}! Son {god}. Cóntame, de que queres que sexa a túa clase?",
+          "review_approach": "Isto é o que preparei para ti, gústache?",
+          "pick_title": "Que título lle poñemos á túa clase?",
+          "ask_schedule": "Que horario terá a túa clase?",
+          "ask_image": "Creei esta portada para a túa clase",
+          "placeholder_idea": "Ex: Quero crear unha clase de física para 3º ESO con temática de mitoloxía grega...",
+          "generating_approach": "Estou a crear a narrativa da túa clase...",
+          "narrative_feedback_placeholder": "Ex: Quero máis referencias ás casas de Hogwarts...",
+          "btn_change_something": "Quero cambiar algo",
+          "custom_title_placeholder": "Ou escribe o teu propio título...",
+          "title_feedback_placeholder": "Ex: Quero títulos máis curtos...",
+          "placeholder_schedule": "Ex: Luns e Mércores 10:00-12:00",
+          "generating_cover": "Xerando portada...",
+          "cover_error": "Non se puido xerar a portada. Podes saltar este paso.",
+          "image_feedback_placeholder": "Quero que sexa máis colorida, con fondo azul...",
+          "thinking": "Pensando...",
+          "btn_back": "Atrás",
+          "btn_next": "Seguinte",
+          "btn_skip": "Saltar",
+          "btn_accept_plan": "Si, adiante"
+        }
+      },
+      "detail": {
+        "breadcrumb_classes": "As miñas clases",
+        "not_found_title": "Clase non atopada",
+        "not_found_description": "A clase que buscas non existe ou non tes acceso",
+        "btn_back": "Volver ás miñas clases",
+        "btn_invite": "Convidar",
+        "tabs": {
+          "summary": "Resumo",
+          "guide": "Guía",
+          "missions": "Misións",
+          "ranking": "Ranking",
+          "narrative": "Historia",
+          "tienda": "Tenda",
+          "behaviors": "Comportamentos",
+          "settings": "Axustes"
+        },
+        "stats_title": "Estatísticas da Clase",
+        "pending_reviews": "Entregas por Revisar",
+        "guide_editor": {
+          "toast_saved": "Guía gardada correctamente",
+          "toast_error": "Erro ao gardar a guía"
+        },
+        "ranking": {
+          "no_students_title": "Non hai estudantes",
+          "no_students_description": "Aínda non hai estudantes nesta clase"
+        },
+        "missions_tab": {
+          "no_missions_title": "Non hai misións",
+          "no_missions_description": "Aínda non hai misións asignadas a esta clase",
+          "create_first": "Crear Primeira Misión",
+          "new_mission": "Nova Misión",
+          "no_results": "Sen resultados",
+          "empty_search": "Non se atoparon misións para \"{query}\"",
+          "empty_status": "Non hai misións cos estados seleccionados",
+          "empty_rarity": "Non hai misións coas rarezas seleccionadas",
+          "empty_default": "Non hai misións nesta clase"
+        },
+        "meta": {
+          "title": "Detalle de Clase | ITAKAI Profesor",
+          "description": "Xestiona a clase. Revisa estudantes, misións asignadas e progreso xeral."
+        },
+        "behaviors": {
+          "new_button": "Novo comportamento",
+          "new_button_short": "Novo",
+          "library_button": "Biblioteca",
+          "library_title": "Biblioteca de comportamentos",
+          "library_subtitle": "Engade comportamentos suxeridos cun toque. Despois podes editalos ou borralos.",
+          "library_add": "Engadir",
+          "empty_title": "Aínda non hai comportamentos",
+          "empty_description": "Crea un desde cero ou engade desde a biblioteca.",
+          "edit_aria": "Editar comportamento",
+          "section_positives": "Positivos",
+          "section_negatives": "Negativos",
+          "filter_all": "Todos",
+          "apply_title": "Aplicar \"{name}\"",
+          "pick_student": "Selecciona o alumno ao que llo aplicarás.",
+          "applied_toast": "{behavior} aplicado a {student}",
+          "empty_students": "Aínda non hai alumnos nesta clase.",
+          "form_new_title": "Novo comportamento",
+          "form_edit_title": "Editar comportamento",
+          "form_type": "Tipo",
+          "type_positive": "Positivo",
+          "type_negative": "Negativo",
+          "form_name": "Nome",
+          "form_name_placeholder": "Ex: Boa participación",
+          "form_description": "Descrición",
+          "form_description_placeholder": "Que recoñece ou corrixe este comportamento?",
+          "form_impacts": "Impactos",
+          "form_impacts_hint": "Cantidade absoluta; o signo dao o tipo (positivo = +, negativo = −).",
+          "form_cancel": "Cancelar",
+          "form_save": "Gardar",
+          "form_create": "Crear",
+          "form_delete": "Eliminar",
+          "delete_title": "Eliminar \"{name}\"?",
+          "delete_description": "Deixará de estar no catálogo. Esta acción non se pode desfacer.",
+          "toast_created": "Comportamento creado",
+          "toast_updated": "Comportamento actualizado",
+          "toast_deleted": "Comportamento eliminado",
+          "toast_save_error": "Non se puido gardar o comportamento.",
+          "toast_delete_error": "Non se puido eliminar o comportamento.",
+          "fetch_error": "Non se puideron cargar os comportamentos.",
+          "apply_error": "Non se puido aplicar o comportamento."
+        },
+        "shop": {
+          "tab_items": "Artigos",
+          "tab_uses": "Usos",
+          "uses_empty_title": "Sen usos aínda",
+          "new_item": "Novo artigo",
+          "library_button": "Biblioteca",
+          "library_title": "Biblioteca de artigos",
+          "library_subtitle": "Engade artigos suxeridos cun toque. Despois podes editalos ou borralos.",
+          "library_add": "Engadir",
+          "empty_title": "Aínda non hai artigos",
+          "empty_description": "Crea a primeira recompensa que os teus alumnos poderán trocar.",
+          "hidden": "Oculto",
+          "purchases_empty_title": "Sen troques aínda",
+          "form_edit_title": "Editar artigo",
+          "form_new_title": "Novo artigo",
+          "form_name": "Nome",
+          "form_name_placeholder": "Ex: Saltar unha tarefa",
+          "form_description": "Descrición",
+          "form_description_placeholder": "Que obtén o alumno ao trocalo?",
+          "form_price": "Prezo",
+          "form_visible": "Visible para os alumnos",
+          "form_cancel": "Cancelar",
+          "form_delete": "Eliminar",
+          "form_save": "Gardar",
+          "form_create": "Crear",
+          "delete_title": "Eliminar \"{name}\"?",
+          "delete_description": "Os alumnos deixarán de velo na tenda. Esta acción non se pode desfacer.",
+          "toast_created": "Artigo creado",
+          "toast_updated": "Artigo actualizado",
+          "toast_deleted": "Artigo eliminado",
+          "toast_save_error": "Non se puido gardar o artigo.",
+          "toast_delete_error": "Non se puido eliminar o artigo.",
+          "form_type": "Tipo",
+          "type_reward": "Recompensa",
+          "type_power": "Poder",
+          "form_mana_cost": "Custo en maná (ao usar)",
+          "form_usage": "Uso",
+          "usage_single": "Un só uso",
+          "usage_unlimited": "Ilimitado",
+          "form_life_restore": "Vida que recupera",
+          "form_life_restore_hint": "Puntos de vida que se suman ao trocar (recompensas) ou ao usar (poderes). 0 = non recupera vida.",
+          "tab_history": "Historial",
+          "history_purchases": "Compras",
+          "view_student_profile": "Ver estudante",
+          "mana_disabled_chip": "Mana desactivado"
+        },
+        "settings": {
+          "toast_error": "Non se puido gardar a configuración",
+          "items": {
+            "shop": {
+              "label": "Tenda",
+              "desc": "Recompensas e poderes que os alumnos cambian."
+            },
+            "coins": {
+              "label": "Moedas",
+              "desc": "Mostra o saldo e os prezos en moedas."
+            },
+            "mana": {
+              "label": "Mana",
+              "desc": "Enerxía para usar poderes da tenda."
+            },
+            "rankings": {
+              "label": "Ranking",
+              "desc": "Clasificación dos alumnos da clase."
+            },
+            "xp": {
+              "label": "Experiencia (XP)",
+              "desc": "Niveis e barra de progreso por XP."
+            },
+            "behaviors": {
+              "label": "Comportamentos",
+              "desc": "Aplica accións positivas/negativas que dan ou quitan recursos."
+            },
+            "lives": {
+              "label": "Vidas",
+              "desc": "Puntos de vida da clase (modifícanos os comportamentos)."
+            },
+            "visualEffects": {
+              "label": "Efectos visuais",
+              "desc": "Animacións como o confeti ao subir de nivel."
+            },
+            "sounds": {
+              "label": "Sons",
+              "desc": "Efectos de son ao subir de nivel, completar misións, etc."
+            }
+          },
+          "requires": "Necesita {feature}",
+          "requires_resource": "Necesita polo menos un recurso activo (XP, moedas, maná ou vidas)",
+          "general": {
+            "title": "Datos xerais",
+            "name_label": "Nome",
+            "schedule_label": "Horario",
+            "background_label": "Imaxe de fondo",
+            "background_hint": "URL pública dunha imaxe para a cabeceira da clase.",
+            "save": "Gardar cambios",
+            "discard": "Descartar",
+            "toast_saved": "Datos gardados",
+            "toast_error": "Non se puideron gardar os datos",
+            "name_required": "O nome non pode estar baleiro",
+            "schedule_add": "Engadir sesión",
+            "schedule_remove": "Quitar sesión",
+            "schedule_preview": "Vista previa",
+            "background_generate": "Xerar con IA",
+            "background_regenerate": "Rexerar con IA",
+            "background_clear": "Quitar imaxe",
+            "background_error": "Non se puido xerar a imaxe"
+          },
+          "features": {
+            "title": "Funcionalidades"
+          }
+        }
+      }
+    },
+    "missions": {
+      "index": {
+        "meta": {
+          "title": "As Miñas Misións | ITAKAI Profesor",
+          "description": "Xestiona todas as túas misións creadas, edítaas ou crea novas para os teus estudantes."
+        }
+      },
+      "create": {
+        "meta": {
+          "title": "Crear Misión | ITAKAI Profesor"
+        }
+      },
+      "detail": {
+        "delete_confirm_btn": "Eliminar",
+        "toast": {
+          "enigma_has_submissions": "Non se pode eliminar un enigma que xa ten entregas de alumnos"
+        },
+        "meta": {
+          "title": "Detalle de Misión | ITAKAI Profesor",
+          "title_loading": "Cargando misión... | ITAKAI Profesor",
+          "description_fallback": "Detalle de misión en ITAKAI"
+        }
+      }
+    },
+    "badges": {
+      "title": "As Miñas Insignias",
+      "subtitle": "Crea e xestiona insignias personalizadas para recompensar os logros dos teus estudantes",
+      "new_badge": "Nova insignia",
+      "btn_delete": "Eliminar",
+      "no_badges_title": "Sen insignias",
+      "no_badges_description": "Crea a túa primeira insignia para recompensar os teus estudantes",
+      "create_first": "Crear primeira insignia",
+      "form": {
+        "edit_title": "Editar Insignia",
+        "create_title": "Nova Insignia",
+        "label_name": "Nome",
+        "label_description": "Descrición",
+        "label_image": "Imaxe",
+        "image_optional": "(opcional)",
+        "placeholder_name": "Ex: Mestre de Ecuacións",
+        "placeholder_description": "Describe que logro representa esta insignia...",
+        "btn_remove_image": "Quitar imaxe",
+        "preview_label": "Vista previa:",
+        "btn_cancel": "Cancelar",
+        "btn_saving": "Gardando...",
+        "btn_save_changes": "Gardar cambios",
+        "btn_create": "Crear insignia"
+      },
+      "detail": {
+        "btn_edit": "Editar",
+        "btn_close": "Pechar"
+      },
+      "delete_title": "Eliminar Insignia",
+      "delete_confirm": "Estás seguro de que desexas eliminar a insignia '{name}'? Esta acción non se pode desfacer.",
+      "validation": {
+        "name_required": "O nome é obrigatorio",
+        "name_min_length": "O nome debe ter polo menos 3 caracteres",
+        "image_size": "A imaxe non pode superar 2MB",
+        "image_type": "Só se permiten ficheiros PNG, JPG, SVG ou WebP"
+      },
+      "meta": {
+        "title": "As Miñas Insignias | ITAKAI Profesor",
+        "description": "Crea, edita e xestiona insignias personalizadas para premiar os logros dos teus estudantes."
+      }
+    },
+    "students": {
+      "index": {
+        "title": "Os Meus Estudantes",
+        "subtitle": "Xestiona e visualiza o progreso dos teus estudantes",
+        "search_placeholder": "Buscar por nome ou email...",
+        "filter_all_classes": "Todas as clases",
+        "filter_all_progress": "Todo progreso",
+        "progress_excellent": "Excelente (≥80%)",
+        "progress_good": "Bo (50-79%)",
+        "progress_in_progress": "En progreso (20-49%)",
+        "progress_initial": "Inicial (<20%)",
+        "sort_name_asc": "Nome A-Z",
+        "sort_name_desc": "Nome Z-A",
+        "sort_progress_desc": "Maior progreso",
+        "sort_progress_asc": "Menor progreso",
+        "sort_missions_desc": "Máis misións",
+        "no_students_title": "Sen estudantes",
+        "no_students_filtered": "Non se atoparon estudantes con estes filtros",
+        "no_students_default": "Non hai estudantes nas túas clases",
+        "btn_view": "Ver",
+        "stat_missions": "Misións",
+        "meta": {
+          "title": "Os Meus Estudantes | ITAKAI Profesor",
+          "description": "Xestiona todos os teus estudantes, revisa o seu progreso e estatísticas de rendemento académico."
+        }
+      },
+      "detail": {
+        "breadcrumb_students": "Estudantes",
+        "loading": "Cargando...",
+        "error_title": "Erro ao cargar estudante",
+        "error_default": "Erro ao cargar os datos do estudante",
+        "btn_retry": "Reintentar",
+        "stat_classes": "Clases",
+        "stat_missions": "Misións",
+        "stat_completed": "Completado",
+        "enrolled_classes_title": "Clases Inscritas",
+        "enrolled_classes_count": "{count} clases",
+        "not_enrolled": "Non está inscrito en ningunha das túas clases",
+        "label_progress": "Completado",
+        "stat_coins": "Moedas",
+        "stat_mana": "Maná",
+        "stat_lives": "Puntos de vida",
+        "no_activity": "Sen actividade recente",
+        "meta": {
+          "title": "Perfil de Estudante | ITAKAI Profesor",
+          "description": "Perfil detallado do estudante con estatísticas de rendemento, progreso en misións e actividade recente."
+        }
+      }
+    },
+    "ai_assistant": {
+      "meta": {
+        "title": "Asistente IA Profesor | ITAKAI",
+        "description": "Asistente de IA especializado para profesores. Obtén axuda sobre xestión de clases e misións."
+      }
+    },
+    "profile": {
+      "breadcrumb_home": "Inicio",
+      "breadcrumb_profile": "O meu perfil",
+      "title": "O Meu Perfil",
+      "tabs": {
+        "security": "Seguridade",
+        "settings": "Configuración"
+      },
+      "security": {
+        "password_title": "Contrasinal",
+        "placeholder_current": "Contrasinal actual",
+        "placeholder_new": "Novo contrasinal",
+        "placeholder_confirm": "Confirmar contrasinal",
+        "btn_update": "Actualizar",
+        "email_title": "Email",
+        "placeholder_new_email": "Novo email",
+        "sessions_title": "Sesións",
+        "sessions_close_all": "Pechar todas",
+        "session_current": "Actual",
+        "session_close": "Pechar",
+        "validation": {
+          "passwords_mismatch": "Os contrasinais non coinciden",
+          "password_min_length": "O contrasinal debe ter polo menos 6 caracteres",
+          "email_invalid": "Introduce un email válido",
+          "password_required": "Introduce o teu contrasinal"
+        }
+      },
+      "settings": {
+        "theme_title": "Tema",
+        "theme_description": "Elixe o estilo visual da plataforma",
+        "theme_college": "Modo Colexio",
+        "theme_college_desc": "Visual gamificado",
+        "theme_university": "Modo Universidade",
+        "theme_university_desc": "Visual profesional",
+        "language_title": "Idioma",
+        "language_updated": "Idioma actualizado",
+        "theme_updated": "Tema actualizado",
+        "danger_zone_title": "Zona perigosa",
+        "danger_zone_description": "Unha vez eliminada a túa conta, non hai volta atrás. Por favor, asegúrate de estar seguro.",
+        "btn_delete_account": "Eliminar conta",
+        "delete_modal_title": "Eliminar conta",
+        "delete_modal_confirm_prompt": "Para confirmar, introduce o teu contrasinal:",
+        "placeholder_password": "O teu contrasinal",
+        "btn_cancel": "Cancelar",
+        "btn_delete_confirm": "Eliminar a miña conta",
+        "languages": {
+          "es": "Español",
+          "en": "English",
+          "ca": "Catalán",
+          "eu": "Éuscaro",
+          "gl": "Galego"
+        }
+      },
+      "meta": {
+        "title": "O Meu Perfil | ITAKAI",
+        "description": "Xestiona o teu perfil de profesor, configura a seguridade e personaliza a túa experiencia."
+      }
+    },
+    "components": {
+      "enigma_form_modal": {
+        "edit_title": "Editar Enigma",
+        "add_title": "Engadir Enigma",
+        "label_title": "Título do enigma",
+        "placeholder_title": "Ex: O Espertar das Máquinas",
+        "label_xp": "XP",
+        "label_rewards": "Recompensas ao completar",
+        "rewards_locked_hint": "Só podes aumentar as recompensas: algún alumno xa as gañou.",
+        "label_description": "Descrición",
+        "placeholder_description": "Describe que debe facer o estudante...",
+        "label_objectives": "Obxectivos",
+        "label_objectives_optional": "(opcional)",
+        "placeholder_objective": "Escribe un obxectivo...",
+        "btn_remove_objective": "Eliminar obxectivo",
+        "btn_add_objective": "Engadir obxectivo",
+        "is_optional": "Este enigma é opcional",
+        "btn_cancel": "Cancelar",
+        "btn_saving": "Gardando...",
+        "btn_save": "Gardar",
+        "btn_add": "Engadir",
+        "validation": {
+          "title_required": "O título é obrigatorio",
+          "description_required": "A descrición é obrigatoria"
+        },
+        "label_mana": "Maná",
+        "label_coins": "Moedas",
+        "no_mana": "Sen maná"
+      },
+      "document_form_modal": {
+        "edit_title": "Editar Documento",
+        "add_title": "Engadir Documento",
+        "label_title": "Título",
+        "placeholder_title": "Ex: Guía de Sistemas de Ecuacións",
+        "btn_upload_file": "Subir ficheiro",
+        "btn_add_link": "Engadir ligazón",
+        "label_file": "Ficheiro",
+        "drop_hint": "Arrastra un ficheiro ou fai clic para seleccionar",
+        "file_types_hint": "PDF, Word, Vídeo, Imaxes (máx 50MB)",
+        "label_url": "URL",
+        "label_description": "Descrición",
+        "label_description_optional": "(opcional)",
+        "placeholder_description": "Breve descrición do documento...",
+        "label_tags": "Etiquetas",
+        "placeholder_tags": "Escribe unha etiqueta e pulsa Enter...",
+        "btn_cancel": "Cancelar",
+        "btn_saving": "Gardando...",
+        "btn_save": "Gardar",
+        "btn_add": "Engadir",
+        "validation": {
+          "title_required": "O título é obrigatorio",
+          "url_required": "A URL é obrigatoria para ligazóns",
+          "file_required": "Debes seleccionar un ficheiro",
+          "file_too_large": "O ficheiro non pode superar os 50MB"
+        }
+      },
+      "class_filter_bar": {
+        "search_placeholder": "Buscar clases...",
+        "sort": {
+          "name_asc": "Nome A-Z",
+          "name_desc": "Nome Z-A",
+          "most_students": "Máis estudantes",
+          "least_students": "Menos estudantes",
+          "most_missions": "Máis misións",
+          "least_missions": "Menos misións"
+        }
+      },
+      "mission_filter_bar": {
+        "search_placeholder": "Buscar misións...",
+        "all_classes": "Todas as clases",
+        "plural_classes": "clases",
+        "all_statuses": "Todos os estados",
+        "plural_statuses": "estados",
+        "all_rarities": "Todas as rarezas",
+        "plural_rarities": "rarezas",
+        "rarity": {
+          "common": "Común",
+          "rare": "Rara",
+          "epic": "Épica",
+          "legendary": "Legendaria"
+        },
+        "status": {
+          "active": "Activa",
+          "urgent": "Urxente",
+          "completed": "Completada",
+          "expired": "Expirada",
+          "locked": "Bloqueada"
+        },
+        "sort": {
+          "deadline_asc": "Data ↑",
+          "deadline_desc": "Data ↓",
+          "name_asc": "Nome A-Z",
+          "name_desc": "Nome Z-A",
+          "xp_desc": "XP ↓",
+          "xp_asc": "XP ↑",
+          "rarity_desc": "Rareza ↓",
+          "rarity_asc": "Rareza ↑",
+          "completion_desc": "Completación ↓",
+          "completion_asc": "Completación ↑"
+        }
+      },
+      "rewards_form_modal": {
+        "title": "Editar Recompensas",
+        "badge_label": "Insignia de recompensa",
+        "remove_badge": "Quitar insignia",
+        "no_badge_title": "Sen insignia asignada",
+        "no_badge_description": "Selecciona ou crea unha insignia para esta misión",
+        "btn_select_existing": "Seleccionar existente",
+        "btn_create_new": "Crear nova",
+        "select_hint": "Selecciona unha insignia da túa colección:",
+        "no_badges_created": "Non tes insignias creadas",
+        "btn_create_first": "Crea a túa primeira insignia",
+        "label_name": "Nome",
+        "label_description": "Descrición",
+        "label_image": "Imaxe",
+        "image_optional": "(opcional)",
+        "placeholder_name": "Ex: Mestre de Ecuacións",
+        "placeholder_description": "Describe que logro representa esta insignia...",
+        "image_selected": "Imaxe seleccionada",
+        "btn_remove_image": "Quitar imaxe",
+        "upload_prompt": "Fai clic para subir unha imaxe",
+        "upload_hint": "PNG, JPG, SVG ou WebP (max 2MB)",
+        "label_rarity": "Rareza",
+        "btn_cancel": "Cancelar",
+        "btn_saving": "Gardando...",
+        "btn_save": "Gardar",
+        "validation": {
+          "name_required": "O nome é obrigatorio",
+          "description_required": "A descrición é obrigatoria",
+          "image_size": "A imaxe non pode superar 2MB",
+          "image_type": "Só se permiten arquivos PNG, JPG, SVG ou WebP"
+        },
+        "rarity": {
+          "common": "Común",
+          "rare": "Rara",
+          "epic": "Épica",
+          "legendary": "Lendaria"
+        }
+      },
+      "class_detail_layout": {
+        "error_title": "Erro ao cargar a clase",
+        "not_found": "A clase que buscas non existe ou non tes acceso",
+        "btn_back": "Volver ás miñas clases",
+        "breadcrumb_classes": "As miñas clases"
+      },
+      "mission_detail_template": {
+        "error_title": "Erro ao cargar a misión",
+        "btn_back": "Volver a misións",
+        "breadcrumb_classes": "As miñas clases",
+        "deadline_none": "Sen data límite",
+        "deadline_edit": "Editar data límite",
+        "deadline_save": "Gardar",
+        "deadline_clear": "Quitar data límite",
+        "deadline_cancel": "Cancelar",
+        "narrative_title": "Historia da Misión",
+        "btn_see_more": "Ver máis",
+        "btn_see_less": "Ver menos",
+        "btn_edit": "Editar",
+        "enigmas_title": "Enigmas",
+        "btn_add": "Engadir",
+        "optional_label": "Opcional",
+        "objectives_label": "Obxectivos:",
+        "no_enigmas": "Non hai enigmas nesta misión",
+        "btn_add_first_enigma": "Engadir primeiro enigma",
+        "documents_title": "Documentos de Apoio",
+        "no_documents": "Non hai documentos de apoio",
+        "btn_view_submissions": "Ver entregas ({count})",
+        "btn_submit": "Entregar",
+        "status_available": "Dispoñible",
+        "status_in_review": "En revisión",
+        "status_completed": "Completado",
+        "global_progress": "Progreso Global",
+        "class_average": "Media da clase",
+        "rewards_title": "Recompensas",
+        "xp_enigmas": "XP de Enigmas",
+        "xp_mission": "XP de Misión",
+        "complete_all_enigmas": "Completa todos os enigmas",
+        "badge_rarity": {
+          "common": "Común",
+          "rare": "Rara",
+          "epic": "Épica",
+          "legendary": "Legendaria"
+        },
+        "btn_close": "Pechar"
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+services:
+  # PostgreSQL Database (Production)
+  postgres:
+    image: postgres:16-alpine
+    container_name: itakai-db-prod
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-itakai}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB:-itakai_prod}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres_data_prod:/var/lib/postgresql/data
+      - ./api/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-itakai} -d ${POSTGRES_DB:-itakai_prod}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - itakai-network
+
+  # Backend API (Production) — uses host network for VPN (tun0) access to Spark
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: itakai-api-prod
+    network_mode: host
+    env_file:
+      - ./api/.env.prod
+    environment:
+      NODE_ENV: production
+      PORT: 3001
+      NODE_OPTIONS: "--dns-result-order=ipv4first"
+      DATABASE_URL: postgresql://${POSTGRES_USER:-itakai}:${POSTGRES_PASSWORD}@127.0.0.1:5432/${POSTGRES_DB:-itakai_prod}
+    volumes:
+      - api_uploads_prod:/app/uploads
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Frontend App Builder (Production - generates static files)
+  app-builder:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+      target: builder
+    container_name: itakai-app-builder
+    env_file:
+      - ./app/.env
+    environment:
+      NODE_ENV: production
+      NUXT_PUBLIC_API_BASE: ${NUXT_PUBLIC_API_BASE}
+    command: sh -c "pnpm generate && mkdir -p /static-output && rm -rf /static-output/* && cp -a .output/public/. /static-output/"
+    volumes:
+      - /home/static/itakai:/static-output
+    networks:
+      - itakai-network
+  
+  nginx:
+    image: nginx:alpine
+    container_name: itakai-nginx
+    depends_on:
+      api:
+        condition: service_started
+      app-builder:
+        condition: service_completed_successfully
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /home/static/itakai:/usr/share/nginx/html:ro
+      - ./app/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    restart: unless-stopped
+    networks:
+      - itakai-network
+
+volumes:
+  postgres_data_prod:
+  api_uploads_prod:
+
+networks:
+  itakai-network:
+    name: itakai-prod-network

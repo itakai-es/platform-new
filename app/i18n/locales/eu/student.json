@@ -1,0 +1,369 @@
+{
+  "student": {
+    "dashboard": {
+      "meta": {
+        "title": "Nire Dashboarda | ITAKAI",
+        "description": "Ikaslearen dashboard nagusia. Begiratu zure aurrerapena, azken misioak eta XP estatistikak."
+      },
+      "welcome": "Ongi etorri, {name}!",
+      "welcome_fallback_name": "Ikaslea",
+      "subtitle": "Jarraitu zure ikaskuntza bidaia eta osatu misio berriak",
+      "stats": {
+        "classes_enrolled": "Matrikulatutako Klaseak",
+        "missions_completed": "Osatutako Misioak",
+        "badges_earned": "Lortutako Dominak"
+      },
+      "my_classes": {
+        "title": "Nire Klaseak",
+        "view_all": "Ikusi denak",
+        "empty": "Oraindik ez zaude inongo klasetan matrikulatuta"
+      },
+      "latest_missions": {
+        "title": "Azken Misioak",
+        "view_all": "Ikusi denak",
+        "empty": "Ez dago azken misiorik. Esploratu misio berriak!"
+      },
+      "ai_assistant": {
+        "name": "Atenea",
+        "message_new_user": "Kaixo {name}! Ongi etorri ITAKAI-ra. Osatu zure lehen misioa XP irabazten hasteko!",
+        "message_returning_user": "Kaixo {name}! {missions_completed} misio osatu dituzu {classes_enrolled} klasetan. Jarraitu horrela!"
+      },
+      "class_fallback_name": "Klasea"
+    },
+    "missions": {
+      "meta": {
+        "title": "Nire Misioak | ITAKAI",
+        "description": "Esploratu eta osatu hezkuntza misioak. Irabazi XP eta desblokeatu erronka berriak."
+      },
+      "page_title": "Nire Misioak",
+      "page_subtitle": "Esploratu eta osatu misioak esperientzia irabazteko",
+      "empty": {
+        "title": "Misiorik gabe",
+        "search_no_results": "Ez da misiorik aurkitu \"{query}\" bilaketarako",
+        "class_no_missions_single": "Ez dago misiorik klase honetan",
+        "class_no_missions_multiple": "Ez dago misiorik hautatutako klaseetan",
+        "rarity_no_missions": "Ez dago hautatutako bitxitasunekin misiorik",
+        "status_no_missions": "Ez dago hautatutako egoeretako misiorik",
+        "coming_soon": "Laster misio berriak egongo dira eskuragarri"
+      },
+      "redirect": {
+        "redirecting": "Birbideratzen..."
+      },
+      "status": {
+        "urgente": "Urgentea",
+        "activa": "Aktiboa",
+        "completada": "Osatua",
+        "bloqueada": "Blokeatua",
+        "pendiente": "Zain",
+        "expirada": "Iraungia",
+        "en_progreso": "Abian"
+      }
+    },
+    "mission_detail": {
+      "meta": {
+        "title": "{title} | ITAKAI",
+        "title_loading": "Misioaren Xehetasuna | ITAKAI",
+        "description_fallback": "ITAKAI-ko misioaren xehetasuna"
+      },
+      "error": {
+        "loading_error": "Errorea misioa kargatzean"
+      },
+      "documents": {
+        "action_download": "Fitxategia deskargatu",
+        "action_open_link": "Esteka ireki",
+        "action_play_video": "Bideoa erreproduzitu"
+      },
+      "atenea": {
+        "message": "Kaixo! Hemen nago \"{mission_title}\" misioarekin laguntzeko. Prest abentura hau hasteko?"
+      },
+      "rewards": {
+        "unlock_badge_hint": "Osatu misio honetako enigma guztiak dominaria desblokeatzeko."
+      },
+      "submission": {
+        "success": "Entrega behar bezala bidali da. Irakasleak laster berrikusiko du.",
+        "error": "Errorea entrega bidaltzean. Saiatu berriro.",
+        "expired_error": "Misio hau iraungita dago. Dagoeneko ezin duzu enigmarik entregatu.",
+        "downloading": "Deskargatzen"
+      }
+    },
+    "classes": {
+      "meta": {
+        "title": "Nire Klaseak | ITAKAI",
+        "description": "Sartu zure matrikulatutako klaseetara, begiratu aurrerapena eta aurkitu esleitutako misio berriak."
+      },
+      "page_title": "Nire Klaseak",
+      "page_subtitle": "Matrikulatuta zauden klaseak",
+      "join_class_button": "Klasera batu",
+      "empty": {
+        "title": "Ez duzu klaserik",
+        "description": "Oraindik ez zaude inongo klasetan matrikulatuta. Eskatu kodea zure irakasleari batzeko."
+      },
+      "detail": {
+        "error_title": "Errorea klasea kargatzean",
+        "back_to_classes": "Nire klaseetara itzuli",
+        "breadcrumb_classes": "Nire klaseak",
+        "teacher_fallback": "Irakaslea",
+        "tabs": {
+          "resumen": "Laburpena",
+          "historia": "Istorioa",
+          "guia": "Gida",
+          "misiones": "Misioak",
+          "ranking": "Rankinga",
+          "avatar": "Avatarra",
+          "tienda": "Denda"
+        },
+        "progress": {
+          "title": "Nire Aurrerapena",
+          "completion_rate": "Osatua",
+          "missions_completed": "Osatutako Misioak",
+          "xp_total": "Guztirako XP",
+          "badges_earned": "Lortutako Dominak"
+        },
+        "ai_assistant": {
+          "subtitle": "Zure gida klase honetan",
+          "message": "Kaixo! Hemen nago klase honi buruz duzun edozein zalantzarekin laguntzeko. Zertan lagundu dezaket gaur?"
+        },
+        "missions_tab": {
+          "empty_title": "Misiorik gabe",
+          "empty_search": "Ez da misiorik aurkitu \"{query}\" bilaketarako",
+          "empty_rarity": "Ez dago hautatutako bitxitasunekin misiorik",
+          "empty_default": "Oraindik ez dago misiorik esleituta klase honetan."
+        },
+        "avatar_tab": {
+          "choose_guide": "Aukeratu zure gida klase honetarako",
+          "describe_avatar": "Deskribatu nola nahi duzun zure avatarra:",
+          "example_label": "Adibidea:",
+          "example_text": "Urrezko armadura duen gerlari gaztea, ile iluna eta begi distiratsuak dituena, Atenearen sinboloa duen ezkutua eusten. Estilo epiko eta heroikoa, Greziar mitologian inspiratua ...",
+          "placeholder": "Deskribatu zure avatarra hemen...",
+          "tip": "Aholkua: Izan zehatz koloreekin, janzkerarekin, osagarriekin eta estiloarekin. AA-k zure avatarra sortuko du hautatutako pertsonaian oinarrituz.",
+          "generate_button": "Avatarra sortu",
+          "generating": "Zure avatarra sortzen...",
+          "generated_trait": "AArekin sortua",
+          "nickname_placeholder": "Zure ezizena...",
+          "save_changes": "Aldaketak gorde",
+          "no_guide_hint": "Aukeratu zure gida zure avatarra ikusteko",
+          "save_success": "Profila behar bezala gorde da",
+          "save_error": "Errorea profila gordetzean",
+          "generate_error": "Ezin izan da avatarra sortu. Saiatu berriro segundo batzuetan.",
+          "generate_error_with_detail": "Ezin izan da avatarra sortu: {detail}"
+        },
+        "mission_no_description": "Deskribapenik gabe",
+        "shop": {
+          "help_coins": "Txanponak: irabazi misioekin eta trukatu sariengatik.",
+          "help_mana": "Mana: erabili botereak aktibatzeko.",
+          "tab_rewards": "Sariak",
+          "tab_purchases": "Nire trukeak",
+          "empty_title": "Denda hutsik dago",
+          "empty_description": "Irakasleak ez ditu sariak gehitu oraindik. Itzuli geroago.",
+          "purchases_empty_title": "Oraindik ez duzu ezer trukatu",
+          "purchases_empty_description": "Gastatu zure txanponak sarietan eta hemen ikusiko duzu zure historia.",
+          "view_rewards": "Ikusi sariak",
+          "coins": "txanpon",
+          "confirm_title": "\"{name}\" trukatu?",
+          "cost": "Kostua",
+          "balance_after": "Saldoa trukatu ondoren",
+          "missing": "Falta zaizkizu",
+          "cancel": "Utzi",
+          "redeem": "Trukatu",
+          "redeemed_toast": "\"{name}\" trukatu duzu!",
+          "redeem_error": "Ezin izan da trukea osatu.",
+          "mana": "mana",
+          "buy": "Erosi",
+          "use": "Erabili",
+          "owned": "Zurea",
+          "power": "Boterea",
+          "reward": "Saria",
+          "tab_powers": "Botereak",
+          "tab_shop": "Denda",
+          "tab_items": "Nire artikuluak",
+          "owned_empty_title": "Oraindik ezer ez",
+          "owned_empty_description": "Erosi botereak edo pribilegioak dendan eta hemen agertuko dira.",
+          "tab_history": "Historia",
+          "history_bought": "Erosita",
+          "history_used": "Erabilita",
+          "history_redeemed": "Trukatuta",
+          "history_purchases_title": "Erosketak",
+          "history_uses_title": "Erabilerak",
+          "history_purchases_empty": "Oraindik ez duzu ezer erosi.",
+          "history_uses_empty": "Oraindik ez duzu artikulurik erabili.",
+          "history_empty_title": "Jarduerarik ez oraindik",
+          "history_empty_description": "Hemen ikusiko dituzu zure erosketak eta erabiltzen dituzun botereak.",
+          "usage_single": "Erabilera bat",
+          "usage_unlimited": "Mugagabea",
+          "powers_empty_title": "Botererik ez",
+          "powers_empty_description": "Irakasleak ez du botererik gehitu oraindik. Itzuli geroago.",
+          "confirm_buy_title": "\"{name}\" erosi?",
+          "confirm_use_title": "\"{name}\" erabili?",
+          "bought_toast": "\"{name}\" erosi duzu!",
+          "used_toast": "\"{name}\" erabili duzu!",
+          "mana_after": "Mana erabili ondoren"
+        }
+      }
+    },
+    "achievements": {
+      "meta": {
+        "title": "Nire Dominak | ITAKAI",
+        "description": "Ezagutu misioak eta lorpen bereziak osatzean lortutako domina guztiak."
+      },
+      "page_title": "Nire Dominak",
+      "page_subtitle": "Misioak eta lorpenak osatzean lortutako sariak",
+      "filter": {
+        "search_placeholder": "Dominak bilatu...",
+        "all_categories": "Kategoria guztiak",
+        "all_rarities": "Bitxitasun guztiak",
+        "plural_categories": "kategoria",
+        "plural_rarities": "bitxitasun",
+        "status_all": "Denak",
+        "status_unlocked": "Desblokeatuak",
+        "status_locked": "Blokeatuak"
+      },
+      "rarity": {
+        "common": "Arrunta",
+        "rare": "Bitxia",
+        "epic": "Epikoa",
+        "legendary": "Legendarioa"
+      },
+      "empty": {
+        "title": "Dominarik gabe",
+        "no_badges_yet": "Osatu misioak dominak desblokeatzeko",
+        "search_no_results": "Ez da dominarik aurkitu \"{query}\" bilaketarako",
+        "filter_no_results": "Ez dago hautatutako iragazkiekin dominarik",
+        "default": "Ez dago dominarik eskuragarri"
+      },
+      "badge_detail": {
+        "unlocked_on": "{date}-(e)an desblokeatua",
+        "mission_label": "Misioa: {name}",
+        "class_label": "Klasea: {name}",
+        "progress_label": "Uneko aurrerapena",
+        "close": "Itxi"
+      }
+    },
+    "leaderboard": {
+      "meta": {
+        "title": "Rankinga | ITAKAI",
+        "description": "Ikasleen rankinga klase bakoitzean eskuragarri dago."
+      }
+    },
+    "ai_assistant": {
+      "meta": {
+        "title": "AA Laguntzailea | ITAKAI",
+        "description": "Txateatu zure AA laguntzailearekin misioei, aurrerapenari eta plataformari buruzko zalantzak argitzeko."
+      },
+      "suggestions": {
+        "how_to_complete_mission": "Nola osatzen dut misio bat?",
+        "where_to_see_progress": "Non ikusi dezaket nire aurrerapena?",
+        "how_xp_works": "Nola funtzionatzen du XP sistemak?",
+        "how_to_join_class": "Nola batzen naiz klase batera?"
+      }
+    },
+    "profile": {
+      "meta": {
+        "title": "Nire Profila | ITAKAI",
+        "description": "Kudeatu zure ikasle profila, konfiguratu segurtasuna eta pertsonalizatu zure esperientzia."
+      },
+      "breadcrumb_home": "Hasiera",
+      "breadcrumb_profile": "Nire profila",
+      "page_title": "Nire Profila",
+      "tabs": {
+        "security": "Segurtasuna",
+        "settings": "Ezarpenak"
+      },
+      "security": {
+        "password_title": "Pasahitza",
+        "current_password": "Uneko pasahitza",
+        "new_password": "Pasahitz berria",
+        "confirm_password": "Pasahitza berretsi",
+        "update_button": "Eguneratu",
+        "passwords_mismatch": "Pasahitzak ez datoz bat",
+        "password_too_short": "Pasahitzak gutxienez 6 karaktere izan behar ditu",
+        "email_title": "Emaila",
+        "new_email_placeholder": "Email berria",
+        "email_invalid": "Sartu baliozko email bat",
+        "sessions_title": "Saioak",
+        "close_all_sessions": "Denak itxi",
+        "current_session": "Unekoa",
+        "close_session": "Itxi"
+      },
+      "settings": {
+        "theme_title": "Gaia",
+        "theme_description": "Aukeratu plataformaren estilo bisuala",
+        "theme_college": "Eskola Modua",
+        "theme_college_desc": "Itxura gamifikatua",
+        "theme_university": "Unibertsitate Modua",
+        "theme_university_desc": "Itxura profesionala",
+        "language_title": "Hizkuntza",
+        "language_updated": "Hizkuntza eguneratu da",
+        "theme_updated": "Gaia eguneratu da",
+        "danger_zone_title": "Arrisku gunea",
+        "danger_zone_description": "Zure kontua ezabatutakoan, ez dago atzera bueltarik. Mesedez, ziurtatu erabat ziur zaudela.",
+        "delete_account_button": "Kontua ezabatu"
+      },
+      "delete_modal": {
+        "title": "Kontua ezabatu",
+        "confirm_prompt": "Berresteko, sartu zure pasahitza:",
+        "password_placeholder": "Zure pasahitza",
+        "cancel_button": "Utzi",
+        "delete_button": "Nire kontua ezabatu",
+        "password_required": "Sartu zure pasahitza"
+      },
+      "languages": {
+        "es": "Espainiera",
+        "en": "English",
+        "ca": "Katalana",
+        "eu": "Euskara",
+        "gl": "Galego"
+      }
+    },
+    "components": {
+      "mission_card": {
+        "progress": "Aurrerapena",
+        "view_mission": "Ikusi Misioa"
+      },
+      "recent_activity_card": {
+        "title": "Azken Jarduera",
+        "empty": "Ez dago azken jarduerarik",
+        "user_fallback": "Erabiltzailea"
+      },
+      "submission_modal": {
+        "title": "Enigma Entregatu",
+        "file_label": "Entregako fitxategia",
+        "file_required": "*",
+        "drag_hint": "Arrastatu zure fitxategia hona edo egin klik hautatzeko",
+        "file_types": "ZIP, RAR, 7Z (geh. 50MB)",
+        "cancel_button": "Utzi",
+        "submit_button": "Entregatu",
+        "submitting_button": "Bidaltzen...",
+        "validation": {
+          "invalid_type": "ZIP, RAR edo 7Z fitxategiak soilik onartzen dira",
+          "file_too_large": "Fitxategiak ezin du 50MB gainditu",
+          "file_required": "Fitxategi bat hautatu behar duzu"
+        }
+      },
+      "class_guide_markdown": {
+        "empty_title": "Edukirik gabe",
+        "empty_student": "Irakasleak oraindik ez du klase honen gida gehitu.",
+        "empty_teacher": "Oraindik ez duzu klase honen gida gehitu.",
+        "add_guide_button": "Gida Gehitu",
+        "last_updated": "Azken eguneraketa: {date}"
+      },
+      "rarity_badge": {
+        "comun": "Arrunta",
+        "rara": "Bitxia",
+        "epica": "Epikoa",
+        "legendaria": "Legendarioa"
+      },
+      "class_ranking_section": {
+        "podium_title": "Txapeldunen Podiuma",
+        "stats_title": "Estatistikak",
+        "rest_title": "Rankingaren gainerakoa",
+        "level_abbr": "Ml.",
+        "missions_suffix": "misio",
+        "you_badge": "Zu",
+        "avg_xp": "Batez besteko XP",
+        "avg_progress": "Batez besteko Aurrerapena",
+        "avg_missions": "Batez besteko Misioak",
+        "total_xp": "Klaseko Guztirako XP"
+      }
+    }
+  }
+}

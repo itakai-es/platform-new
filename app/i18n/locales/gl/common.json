@@ -1,0 +1,196 @@
+{
+  "common": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "my_classes": "As Miñas Clases",
+      "missions": "Misións",
+      "badges": "Insignias",
+      "students": "Estudantes",
+      "users": "Usuarios",
+      "classes": "Clases",
+      "analytics": "Analíticas",
+      "logs": "Logs",
+      "features": "Características",
+      "blog": "Blog",
+      "section_management": "Xestión",
+      "section_system": "Sistema"
+    },
+    "actions": {
+      "rename": "Renomear",
+      "delete": "Eliminar",
+      "open_menu": "Abrir menú",
+      "close_menu": "Pechar menú",
+      "toggle_menu": "Alternar menú",
+      "back_to_dashboard": "Volver ao Dashboard",
+      "create_new_account": "Crear Conta Nova",
+      "enter": "Entrar"
+    },
+    "status": {
+      "under_development": "En Desenvolvemento"
+    },
+    "time": {
+      "now": "Agora",
+      "ago_min_short": "Hai {count} min",
+      "ago_hours_short": "Hai {count}h",
+      "ago_days": "Hai {count} días",
+      "ago_weeks": "Hai {count} semanas",
+      "yesterday": "Onte"
+    },
+    "toast": {
+      "enigma_updated": "Enigma actualizado correctamente",
+      "enigma_added": "Enigma engadido correctamente",
+      "enigma_save_error": "Erro ao gardar o enigma",
+      "enigma_deleted": "Enigma eliminado correctamente",
+      "enigma_delete_error": "Erro ao eliminar o enigma",
+      "document_updated": "Documento actualizado correctamente",
+      "document_added": "Documento engadido correctamente",
+      "document_save_error": "Erro ao gardar o documento",
+      "document_deleted": "Documento eliminado correctamente",
+      "document_delete_error": "Erro ao eliminar o documento",
+      "badge_assigned": "Insignia asignada correctamente",
+      "badge_removed": "Insignia eliminada da misión",
+      "submission_student_approved": "Entrega de {name} aprobada (+{xp} XP)",
+      "download_not_found": "Non se atopou o ficheiro para descargar",
+      "download_error": "Non se puido descargar o ficheiro",
+      "join_request_accepted": "{name} foi aceptado na clase",
+      "join_request_rejected": "Solicitude rexeitada",
+      "join_request_accept_error": "Erro ao aceptar a solicitude",
+      "join_request_reject_error": "Erro ao rexeitar a solicitude"
+    },
+    "notifications": {
+      "title": "Notificacións",
+      "panel_label": "Panel de notificacións",
+      "view_all": "Ver todas",
+      "empty": "Non tes notificacións",
+      "unread_label": "Non lida",
+      "aria_label": "Notificacións",
+      "aria_label_unread": "Notificacións ({count} sen ler)"
+    },
+    "errors": {
+      "generic": "Ocorreu un erro. Por favor, téntao de novo."
+    },
+    "roles": {
+      "student": "Estudante",
+      "teacher": "Profesor",
+      "admin": "Administrador",
+      "admin_system": "Administrador do Sistema"
+    },
+    "user_dropdown": {
+      "my_profile": "O Meu Perfil",
+      "logout": "Pechar Sesión",
+      "user_menu_label": "Menú de usuario"
+    },
+    "sidebar": {
+      "new_conversation": "Nova conversa",
+      "no_conversations": "Aínda non hai conversas.",
+      "start_new": "Comeza unha nova!",
+      "chat_with": "Conversa con {name}",
+      "chat_with_god": "Conversa cun deus",
+      "chat_with_label": "Conversa con"
+    },
+    "mobile_sidebar": {
+      "join_class": "Unirse a Clase"
+    },
+    "landing": {
+      "hero_title": "A aventura de aprender",
+      "hero_subtitle": "Sistema de xestión educativa con elementos de gamificación para estudantes e profesores",
+      "cta_start": "Comezar",
+      "features_title": "Que podes facer con ITAKAI?",
+      "features_subtitle": "Descobre todas as ferramentas e funcionalidades que transforman a educación nunha experiencia única",
+      "feature_gamification_title": "Gamificación Completa",
+      "feature_gamification_desc": "Sistema de puntos, niveis, insignias e recompensas que motiva a aprendizaxe continua",
+      "feature_narrative_title": "Narrativa Inmersiva",
+      "feature_narrative_desc": "Cada clase é unha aventura única con personaxes e historias que capturan a atención",
+      "feature_teamwork_title": "Traballo en Equipo",
+      "feature_teamwork_desc": "Desafíos colaborativos e rankings que fomentan o traballo en equipo e a superación constante",
+      "feature_analytics_title": "Análise Intelixente",
+      "feature_analytics_desc": "Ferramentas avanzadas de seguimento e análise do progreso estudantil",
+      "feature_access_title": "Acceso Universal",
+      "feature_access_desc": "Funciona en calquera dispositivo, desde calquera lugar do mundo",
+      "feature_ai_title": "IA Educativa",
+      "feature_ai_desc": "Asistentes que personalizan a aprendizaxe para cada estudante",
+      "profiles_title": "Elixe o teu perfil para comezar",
+      "about_title": "Que é ITAKAI?",
+      "about_description_1": "ITAKAI é a evolución de <strong>MyClassGame</strong>, potenciada con <strong>Intelixencia Artificial</strong>. Unha plataforma educativa gamificada que transforma a formación profesional nunha experiencia inmersiva.",
+      "about_description_2": "Xeración automática de contidos, asistentes IA personalizados para cada estudante, e análise preditiva do rendemento. Todo integrado nun ecosistema onde aprender é unha aventura.",
+      "stat_students": "Estudantes",
+      "stat_teachers": "Profesores",
+      "stat_centers": "Centros",
+      "partners_title": "Quen somos?",
+      "gods_title": "Os Teus Mentores Olímpicos",
+      "gods_subtitle": "5 asistentes IA inspirados en deuses gregos, cada un experto no seu dominio",
+      "cta_final_title": "Listo para a túa Aventura Épica?",
+      "cta_final_subtitle": "Únete a miles de estudantes que xa están transformando a súa aprendizaxe con ITAKAI",
+      "cta_final_button": "Comezar Gratis Agora",
+      "footer_copyright_alt": "(c) {year} ITAKAI. Sistema educativo gamificado"
+    },
+    "footer": {
+      "legal": "Legal",
+      "platform": "Plataforma",
+      "support": "Soporte",
+      "contact": "Contacto",
+      "terms_of_service": "Termos do servizo",
+      "privacy_policy": "Política de privacidade",
+      "cookies": "Cookies",
+      "licenses": "Licenzas",
+      "system_access": "Acceso ao sistema",
+      "teacher_panel": "Panel do profesor",
+      "student_panel": "Panel do estudante",
+      "help_center": "Centro de axuda",
+      "documentation": "Documentación"
+    },
+    "level_up": {
+      "title": "Subiches de Nivel!",
+      "congratulations": "Parabéns! Alcanzaches o nivel {level}",
+      "congratulations_class": "Parabéns! Alcanzaches o nivel {level} en {className}",
+      "rewards_title": "Recompensas Obtidas",
+      "continue": "Continuar!"
+    },
+    "join_class_modal": {
+      "title": "Unirse a unha Clase",
+      "description": "Introduce o código de clase que che proporcionou o teu profesor",
+      "placeholder": "ABC123",
+      "joining": "Uníndose...",
+      "join_button": "Unirse á clase",
+      "error_required": "O código de clase é obrigatorio",
+      "error_min_length": "O código debe ter polo menos 4 caracteres",
+      "error_not_found": "Non se atopou unha clase con ese código",
+      "error_invalid_code": "Código de clase non válido",
+      "error_already_enrolled": "Xa estás inscrito nesta clase",
+      "error_generic": "Erro ao unirse á clase. Téntao de novo.",
+      "error_generic_short": "Erro ao unirse á clase",
+      "success": "Unícheste a {className}"
+    },
+    "invite_students_modal": {
+      "title": "Convidar Estudantes",
+      "description": "Comparte este código cos teus estudantes para que se unan á clase:",
+      "copy_code": "Copiar Código",
+      "code_copied": "Código copiado ao portapapeis",
+      "copy_error": "Erro ao copiar o código"
+    },
+    "under_development": {
+      "back_to_dashboard": "Volver ao Dashboard"
+    },
+    "docs": {
+      "title": "Centro de Axuda e Documentación",
+      "description": "Aquí poderás acceder a guías completas, titoriais paso a paso, preguntas frecuentes e recursos de axuda para aproveitar ao máximo a plataforma ITAKAI.",
+      "btn_back": "Volver á páxina principal",
+      "meta": {
+        "title": "Documentación - ITAKAI",
+        "description": "Centro de axuda e documentación de ITAKAI"
+      }
+    },
+    "meta": {
+      "site_title": "ITAKAI - A aventura de aprender | Plataforma Educativa Gamificada",
+      "site_description": "Transforma a educación con ITAKAI, a plataforma gamificada que inspira, motiva e conecta a estudantes, profesores e familias. Únete a máis de 50.000 estudantes.",
+      "og_title": "ITAKAI - A aventura de aprender",
+      "og_description": "Plataforma educativa gamificada con IA, narrativas inmersivas e análise intelixente."
+    },
+    "resources": {
+      "xp": "Experiencia (XP)",
+      "coins": "Moedas",
+      "mana": "Maná",
+      "lives": "Puntos de vida"
+    }
+  }
+}

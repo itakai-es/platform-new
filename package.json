@@ -1,0 +1,41 @@
+{
+  "name": "itakai-monorepo",
+  "version": "1.0.0",
+  "description": "ITAKAI - Plataforma Educativa Gamificada",
+  "private": true,
+  "scripts": {
+    "dev": "docker-compose up -d",
+    "dev:logs": "docker-compose logs -f",
+    "dev:stop": "docker-compose down",
+    "dev:clean": "docker-compose down -v",
+    "prod:build": "docker-compose -f docker-compose.prod.yml build",
+    "prod:up": "docker-compose -f docker-compose.prod.yml up -d",
+    "prod:down": "docker-compose -f docker-compose.prod.yml down",
+    "prod:logs": "docker-compose -f docker-compose.prod.yml logs -f",
+    "app:dev": "cd app && docker-compose up -d",
+    "app:test": "cd app && pnpm test:e2e",
+    "app:lint": "cd app && pnpm lint",
+    "api:dev": "cd api && docker-compose up -d",
+    "api:test": "cd api && pnpm test",
+    "api:migrate": "cd api && pnpm db:migrate",
+    "api:seed": "cd api && pnpm db:seed",
+    "api:studio": "cd api && pnpm db:studio",
+    "db:adminer": "open http://localhost:8080",
+    "lint": "pnpm app:lint && cd api && pnpm lint",
+    "test": "pnpm app:test && pnpm api:test"
+  },
+  "keywords": [
+    "education",
+    "gamification",
+    "nuxt",
+    "fastify",
+    "prisma",
+    "typescript"
+  ],
+  "author": "ITAKAI Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "chat": {
+    "assistant": {
+      "default_name": "AI Assistant",
+      "default_title": "Available to help you",
+      "default_description": "I'm here to help you with your studies.",
+      "itakai_assistant": "ITAKAI Assistant"
+    },
+    "interface": {
+      "welcome_greeting": "Hello! I'm {name}",
+      "welcome_greeting_default": "Hello! I'm your assistant",
+      "ask_about": "You can ask me about:",
+      "input_placeholder": "Type your question here...",
+      "input_typing": "The assistant is typing...",
+      "input_sending": "Sending message...",
+      "attach_file": "Attach file",
+      "attach_image": "Attach image",
+      "mention": "Mention",
+      "ask_anything_placeholder": "Ask anything...",
+      "suggested_questions_label": "Suggested questions:",
+      "message_input_placeholder": "Type your message here...",
+      "default_suggestions": [
+        "How do I complete a mission?",
+        "Where can I see my progress?",
+        "How does the XP system work?",
+        "How do I join a class?"
+      ],
+      "teacher_suggestions": [
+        "How do I create a new mission?",
+        "How do I manage my class?",
+        "How do I review student progress?",
+        "How do I assign bonus points?"
+      ]
+    },
+    "god_messages": {
+      "student": [
+        "Need help with your mission?",
+        "Let's learn together!",
+        "Questions about the assignment?",
+        "Ask me anything!",
+        "I'm here to help you",
+        "Stuck? Let's talk!",
+        "Conquer that challenge!",
+        "How's your progress going?"
+      ],
+      "teacher": [
+        "How are your classes going?",
+        "Need to create a mission?",
+        "Questions about your students?",
+        "I'm here to assist you",
+        "Shall we review something together?",
+        "Ideas for your class?",
+        "Let's plan the lesson!",
+        "How can I help you today?"
+      ],
+      "admin": [
+        "Need help?",
+        "At your service",
+        "How can I help you?",
+        "I'm here!"
+      ]
+    },
+    "user_subtitles": {
+      "teacher": "Teacher",
+      "default": "User"
+    }
+  }
+}

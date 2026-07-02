@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-a2d38128-3f53-47df-b43e-0e77927fb9a6" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 113.3">
+  <defs>
+    <style>
+      .uuid-ae06bce4-e2fe-4b9b-88a4-3712bb5ee91f {
+        fill: #004;
+      }
+    </style>
+  </defs>
+  <g id="uuid-b5eb07a7-4c26-4f10-bf9b-d77e7ec81aa2" data-name="Capa 1">
+    <path class="uuid-ae06bce4-e2fe-4b9b-88a4-3712bb5ee91f" d="M2000,97.08c-149.4-30.82-322.4-74.98-529.81-74.98-318.57,0-234.42,70.68-489.87,70.68S631.7,0,364.23,0C217.27,0,87.3,41.89,0,79.64v33.66h2000v-16.22Z"/>
+  </g>
+</svg>
