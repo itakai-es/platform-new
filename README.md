@@ -9,10 +9,8 @@
 
   <p>
     <a href="https://itakai.es"><strong>Website</strong></a> ·
-    <a href="https://demo.itakai.es"><strong>Demo en Vivo</strong></a> ·
-    <a href="./docs"><strong>Documentación</strong></a> ·
-    <a href="https://github.com/itakai-es/platform-new/issues"><strong>Reportar Bug</strong></a> ·
-    <a href="https://github.com/itakai-es/platform-new/discussions"><strong>Comunidad</strong></a>
+    <a href="https://feedback.itakai.es"><strong>Reportar Bug</strong></a> ·
+    <a href="https://x.com/itakai"><strong>Comunidad</strong></a>
   </p>
 
   <p>
@@ -24,18 +22,6 @@
     </a>
     <a href="https://github.com/itakai-es/platform-new/blob/main/LICENSE">
       <img src="https://img.shields.io/github/license/itakai-es/platform-new?style=for-the-badge&logo=opensourceinitiative&color=1A1F3A&logoColor=white" alt="License">
-    </a>
-    <a href="https://github.com/itakai-es/platform-new/releases">
-      <img src="https://img.shields.io/github/v/release/itakai-es/platform-new?style=for-the-badge&logo=github&color=0A0E27&logoColor=white" alt="GitHub release">
-    </a>
-  </p>
-
-  <p>
-    <a href="https://discord.gg/itakai">
-      <img src="https://img.shields.io/discord/YOUR_DISCORD_ID?style=for-the-badge&logo=discord&logoColor=white&label=Discord&color=5865F2" alt="Discord">
-    </a>
-    <a href="https://twitter.com/itakai_es">
-      <img src="https://img.shields.io/twitter/follow/itakai_es?style=for-the-badge&logo=x&logoColor=white&color=000000" alt="Twitter">
     </a>
   </p>
 </div>
@@ -273,12 +259,9 @@ pnpm preview
 
 | Sección | Descripción |
 |---------|-------------|
-| 📖 [Guía de Usuario](./docs/USER_GUIDE.md) | Tutorial completo para estudiantes y profesores |
-| 🏗️ [Instalación](./docs/INSTALLATION.md) | Guía detallada de instalación y configuración |
-| 🔌 [API Reference](./docs/API.md) | Documentación completa de la API REST |
-| 🎨 [Sistema de Diseño](./docs/DESIGN_SYSTEM.md) | Colores, componentes y guías de estilo |
 | 🤝 [Guía de Contribución](./CONTRIBUTING.md) | Cómo contribuir al proyecto |
 | 🔒 [Seguridad](./SECURITY.md) | Política de seguridad y reporte de vulnerabilidades |
+| 📋 [Código de Conducta](./CODE_OF_CONDUCT.md) | Reglas de convivencia en el proyecto |
 
 ---
 
@@ -308,7 +291,6 @@ pnpm preview
 - [ ] Multi-tenancy para instituciones
 - [ ] Analytics con IA predictiva
 
-[Ver roadmap completo →](https://github.com/itakai-es/platform-new/projects)
 
 ---
 
@@ -318,8 +300,8 @@ pnpm preview
 
 ### Formas de Contribuir
 
-- 🐛 **Reportar bugs** - [Crear issue](https://github.com/itakai-es/platform-new/issues/new?template=bug_report.md)
-- 💡 **Sugerir features** - [Crear feature request](https://github.com/itakai-es/platform-new/issues/new?template=feature_request.md)
+- 🐛 **Reportar bugs** - En [feedback.itakai.es](https://feedback.itakai.es)
+- 💡 **Sugerir features** - En [feedback.itakai.es](https://feedback.itakai.es)
 - 📝 **Mejorar documentación** - Hacer un PR con mejoras
 - 🌍 **Traducir** - Ayudar con i18n a otros idiomas
 - 💻 **Código** - Revisar [issues abiertos](https://github.com/itakai-es/platform-new/issues)
@@ -348,16 +330,11 @@ Lee nuestra [Guía de Contribución](./CONTRIBUTING.md) para más detalles.
 
 <div align="center">
 
-[![Discord](https://img.shields.io/badge/Discord-Únete_al_servidor-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/itakai)
-[![Twitter](https://img.shields.io/badge/Twitter-Síguenos-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/itakai_es)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Conéctate-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/company/itakai)
+[![X](https://img.shields.io/badge/X-Síguenos-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/itakai)
 
 </div>
 
-- 💬 **Discord** - Chat en tiempo real con la comunidad
-- 🐦 **Twitter** - Noticias y actualizaciones
-- 📧 **Email** - [hola@itakai.es](mailto:hola@itakai.es)
-- 🌐 **Blog** - [blog.itakai.es](https://blog.itakai.es)
+Novedades, avances y comunidad en [x.com/itakai](https://x.com/itakai).
 
 ---
 
@@ -395,7 +372,7 @@ Lee nuestra [Guía de Contribución](./CONTRIBUTING.md) para más detalles.
 
 ## 📄 Licencia
 
-ITAKAI está licenciado bajo la [Licencia MIT](./LICENSE).
+ITAKAI está licenciado bajo la [Licencia GPL-3.0](./LICENSE).
 
 Esto significa que puedes:
 - ✅ Usar comercialmente
@@ -429,11 +406,8 @@ Agradecemos a todos los contribuidores que han hecho posible este proyecto:
 ## 🔗 Enlaces Útiles
 
 - 🌐 [Website Oficial](https://itakai.es)
-- 📖 [Documentación](./docs)
-- 🎮 [Demo en Vivo](https://demo.itakai.es)
-- 📰 [Blog](https://blog.itakai.es)
-- 🐛 [Reportar Issues](https://github.com/itakai-es/platform-new/issues)
-- 💬 [Discusiones](https://github.com/itakai-es/platform-new/discussions)
+- 🐛 [Reportar bugs y sugerencias](https://feedback.itakai.es)
+- 🐦 [X / Twitter](https://x.com/itakai)
 - 📦 [Releases](https://github.com/itakai-es/platform-new/releases)
 
 ---
@@ -448,6 +422,6 @@ Agradecemos a todos los contribuidores que han hecho posible este proyecto:
 
 **Construido con ❤️ por el equipo de ITAKAI**
 
-[Website](https://itakai.es) • [Demo](https://demo.itakai.es) • [Documentación](./docs) • [Discord](https://discord.gg/itakai)
+[Website](https://itakai.es) • [Reportar bug](https://feedback.itakai.es) • [X](https://x.com/itakai)
 
 </div>
