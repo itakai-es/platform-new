@@ -30,7 +30,8 @@
         "meta": {
           "title": "Mis Clases | ITAKAI Profesor",
           "description": "Gestiona todas tus clases, alumnos inscritos y misiones asignadas."
-        }
+        },
+        "templates": "Plantillas"
       },
       "create": {
         "breadcrumb_classes": "Mis Clases",
@@ -250,6 +251,17 @@
           "general": {
             "title": "Datos generales",
             "name_label": "Nombre",
+            "subject_label": "Asignatura",
+            "level_label": "Nivel educativo",
+            "language_label": "Idioma",
+            "province_label": "Provincia",
+            "metadata_none": "Sin especificar",
+            "metadata_search": "Buscar...",
+            "publish_title": "Publicar como plantilla",
+            "publish_hint": "Compártela en el marketplace para que otros profesores la importen. Necesitas asignatura, nivel e idioma guardados.",
+            "publish_on": "Clase publicada como plantilla",
+            "publish_off": "Plantilla retirada del marketplace",
+            "publish_error": "No se pudo publicar la plantilla",
             "schedule_label": "Horario",
             "background_label": "Imagen de fondo",
             "background_hint": "URL pública a una imagen para la cabecera de la clase.",
@@ -635,6 +647,21 @@
         },
         "btn_close": "Cerrar"
       }
+    },
+    "templates": {
+      "page_title": "Plantillas de clases",
+      "page_subtitle": "Explora clases que otros profesores han publicado e impórtalas a las tuyas.",
+      "search": "Buscar plantillas…",
+      "own": "Tuya",
+      "missions_count": "{n} misiones",
+      "import": "Importar",
+      "import_success": "«{name}» importada. ¡Edítala a tu gusto!",
+      "import_error": "No se pudo importar la plantilla",
+      "load_error": "No se pudieron cargar las plantillas",
+      "empty_title": "Aún no hay plantillas",
+      "empty_description": "Cuando algún profesor publique una clase como plantilla, aparecerá aquí.",
+      "no_results_title": "Sin resultados",
+      "no_results_description": "No hay plantillas que coincidan con los filtros."
     }
   }
 }

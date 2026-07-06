@@ -30,7 +30,8 @@
         "meta": {
           "title": "My Classes | ITAKAI Teacher",
           "description": "Manage all your classes, enrolled students, and assigned missions."
-        }
+        },
+        "templates": "Templates"
       },
       "create": {
         "breadcrumb_classes": "My Classes",
@@ -250,6 +251,17 @@
           "general": {
             "title": "General details",
             "name_label": "Name",
+            "subject_label": "Subject",
+            "level_label": "Education level",
+            "language_label": "Language",
+            "province_label": "Province",
+            "metadata_none": "Not specified",
+            "metadata_search": "Search...",
+            "publish_title": "Publish as template",
+            "publish_hint": "Share it in the marketplace so other teachers can import it. You need subject, level and language saved.",
+            "publish_on": "Class published as a template",
+            "publish_off": "Template removed from the marketplace",
+            "publish_error": "Couldn't publish the template",
             "schedule_label": "Schedule",
             "background_label": "Background image",
             "background_hint": "Public URL of an image used as the class header background.",
@@ -635,6 +647,21 @@
         },
         "btn_close": "Close"
       }
+    },
+    "templates": {
+      "page_title": "Class templates",
+      "page_subtitle": "Browse classes other teachers have published and import them into yours.",
+      "search": "Search templates…",
+      "own": "Yours",
+      "missions_count": "{n} missions",
+      "import": "Import",
+      "import_success": "“{name}” imported. Make it your own!",
+      "import_error": "Couldn't import the template",
+      "load_error": "Couldn't load templates",
+      "empty_title": "No templates yet",
+      "empty_description": "When a teacher publishes a class as a template, it'll show up here.",
+      "no_results_title": "No results",
+      "no_results_description": "No templates match your filters."
     }
   }
 }

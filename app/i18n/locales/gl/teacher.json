@@ -30,7 +30,8 @@
         "meta": {
           "title": "As Miñas Clases | ITAKAI Profesor",
           "description": "Xestiona todas as túas clases, estudantes inscritos e misións asignadas."
-        }
+        },
+        "templates": "Modelos"
       },
       "create": {
         "breadcrumb_classes": "As Miñas Clases",
@@ -250,6 +251,17 @@
           "general": {
             "title": "Datos xerais",
             "name_label": "Nome",
+            "subject_label": "Materia",
+            "level_label": "Nivel educativo",
+            "language_label": "Idioma",
+            "province_label": "Provincia",
+            "metadata_none": "Sen especificar",
+            "metadata_search": "Buscar...",
+            "publish_title": "Publicar como modelo",
+            "publish_hint": "Compárteo no marketplace para que outros profesores o importen. Precisas materia, nivel e idioma gardados.",
+            "publish_on": "Clase publicada como modelo",
+            "publish_off": "Modelo retirado do marketplace",
+            "publish_error": "Non se puido publicar o modelo",
             "schedule_label": "Horario",
             "background_label": "Imaxe de fondo",
             "background_hint": "URL pública dunha imaxe para a cabeceira da clase.",
@@ -635,6 +647,21 @@
         },
         "btn_close": "Pechar"
       }
+    },
+    "templates": {
+      "page_title": "Modelos de clases",
+      "page_subtitle": "Explora clases que outros profesores publicaron e impórtaas ás túas.",
+      "search": "Buscar modelos…",
+      "own": "Túa",
+      "missions_count": "{n} misións",
+      "import": "Importar",
+      "import_success": "«{name}» importada. Personalízaa ao teu gusto!",
+      "import_error": "Non se puido importar o modelo",
+      "load_error": "Non se puideron cargar os modelos",
+      "empty_title": "Aínda non hai modelos",
+      "empty_description": "Cando algún profesor publique unha clase como modelo, aparecerá aquí.",
+      "no_results_title": "Sen resultados",
+      "no_results_description": "Non hai modelos que coincidan cos filtros."
     }
   }
 }

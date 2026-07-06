@@ -1,4 +1,5 @@
 import { prisma } from '../../config/database.js'
+import type { Prisma } from '../../generated/prisma/client.js'
 import { nanoid } from 'nanoid'
 import { getLevelInfo, calculateMissionTotalXP } from '../../utils/xp-calculator.js'
 import { existsSync, mkdirSync, writeFileSync } from 'fs'
@@ -162,6 +163,10 @@ export class TeachersService {
           archived: c.archived,
           invitationCode: c.invitationCode,
           backgroundImage: c.backgroundImage,
+          subject: c.subject,
+          language: c.language,
+          educationLevel: c.educationLevel,
+          province: c.province,
           settings: resolveClassSettings(c.settings),
           studentCount: c.enrollments.length,
           missionCount: totalMissions,
@@ -207,6 +212,11 @@ export class TeachersService {
       archived: cls.archived,
       invitationCode: cls.invitationCode,
       backgroundImage: cls.backgroundImage,
+      subject: cls.subject,
+      language: cls.language,
+      educationLevel: cls.educationLevel,
+      province: cls.province,
+      isTemplate: cls.isTemplate,
       settings: resolveClassSettings(cls.settings),
       updatedAt: cls.updatedAt,
       studentCount: cls.enrollments.length,
@@ -219,7 +229,7 @@ export class TeachersService {
     }
   }
 
-  async createClass(userId: string, data: { name: string; narrative?: string; schedule?: string; backgroundImage?: string }) {
+  async createClass(userId: string, data: { name: string; narrative?: string; schedule?: string; backgroundImage?: string; subject?: string; language?: string; educationLevel?: string; province?: string }) {
     const invitationCode = nanoid(6).toUpperCase()
 
     const cls = await prisma.class.create({
@@ -243,6 +253,10 @@ export class TeachersService {
         archived: cls.archived,
         invitationCode: cls.invitationCode,
         backgroundImage: cls.backgroundImage,
+        subject: cls.subject,
+        language: cls.language,
+        educationLevel: cls.educationLevel,
+        province: cls.province,
       },
       message: 'Clase creada correctamente',
     }
@@ -251,7 +265,7 @@ export class TeachersService {
   async updateClass(
     userId: string,
     classId: string,
-    data: { name?: string; narrative?: string; schedule?: string; backgroundImage?: string; settings?: Partial<ClassSettings> }
+    data: { name?: string; narrative?: string; schedule?: string; backgroundImage?: string; subject?: string; language?: string; educationLevel?: string; province?: string; settings?: Partial<ClassSettings> }
   ) {
     const cls = await prisma.class.findFirst({
       where: { id: classId, teacherId: userId },
@@ -281,10 +295,189 @@ export class TeachersService {
         archived: updated.archived,
         invitationCode: updated.invitationCode,
         backgroundImage: updated.backgroundImage,
+        subject: updated.subject,
+        language: updated.language,
+        educationLevel: updated.educationLevel,
+        province: updated.province,
         settings: resolveClassSettings(updated.settings),
       },
       message: 'Clase actualizada correctamente',
     }
+  }
+
+  // ==================== MARKETPLACE DE PLANTILLAS ====================
+
+  /** Publica/retira una clase como plantilla pública. Al publicar exige metadatos
+   *  mínimos (asignatura, nivel, idioma) para que el marketplace pueda filtrarla. */
+  async publishTemplate(userId: string, classId: string, publish: boolean) {
+    const cls = await prisma.class.findFirst({ where: { id: classId, teacherId: userId } })
+    if (!cls) throw new Error('Clase no encontrada')
+
+    if (publish) {
+      const missing: string[] = []
+      if (!cls.subject) missing.push('subject')
+      if (!cls.educationLevel) missing.push('educationLevel')
+      if (!cls.language) missing.push('language')
+      if (missing.length > 0) {
+        throw new Error('Completa los metadatos de la clase (asignatura, nivel e idioma) antes de publicarla como plantilla.')
+      }
+    }
+
+    await prisma.class.update({ where: { id: classId }, data: { isTemplate: publish } })
+    return { isTemplate: publish }
+  }
+
+  /** Lista las plantillas públicas del marketplace, con filtros opcionales. */
+  async listTemplates(
+    userId: string,
+    filters: { subject?: string; educationLevel?: string; language?: string; province?: string; q?: string } = {}
+  ) {
+    const where: Prisma.ClassWhereInput = {
+      isTemplate: true,
+      archived: false,
+      ...(filters.subject ? { subject: filters.subject } : {}),
+      ...(filters.educationLevel ? { educationLevel: filters.educationLevel } : {}),
+      ...(filters.language ? { language: filters.language } : {}),
+      ...(filters.province ? { province: filters.province } : {}),
+      ...(filters.q
+        ? {
+            OR: [
+              { name: { contains: filters.q, mode: 'insensitive' } },
+              { narrative: { contains: filters.q, mode: 'insensitive' } },
+            ],
+          }
+        : {}),
+    }
+
+    const classes = await prisma.class.findMany({
+      where,
+      include: { teacher: { select: { name: true } }, _count: { select: { missions: true } } },
+      orderBy: { updatedAt: 'desc' },
+      take: 100,
+    })
+
+    return {
+      templates: classes.map((c) => ({
+        id: c.id,
+        name: c.name,
+        narrative: c.narrative,
+        subject: c.subject,
+        language: c.language,
+        educationLevel: c.educationLevel,
+        province: c.province,
+        backgroundImage: c.backgroundImage,
+        teacherName: c.teacher.name,
+        missionCount: c._count.missions,
+        isOwn: c.teacherId === userId,
+      })),
+      total: classes.length,
+    }
+  }
+
+  /** Importa una plantilla: crea una clase NUEVA del profesor con el contenido
+   *  copiado (narrativa, metadatos, settings, guía, tienda, comportamientos y
+   *  misiones + enigmas). No copia alumnos, progreso ni fechas. */
+  async importTemplate(userId: string, templateClassId: string) {
+    const tpl = await prisma.class.findFirst({
+      where: { id: templateClassId, isTemplate: true },
+      include: {
+        guide: true,
+        shopItems: true,
+        behaviorTemplates: true,
+        missions: { include: { enigmas: true } },
+      },
+    })
+    if (!tpl) throw new Error('Plantilla no encontrada')
+
+    const invitationCode = nanoid(6).toUpperCase()
+
+    const created = await prisma.$transaction(
+      async (tx) => {
+        const newClass = await tx.class.create({
+          data: {
+            name: `${tpl.name} (copia)`,
+            narrative: tpl.narrative,
+            backgroundImage: tpl.backgroundImage,
+            subject: tpl.subject,
+            language: tpl.language,
+            educationLevel: tpl.educationLevel,
+            province: tpl.province,
+            settings: tpl.settings as Prisma.InputJsonValue,
+            teacherId: userId,
+            invitationCode,
+            isTemplate: false,
+          },
+        })
+
+        if (tpl.guide) {
+          await tx.classGuide.create({ data: { classId: newClass.id, content: tpl.guide.content } })
+        }
+
+        if (tpl.shopItems.length > 0) {
+          await tx.shopItem.createMany({
+            data: tpl.shopItems.map((s) => ({
+              classId: newClass.id,
+              name: s.name,
+              description: s.description,
+              price: s.price,
+              active: s.active,
+              kind: s.kind,
+              manaCost: s.manaCost,
+              usage: s.usage,
+              lifeRestore: s.lifeRestore,
+            })),
+          })
+        }
+
+        if (tpl.behaviorTemplates.length > 0) {
+          await tx.behaviorTemplate.createMany({
+            data: tpl.behaviorTemplates.map((b) => ({
+              classId: newClass.id,
+              kind: b.kind,
+              name: b.name,
+              description: b.description,
+              xpDelta: b.xpDelta,
+              coinDelta: b.coinDelta,
+              lifeDelta: b.lifeDelta,
+            })),
+          })
+        }
+
+        for (const m of tpl.missions) {
+          const newMission = await tx.mission.create({
+            data: {
+              classId: newClass.id,
+              title: m.title,
+              description: m.description,
+              status: m.status,
+              rarity: m.rarity,
+              backgroundImage: m.backgroundImage,
+              deadline: null, // las fechas son específicas de la clase original
+            },
+          })
+          if (m.enigmas.length > 0) {
+            await tx.missionEnigma.createMany({
+              data: m.enigmas.map((e) => ({
+                missionId: newMission.id,
+                title: e.title,
+                description: e.description,
+                objectives: e.objectives,
+                isOptional: e.isOptional,
+                xpReward: e.xpReward,
+                coinReward: e.coinReward,
+                manaReward: e.manaReward,
+                orderIndex: e.orderIndex,
+              })),
+            })
+          }
+        }
+
+        return newClass
+      },
+      { timeout: 20000 }
+    )
+
+    return { class: { id: created.id, name: created.name }, message: 'Plantilla importada como nueva clase' }
   }
 
   async setClassArchived(userId: string, classId: string, archived: boolean) {

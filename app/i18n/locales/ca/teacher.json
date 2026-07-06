@@ -30,7 +30,8 @@
         "meta": {
           "title": "Les Meves Classes | ITAKAI Professor",
           "description": "Gestiona totes les teves classes, estudiants inscrits i missions assignades."
-        }
+        },
+        "templates": "Plantilles"
       },
       "create": {
         "breadcrumb_classes": "Les Meves Classes",
@@ -250,6 +251,17 @@
           "general": {
             "title": "Dades generals",
             "name_label": "Nom",
+            "subject_label": "Assignatura",
+            "level_label": "Nivell educatiu",
+            "language_label": "Idioma",
+            "province_label": "Província",
+            "metadata_none": "Sense especificar",
+            "metadata_search": "Cercar...",
+            "publish_title": "Publica com a plantilla",
+            "publish_hint": "Comparteix-la al marketplace perquè altres professors la importin. Necessites assignatura, nivell i idioma desats.",
+            "publish_on": "Classe publicada com a plantilla",
+            "publish_off": "Plantilla retirada del marketplace",
+            "publish_error": "No s'ha pogut publicar la plantilla",
             "schedule_label": "Horari",
             "background_label": "Imatge de fons",
             "background_hint": "URL pública d'una imatge per a la capçalera de la classe.",
@@ -635,6 +647,21 @@
         },
         "btn_close": "Tancar"
       }
+    },
+    "templates": {
+      "page_title": "Plantilles de classes",
+      "page_subtitle": "Explora classes que altres professors han publicat i importa-les a les teves.",
+      "search": "Cerca plantilles…",
+      "own": "Teva",
+      "missions_count": "{n} missions",
+      "import": "Importa",
+      "import_success": "«{name}» importada. Personalitza-la al teu gust!",
+      "import_error": "No s'ha pogut importar la plantilla",
+      "load_error": "No s'han pogut carregar les plantilles",
+      "empty_title": "Encara no hi ha plantilles",
+      "empty_description": "Quan algun professor publiqui una classe com a plantilla, apareixerà aquí.",
+      "no_results_title": "Sense resultats",
+      "no_results_description": "No hi ha plantilles que coincideixin amb els filtres."
     }
   }
 }

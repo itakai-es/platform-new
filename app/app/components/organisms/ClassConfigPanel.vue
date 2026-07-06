@@ -19,94 +19,155 @@
 
     <!-- Section: Datos generales -->
     <div v-if="activeSection === 'general'">
-      <form class="space-y-5" @submit.prevent="saveGeneral">
-        <FormField
-          id="cfg-name"
-          v-model="general.name"
-          :label="t('teacher.classes.detail.settings.general.name_label')"
-          required
-        />
+      <form class="space-y-6" @submit.prevent="saveGeneral">
+        <!-- Básicos (izquierda) + Clasificación (derecha) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-6 items-start">
+          <!-- Datos básicos -->
+          <div class="space-y-4">
+          <FormField
+            id="cfg-name"
+            v-model="general.name"
+            :label="t('teacher.classes.detail.settings.general.name_label')"
+            required
+          />
+          <div>
+            <label class="text-sm font-medium text-text-primary mb-2 block">
+              {{ t('teacher.classes.detail.settings.general.schedule_label') }}
+            </label>
+            <ClassScheduleEditor v-model="general.schedule" />
+          </div>
+          </div>
 
-        <div>
-          <label class="text-sm font-medium text-text-primary mb-2 block">
-            {{ t('teacher.classes.detail.settings.general.schedule_label') }}
-          </label>
-          <ClassScheduleEditor v-model="general.schedule" />
+          <!-- Clasificación (columna derecha). Alimenta los filtros del marketplace
+               de plantillas. Opcional ahora; obligatorio al publicar como plantilla. -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 content-start">
+            <div>
+              <label class="text-sm font-medium text-text-primary mb-2 block">
+                {{ t('teacher.classes.detail.settings.general.subject_label') }}
+              </label>
+              <SelectDropdown
+                :model-value="general.subject"
+                :options="subjectOptions"
+                searchable
+                :placeholder="t('teacher.classes.detail.settings.general.metadata_none')"
+                :search-placeholder="t('teacher.classes.detail.settings.general.metadata_search')"
+                @update:model-value="general.subject = String($event)"
+              />
+            </div>
+            <div>
+              <label class="text-sm font-medium text-text-primary mb-2 block">
+                {{ t('teacher.classes.detail.settings.general.level_label') }}
+              </label>
+              <SelectDropdown
+                :model-value="general.educationLevel"
+                :options="educationLevelOptions"
+                :placeholder="t('teacher.classes.detail.settings.general.metadata_none')"
+                @update:model-value="general.educationLevel = String($event)"
+              />
+            </div>
+            <div>
+              <label class="text-sm font-medium text-text-primary mb-2 block">
+                {{ t('teacher.classes.detail.settings.general.language_label') }}
+              </label>
+              <SelectDropdown
+                :model-value="general.language"
+                :options="languageOptions"
+                :placeholder="t('teacher.classes.detail.settings.general.metadata_none')"
+                @update:model-value="general.language = String($event)"
+              />
+            </div>
+            <div>
+              <label class="text-sm font-medium text-text-primary mb-2 block">
+                {{ t('teacher.classes.detail.settings.general.province_label') }}
+              </label>
+              <SelectDropdown
+                :model-value="general.province"
+                :options="provinceOptions"
+                searchable
+                :placeholder="t('teacher.classes.detail.settings.general.metadata_none')"
+                :search-placeholder="t('teacher.classes.detail.settings.general.metadata_search')"
+                @update:model-value="general.province = String($event)"
+              />
+            </div>
+          </div>
         </div>
 
+        <hr class="border-border-primary" />
+
+        <!-- Imagen de fondo -->
         <div>
           <label class="text-sm font-medium text-text-primary mb-2 block">
             {{ t('teacher.classes.detail.settings.general.background_label') }}
           </label>
-          <div class="rounded-2xl bg-white p-4 shadow-sm">
-            <div class="flex flex-col sm:flex-row sm:items-center gap-4">
-              <!-- Preview -->
+          <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+            <!-- Preview -->
+            <div
+              class="relative w-full sm:w-40 h-28 rounded-xl overflow-hidden bg-navy-700/5 flex-shrink-0"
+            >
+              <img
+                v-if="general.backgroundImage"
+                :src="getImageUrl(general.backgroundImage)"
+                alt=""
+                class="w-full h-full object-cover"
+              />
               <div
-                class="relative w-full sm:w-40 h-28 rounded-xl overflow-hidden bg-navy-700/5 flex-shrink-0"
+                v-else
+                class="w-full h-full flex items-center justify-center text-text-secondary text-xs"
               >
-                <img
-                  v-if="general.backgroundImage"
-                  :src="getImageUrl(general.backgroundImage)"
-                  alt=""
-                  class="w-full h-full object-cover"
-                />
-                <div
-                  v-else
-                  class="w-full h-full flex items-center justify-center text-text-secondary text-xs"
-                >
-                  <PhotoIcon class="w-8 h-8 opacity-40" />
-                </div>
-                <div
-                  v-if="generatingImage"
-                  class="absolute inset-0 bg-navy-700/60 flex items-center justify-center"
-                >
-                  <Spinner size="sm" class="text-white" />
-                </div>
+                <PhotoIcon class="w-8 h-8 opacity-40" />
               </div>
+              <div
+                v-if="generatingImage"
+                class="absolute inset-0 bg-navy-700/60 flex items-center justify-center"
+              >
+                <Spinner size="sm" class="text-white" />
+              </div>
+            </div>
 
-              <!-- Acciones -->
-              <div class="flex-1 space-y-2">
-                <p class="text-sm text-text-secondary">
-                  {{ t('teacher.classes.detail.settings.general.background_hint') }}
-                </p>
-                <div class="flex flex-wrap gap-2">
-                  <Button
-                    type="button"
-                    variant="primary"
-                    size="sm"
-                    :icon-left="SparklesIcon"
-                    :loading="generatingImage"
-                    :disabled="generatingImage"
-                    @click="regenerateImage"
-                  >
-                    {{
-                      general.backgroundImage
-                        ? t('teacher.classes.detail.settings.general.background_regenerate')
-                        : t('teacher.classes.detail.settings.general.background_generate')
-                    }}
-                  </Button>
-                  <Button
-                    v-if="general.backgroundImage"
-                    type="button"
-                    variant="ghost"
-                    size="sm"
-                    :icon-left="TrashIcon"
-                    :disabled="generatingImage"
-                    @click="clearImage"
-                  >
-                    {{ t('teacher.classes.detail.settings.general.background_clear') }}
-                  </Button>
-                </div>
+            <!-- Acciones -->
+            <div class="flex-1 space-y-2">
+              <p class="text-sm text-text-secondary">
+                {{ t('teacher.classes.detail.settings.general.background_hint') }}
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <Button
+                  type="button"
+                  variant="primary"
+                  size="sm"
+                  :icon-left="SparklesIcon"
+                  :loading="generatingImage"
+                  :disabled="generatingImage"
+                  @click="regenerateImage"
+                >
+                  {{
+                    general.backgroundImage
+                      ? t('teacher.classes.detail.settings.general.background_regenerate')
+                      : t('teacher.classes.detail.settings.general.background_generate')
+                  }}
+                </Button>
+                <Button
+                  v-if="general.backgroundImage"
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  :icon-left="TrashIcon"
+                  :disabled="generatingImage"
+                  @click="clearImage"
+                >
+                  {{ t('teacher.classes.detail.settings.general.background_clear') }}
+                </Button>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="flex justify-end gap-2 pt-1">
+        <hr class="border-border-primary" />
+
+        <div class="flex justify-end gap-2">
           <Button
             type="button"
             variant="outline"
-            size="sm"
+            size="md"
             :disabled="!generalDirty || savingGeneral"
             @click="resetGeneral"
           >
@@ -115,7 +176,7 @@
           <Button
             type="submit"
             variant="primary"
-            size="sm"
+            size="md"
             :disabled="!generalDirty || savingGeneral"
             :loading="savingGeneral"
           >
@@ -123,6 +184,26 @@
           </Button>
         </div>
       </form>
+
+      <!-- Publicar como plantilla en el marketplace -->
+      <div
+        class="mt-6 flex flex-col gap-3 rounded-2xl border border-border-primary p-4 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <div class="min-w-0">
+          <p class="font-semibold text-navy-700">
+            {{ t('teacher.classes.detail.settings.general.publish_title') }}
+          </p>
+          <p class="mt-0.5 text-sm text-text-secondary">
+            {{ t('teacher.classes.detail.settings.general.publish_hint') }}
+          </p>
+        </div>
+        <Toggle
+          :model-value="isTemplate"
+          :disabled="publishing"
+          class="flex-shrink-0"
+          @update:model-value="togglePublish"
+        />
+      </div>
     </div>
 
     <!-- Section: Funcionalidades -->
@@ -197,11 +278,21 @@ import {
   coerceClassSettings,
   classSettingNeedsResource,
 } from '~/utils/class-settings'
+import {
+  CLASS_LANGUAGES,
+  CLASS_SUBJECTS,
+  CLASS_EDUCATION_LEVELS,
+  SPANISH_PROVINCES,
+} from '~/utils/class-metadata'
 
 interface GeneralData {
   name: string
   schedule: string
   backgroundImage: string
+  subject: string
+  language: string
+  educationLevel: string
+  province: string
 }
 
 const props = defineProps<{
@@ -211,6 +302,11 @@ const props = defineProps<{
     schedule?: string | null
     narrative?: string | null
     backgroundImage?: string | null
+    subject?: string | null
+    language?: string | null
+    educationLevel?: string | null
+    province?: string | null
+    isTemplate?: boolean | null
     invitationCode?: string
     settings?: Partial<ClassSettings> | null
   } | null
@@ -240,6 +336,10 @@ const buildGeneral = (): GeneralData => ({
   name: props.classData?.name ?? '',
   schedule: props.classData?.schedule ?? '',
   backgroundImage: props.classData?.backgroundImage ?? '',
+  subject: props.classData?.subject ?? '',
+  language: props.classData?.language ?? '',
+  educationLevel: props.classData?.educationLevel ?? '',
+  province: props.classData?.province ?? '',
 })
 
 const general = ref<GeneralData>(buildGeneral())
@@ -251,6 +351,10 @@ watch(
     props.classData?.name,
     props.classData?.schedule,
     props.classData?.backgroundImage,
+    props.classData?.subject,
+    props.classData?.language,
+    props.classData?.educationLevel,
+    props.classData?.province,
   ],
   () => {
     // Only sync when the form is clean to avoid clobbering in-progress edits.
@@ -267,13 +371,28 @@ const generalDirty = computed(() => {
   return (
     a.name !== b.name ||
     a.schedule !== b.schedule ||
-    a.backgroundImage !== b.backgroundImage
+    a.backgroundImage !== b.backgroundImage ||
+    a.subject !== b.subject ||
+    a.language !== b.language ||
+    a.educationLevel !== b.educationLevel ||
+    a.province !== b.province
   )
 })
 
 function resetGeneral() {
   general.value = { ...generalSnapshot.value }
 }
+
+// --------- Clasificación (asignatura / nivel / idioma / provincia) ---------
+// Opciones de cada select con un "sin especificar" delante para poder limpiar.
+const noneOption = computed(() => ({
+  value: '',
+  label: t('teacher.classes.detail.settings.general.metadata_none'),
+}))
+const subjectOptions = computed(() => [noneOption.value, ...CLASS_SUBJECTS])
+const languageOptions = computed(() => [noneOption.value, ...CLASS_LANGUAGES])
+const educationLevelOptions = computed(() => [noneOption.value, ...CLASS_EDUCATION_LEVELS])
+const provinceOptions = computed(() => [noneOption.value, ...SPANISH_PROVINCES])
 
 // --------- Imagen de fondo ---------
 const generatingImage = ref(false)
@@ -317,6 +436,10 @@ async function saveGeneral() {
     name: general.value.name.trim(),
     schedule: general.value.schedule.trim(),
     backgroundImage: general.value.backgroundImage.trim(),
+    subject: general.value.subject,
+    language: general.value.language,
+    educationLevel: general.value.educationLevel,
+    province: general.value.province,
   }
 
   try {
@@ -324,6 +447,11 @@ async function saveGeneral() {
       name: payload.name,
       schedule: payload.schedule || undefined,
       backgroundImage: payload.backgroundImage || undefined,
+      // Cadena vacía = "sin especificar" (se envía para poder limpiar el valor).
+      subject: payload.subject,
+      language: payload.language,
+      educationLevel: payload.educationLevel,
+      province: payload.province,
     })
     generalSnapshot.value = { ...payload }
     general.value = { ...payload }
@@ -333,6 +461,39 @@ async function saveGeneral() {
     toast.error(t('teacher.classes.detail.settings.general.toast_error'))
   } finally {
     savingGeneral.value = false
+  }
+}
+
+// --------- Publicar como plantilla en el marketplace ---------
+const isTemplate = ref<boolean>(props.classData?.isTemplate ?? false)
+const publishing = ref(false)
+watch(
+  () => props.classData?.isTemplate,
+  val => {
+    isTemplate.value = val ?? false
+  }
+)
+
+async function togglePublish(value: boolean) {
+  if (publishing.value) return
+  publishing.value = true
+  const previous = isTemplate.value
+  isTemplate.value = value // optimista
+  try {
+    await teacherStore.publishTemplate(props.classId, value)
+    toast.success(
+      value
+        ? t('teacher.classes.detail.settings.general.publish_on')
+        : t('teacher.classes.detail.settings.general.publish_off')
+    )
+  } catch (err: unknown) {
+    isTemplate.value = previous // revierte si el backend rechaza (p. ej. faltan metadatos)
+    const message =
+      (err as { data?: { message?: string } })?.data?.message ||
+      t('teacher.classes.detail.settings.general.publish_error')
+    toast.error(message)
+  } finally {
+    publishing.value = false
   }
 }
 

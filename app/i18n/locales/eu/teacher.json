@@ -30,7 +30,8 @@
         "meta": {
           "title": "Nire Klaseak | ITAKAI Irakaslea",
           "description": "Kudeatu zure klase guztiak, matrikulatutako ikasleak eta esleitutako misioak."
-        }
+        },
+        "templates": "Txantiloiak"
       },
       "create": {
         "breadcrumb_classes": "Nire Klaseak",
@@ -250,6 +251,17 @@
           "general": {
             "title": "Datu orokorrak",
             "name_label": "Izena",
+            "subject_label": "Irakasgaia",
+            "level_label": "Hezkuntza-maila",
+            "language_label": "Hizkuntza",
+            "province_label": "Probintzia",
+            "metadata_none": "Zehaztu gabe",
+            "metadata_search": "Bilatu...",
+            "publish_title": "Argitaratu txantiloi gisa",
+            "publish_hint": "Partekatu marketplacean beste irakasle batzuek inporta dezaten. Gaia, maila eta hizkuntza gordeta behar dituzu.",
+            "publish_on": "Klasea txantiloi gisa argitaratu da",
+            "publish_off": "Txantiloia marketplacetik kendu da",
+            "publish_error": "Ezin izan da txantiloia argitaratu",
             "schedule_label": "Ordutegia",
             "background_label": "Atzeko planoko irudia",
             "background_hint": "Klasearen goiburuko atzeko irudiaren URL publikoa.",
@@ -635,6 +647,21 @@
         },
         "btn_close": "Itxi"
       }
+    },
+    "templates": {
+      "page_title": "Klase-txantiloiak",
+      "page_subtitle": "Beste irakasle batzuek argitaratutako klaseak arakatu eta zureetara inportatu.",
+      "search": "Bilatu txantiloiak…",
+      "own": "Zurea",
+      "missions_count": "{n} misio",
+      "import": "Inportatu",
+      "import_success": "«{name}» inportatu da. Egokitu zure gustura!",
+      "import_error": "Ezin izan da txantiloia inportatu",
+      "load_error": "Ezin izan dira txantiloiak kargatu",
+      "empty_title": "Oraindik ez dago txantiloirik",
+      "empty_description": "Irakasleren batek klase bat txantiloi gisa argitaratzen duenean, hemen agertuko da.",
+      "no_results_title": "Emaitzarik ez",
+      "no_results_description": "Ez dago iragazkiekin bat datorren txantiloirik."
     }
   }
 }
