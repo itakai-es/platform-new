@@ -57,6 +57,17 @@ cp .env.selfhost.example .env.selfhost
 docker compose -f docker-compose.selfhost.yml --env-file .env.selfhost up -d --build
 ```
 
+**Para servir en tu dominio** (por ejemplo el del instituto, resuelto por la DNS de
+tu red): en `.env.selfhost` defines el dominio y nginx se configura con él (como el
+"site URL" de WordPress):
+```bash
+SERVER_NAME=itakai.miinstituto.es          # el dominio (nginx server_name)
+CORS_ORIGIN=https://itakai.miinstituto.es  # (o http:// si sin TLS)
+APP_URL=https://itakai.miinstituto.es
+```
+Que ese dominio apunte al servidor (DNS del router/WiFi del instituto) es un paso
+aparte de tu red — ITAKAI solo necesita saber su dominio con esas variables.
+
 > **HTTPS / producción**: el stack sirve HTTP en el puerto 80, apto para local o red
 > interna. Para una instancia accesible desde internet, pon TLS delante (Caddy,
 > Traefik, Cloudflare) y en `.env.selfhost` define `COOKIE_SECURE=true` y tu

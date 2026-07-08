@@ -1,11 +1,13 @@
-# nginx para el despliegue auto-hosteable de ITAKAI.
-# Sirve la SPA estática y hace de proxy hacia la API (servicio `api` en la red
-# del compose). HTTP en el puerto 80; para HTTPS, pon un reverse-proxy/TLS
-# delante (Caddy, Traefik, Cloudflare) o añade tus certificados aquí.
+# Plantilla de nginx para el despliegue auto-hosteable de ITAKAI.
+# El dominio se fija con la variable de entorno SERVER_NAME (como en WordPress):
+#   SERVER_NAME=itakai.instituto.es
+# Por defecto es `_`, que acepta cualquier dominio. La imagen nginx sustituye
+# ${SERVER_NAME} al arrancar (envsubst); las variables propias de nginx ($host,
+# $uri, etc.) no se tocan gracias a NGINX_ENVSUBST_FILTER=SERVER_NAME.
 server {
     listen 80;
     listen [::]:80;
-    server_name _;
+    server_name ${SERVER_NAME};
 
     root /usr/share/nginx/html;
     index index.html;

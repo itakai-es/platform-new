@@ -96,9 +96,15 @@ services:
         condition: service_completed_successfully
     ports:
       - "${HTTP_PORT:-80}:80"
+    environment:
+      # Tu dominio (como el "site URL" de WordPress). Por defecto `_` = cualquiera.
+      SERVER_NAME: ${SERVER_NAME:-_}
+      # Que envsubst SOLO sustituya SERVER_NAME (no las variables propias de nginx).
+      NGINX_ENVSUBST_FILTER: SERVER_NAME
     volumes:
       - static_html:/usr/share/nginx/html:ro
-      - ./app/nginx/selfhost.conf:/etc/nginx/conf.d/default.conf:ro
+      # La imagen procesa las plantillas de /etc/nginx/templates y las vuelca en conf.d.
+      - ./app/nginx/selfhost.conf.template:/etc/nginx/templates/default.conf.template:ro
     restart: unless-stopped
     networks: [itakai]
 
