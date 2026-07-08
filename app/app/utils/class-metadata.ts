@@ -13,17 +13,10 @@ export interface MetaOption {
   label: string
 }
 
-const toOptions = (values: string[]): MetaOption[] =>
-  values.map((v) => ({ value: v, label: v }))
+const toOptions = (values: string[]): MetaOption[] => values.map(v => ({ value: v, label: v }))
 
 /** Idioma vehicular de la clase: los 5 idiomas que soporta la app (locales). */
-export const CLASS_LANGUAGES = toOptions([
-  'Castellano',
-  'English',
-  'Català',
-  'Euskara',
-  'Galego',
-])
+export const CLASS_LANGUAGES = toOptions(['Castellano', 'English', 'Català', 'Euskara', 'Galego'])
 
 /** Nivel educativo (sistema español, todos los niveles). */
 export const CLASS_EDUCATION_LEVELS = toOptions([

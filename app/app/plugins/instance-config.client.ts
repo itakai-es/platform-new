@@ -7,7 +7,7 @@ import type { InstanceConfig } from '~/composables/useInstanceConfig'
  *    elegido uno explícitamente).
  * Deja el config en un `useState` para que otras vistas (p. ej. el registro) lo lean.
  */
-export default defineNuxtPlugin(async (nuxtApp) => {
+export default defineNuxtPlugin(async nuxtApp => {
   const config = useRuntimeConfig()
   const state = useState<InstanceConfig | null>('instanceConfig', () => null)
 

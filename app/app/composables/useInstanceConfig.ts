@@ -10,5 +10,4 @@ export interface InstanceConfig {
   maintenanceMode: boolean
 }
 
-export const useInstanceConfig = () =>
-  useState<InstanceConfig | null>('instanceConfig', () => null)
+export const useInstanceConfig = () => useState<InstanceConfig | null>('instanceConfig', () => null)
