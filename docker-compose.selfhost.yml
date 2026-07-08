@@ -1,14 +1,18 @@
 # =============================================================================
-# ITAKAI — despliegue AUTO-HOSTEABLE (turnkey, sin dependencias privadas).
+# ITAKAI — despliegue AUTO-HOSTEABLE (turnkey, cero configuración).
 #
-# A diferencia de docker-compose.prod.yml (que usa red host + VPN para el Spark
-# privado), este stack corre en red bridge y no necesita VPN: la IA, el
-# almacenamiento y el dominio se configuran desde el panel de administración.
+# Arranca con UN comando y sin tocar ficheros — trae defaults sensatos y
+# autogenera los secretos:
 #
-# Uso:
-#   1) cp .env.selfhost.example .env.selfhost   # y rellena los secretos
-#   2) docker compose -f docker-compose.selfhost.yml --env-file .env.selfhost up -d --build
-#   3) entra como admin → Configuración → conecta tu IA / almacenamiento / dominio.
+#   docker compose -f docker-compose.selfhost.yml up -d --build
+#
+# Luego abre http://localhost y mira las credenciales de admin en los logs:
+#   docker compose -f docker-compose.selfhost.yml logs api | grep -A4 "Administrador creado"
+#
+# ¿Quieres cambiar algo (dominio, puerto, contraseña de admin, BD…)? Copia
+# `.env.selfhost.example` a `.env.selfhost`, edita solo lo que quieras, y añade
+# `--env-file .env.selfhost` al comando. La IA, el almacenamiento (R2) y el resto
+# se configuran desde el panel de administración una vez dentro.
 # =============================================================================
 name: itakai
 
@@ -18,7 +22,7 @@ services:
     container_name: itakai-db
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-itakai}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Define POSTGRES_PASSWORD en .env.selfhost}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-itakai}
       POSTGRES_DB: ${POSTGRES_DB:-itakai}
     volumes:
       - postgres_data:/var/lib/postgresql/data
@@ -35,15 +39,28 @@ services:
       context: ./api
       dockerfile: Dockerfile
     container_name: itakai-api
-    env_file: [.env.selfhost]
+    # .env.selfhost es OPCIONAL: solo para sobreescribir defaults.
+    env_file:
+      - path: .env.selfhost
+        required: false
     environment:
       NODE_ENV: production
       PORT: 3001
-      DATABASE_URL: postgresql://${POSTGRES_USER:-itakai}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-itakai}
-    # Aplica migraciones pendientes y arranca (turnkey sobre una BD nueva).
-    command: sh -c "pnpm exec prisma migrate deploy && pnpm tsx src/index.ts"
+      DATABASE_URL: postgresql://${POSTGRES_USER:-itakai}:${POSTGRES_PASSWORD:-itakai}@postgres:5432/${POSTGRES_DB:-itakai}
+      # Dominio: por defecto localhost; cámbialo por tu dominio si lo expones.
+      CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost}
+      APP_URL: ${APP_URL:-http://localhost}
+      # Cookies de sesión: por HTTP (local) van sin Secure; con HTTPS pon COOKIE_SECURE=true.
+      COOKIE_SAMESITE: ${COOKIE_SAMESITE:-lax}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      # Admin inicial (opcional): si no defines contraseña, se genera y se imprime en los logs.
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@itakai.local}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      # Los secretos JWT y de cifrado se autogeneran en el primer arranque (ver entrypoint).
+    command: ["sh", "docker-entrypoint.selfhost.sh"]
     volumes:
       - api_uploads:/app/uploads
+      - api_data:/app/data
     depends_on:
       postgres:
         condition: service_healthy
@@ -51,7 +68,7 @@ services:
     networks: [itakai]
 
   # Genera la SPA estática (API base relativa `/api` → independiente del dominio)
-  # y la deja en el volumen compartido que sirve nginx. Es un job de un solo uso.
+  # y la deja en el volumen que sirve nginx. Job de un solo uso.
   app-builder:
     build:
       context: ./app
@@ -88,6 +105,7 @@ services:
 volumes:
   postgres_data:
   api_uploads:
+  api_data:
   static_html:
 
 networks:
