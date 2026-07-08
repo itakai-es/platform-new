@@ -8,39 +8,51 @@
       <p class="mt-1 text-text-secondary">{{ t('teacher.templates.page_subtitle') }}</p>
     </div>
 
-    <!-- Filtros -->
-    <div class="flex flex-col gap-3 lg:flex-row lg:items-center">
-      <input
-        v-model="search"
-        type="text"
-        :placeholder="t('teacher.templates.search')"
-        class="w-full rounded-2xl border border-border-primary bg-surface px-4 py-2.5 text-sm text-text-primary outline-none focus:ring-2 focus:ring-primary/20 lg:max-w-xs"
-      />
-      <div class="grid flex-1 grid-cols-2 gap-2 sm:grid-cols-4">
-        <SelectDropdown
-          :model-value="fSubject"
-          :options="subjectFilterOptions"
-          searchable
-          @update:model-value="fSubject = String($event)"
+    <!-- Filtros (mismo componente que las misiones) -->
+    <FilterBar
+      :search="search"
+      :sort="sort"
+      :results-count="filtered.length"
+      :search-placeholder="t('teacher.templates.search')"
+      :sort-options="sortOptions"
+      :has-active-filters="hasActiveFilters"
+      :active-filter-count="activeFilterCount"
+      variant="red"
+      @update:search="search = $event"
+      @update:sort="sort = $event"
+      @reset="resetFilters"
+    >
+      <template #filters>
+        <MultiSelectDropdown
+          :model-value="fSubjects"
+          :options="CLASS_SUBJECTS"
+          :all-label="t('teacher.templates.filter_all.subject')"
+          :plural-label="t('teacher.templates.plural.subjects')"
+          @update:model-value="fSubjects = $event"
         />
-        <SelectDropdown
-          :model-value="fLevel"
-          :options="levelFilterOptions"
-          @update:model-value="fLevel = String($event)"
+        <MultiSelectDropdown
+          :model-value="fLevels"
+          :options="CLASS_EDUCATION_LEVELS"
+          :all-label="t('teacher.templates.filter_all.level')"
+          :plural-label="t('teacher.templates.plural.levels')"
+          @update:model-value="fLevels = $event"
         />
-        <SelectDropdown
-          :model-value="fLanguage"
-          :options="languageFilterOptions"
-          @update:model-value="fLanguage = String($event)"
+        <MultiSelectDropdown
+          :model-value="fLanguages"
+          :options="CLASS_LANGUAGES"
+          :all-label="t('teacher.templates.filter_all.language')"
+          :plural-label="t('teacher.templates.plural.languages')"
+          @update:model-value="fLanguages = $event"
         />
-        <SelectDropdown
-          :model-value="fProvince"
-          :options="provinceFilterOptions"
-          searchable
-          @update:model-value="fProvince = String($event)"
+        <MultiSelectDropdown
+          :model-value="fProvinces"
+          :options="SPANISH_PROVINCES"
+          :all-label="t('teacher.templates.filter_all.province')"
+          :plural-label="t('teacher.templates.plural.provinces')"
+          @update:model-value="fProvinces = $event"
         />
-      </div>
-    </div>
+      </template>
+    </FilterBar>
 
     <!-- Cargando -->
     <div v-if="loading" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-6">
@@ -61,74 +73,79 @@
 
     <!-- Grid de plantillas -->
     <div v-else class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-6">
-      <div
+      <article
         v-for="tpl in filtered"
         :key="tpl.id"
-        class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
+        class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-lg transition-shadow duration-200 hover:shadow-xl"
       >
         <!-- Portada -->
-        <div class="relative h-32 bg-navy-700/5">
-          <img
+        <div class="relative h-40 flex-shrink-0">
+          <div
             v-if="tpl.backgroundImage"
-            :src="getImageUrl(tpl.backgroundImage) || undefined"
-            alt=""
-            class="h-full w-full object-cover"
+            class="absolute inset-0 bg-cover bg-center"
+            :style="{ backgroundImage: `url(${getImageUrl(tpl.backgroundImage) || ''})` }"
           />
-          <span
+          <div v-else class="absolute inset-0 bg-gray-100" />
+          <StatusBadge
             v-if="tpl.isOwn"
-            class="absolute right-2 top-2 rounded-full bg-white/90 px-2 py-0.5 text-xs font-medium text-navy-700 shadow-sm"
+            variant="activa"
+            class="absolute right-3 top-3"
           >
             {{ t('teacher.templates.own') }}
-          </span>
+          </StatusBadge>
         </div>
 
         <!-- Contenido -->
-        <div class="flex flex-1 flex-col p-4">
-          <h3 class="font-bold leading-snug text-navy-700">{{ tpl.name }}</h3>
-          <p v-if="tpl.narrative" class="mt-1 line-clamp-2 text-sm text-text-secondary">
-            {{ tpl.narrative }}
-          </p>
+        <div class="flex flex-1 flex-col p-6">
+          <h3 class="text-lg font-bold leading-tight text-navy-700 md:text-xl">
+            {{ tpl.name }}
+          </h3>
 
-          <!-- Chips de clasificación -->
-          <div class="mt-2 flex flex-wrap gap-1.5">
-            <span
-              v-if="tpl.subject"
-              class="inline-flex items-center gap-1 rounded-full bg-navy-700/5 px-2 py-0.5 text-xs font-medium text-navy-700"
-            >
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <Badge v-if="tpl.subject" variant="info" size="sm" class="gap-1">
               <BookOpenIcon class="h-3.5 w-3.5" />{{ tpl.subject }}
-            </span>
-            <span
-              v-if="tpl.educationLevel"
-              class="inline-flex items-center gap-1 rounded-full bg-navy-700/5 px-2 py-0.5 text-xs font-medium text-navy-700"
-            >
+            </Badge>
+            <Badge v-if="tpl.educationLevel" variant="info" size="sm" class="gap-1">
               <AcademicCapIcon class="h-3.5 w-3.5" />{{ tpl.educationLevel }}
-            </span>
-            <span
-              v-if="tpl.language"
-              class="inline-flex items-center gap-1 rounded-full bg-navy-700/5 px-2 py-0.5 text-xs font-medium text-navy-700"
-            >
+            </Badge>
+            <Badge v-if="tpl.language" variant="info" size="sm" class="gap-1">
               <LanguageIcon class="h-3.5 w-3.5" />{{ tpl.language }}
-            </span>
+            </Badge>
           </div>
 
-          <p class="mt-3 text-xs text-text-secondary">
-            {{ tpl.teacherName }} · {{ t('teacher.templates.missions_count', { n: tpl.missionCount }) }}
-          </p>
+          <p class="mt-3 flex-1 text-sm text-text-secondary">{{ tpl.teacherName }}</p>
 
-          <Button
-            class="mt-3"
-            variant="primary"
-            size="sm"
-            full-width
-            :loading="importingId === tpl.id"
-            :disabled="importingId !== null"
-            @click="importTemplate(tpl)"
-          >
-            {{ t('teacher.templates.import') }}
-          </Button>
+          <div class="mt-4 flex gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              class="flex-1"
+              :disabled="importingId !== null"
+              @click="previewTemplate(tpl)"
+            >
+              {{ t('teacher.templates.preview_action') }}
+            </Button>
+            <Button
+              variant="primary"
+              size="sm"
+              class="flex-1"
+              :loading="importingId === tpl.id"
+              :disabled="importingId !== null"
+              @click="importTemplate(tpl)"
+            >
+              {{ t('teacher.templates.import') }}
+            </Button>
+          </div>
         </div>
-      </div>
+      </article>
     </div>
+
+    <!-- Modal de previsualización -->
+    <TemplatePreviewModal
+      v-model="previewOpen"
+      :template-id="previewId"
+      @imported="onImported"
+    />
   </div>
 </template>
 
@@ -149,14 +166,12 @@ import {
 interface Template {
   id: string
   name: string
-  narrative: string | null
   subject: string | null
   language: string | null
   educationLevel: string | null
   province: string | null
   backgroundImage: string | null
   teacherName: string
-  missionCount: number
   isOwn: boolean
 }
 
@@ -176,36 +191,72 @@ definePageMeta({
 const templates = ref<Template[]>([])
 const loading = ref(true)
 const importingId = ref<string | null>(null)
+const previewOpen = ref(false)
+const previewId = ref<string | null>(null)
 
-// Filtros (cliente): '' = sin filtro. La etiqueta del campo hace de "todas".
+function previewTemplate(tpl: Template) {
+  previewId.value = tpl.id
+  previewOpen.value = true
+}
+
+function onImported(payload: { id: string; name: string }) {
+  classesStore.hasLoadedClasses = false
+  navigateTo(`/profesor/clases/${payload.id}`)
+}
+
+// Filtros (cliente, multi-select): array vacío = sin filtro.
 const search = ref('')
-const fSubject = ref('')
-const fLevel = ref('')
-const fLanguage = ref('')
-const fProvince = ref('')
+const fSubjects = ref<string[]>([])
+const fLevels = ref<string[]>([])
+const fLanguages = ref<string[]>([])
+const fProvinces = ref<string[]>([])
+const sort = ref('recent')
 
-const G = 'teacher.classes.detail.settings.general'
-const subjectFilterOptions = computed(() => [{ value: '', label: t(`${G}.subject_label`) }, ...CLASS_SUBJECTS])
-const levelFilterOptions = computed(() => [{ value: '', label: t(`${G}.level_label`) }, ...CLASS_EDUCATION_LEVELS])
-const languageFilterOptions = computed(() => [{ value: '', label: t(`${G}.language_label`) }, ...CLASS_LANGUAGES])
-const provinceFilterOptions = computed(() => [{ value: '', label: t(`${G}.province_label`) }, ...SPANISH_PROVINCES])
+const sortOptions = computed(() => [
+  { value: 'recent', label: t('teacher.templates.sort.recent') },
+  { value: 'name-asc', label: t('teacher.templates.sort.name_asc') },
+  { value: 'name-desc', label: t('teacher.templates.sort.name_desc') },
+])
 
 const normalize = (s: string) => s.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '')
 
 const filtered = computed(() => {
   const q = normalize(search.value.trim())
-  return templates.value.filter((tpl) => {
-    if (fSubject.value && tpl.subject !== fSubject.value) return false
-    if (fLevel.value && tpl.educationLevel !== fLevel.value) return false
-    if (fLanguage.value && tpl.language !== fLanguage.value) return false
-    if (fProvince.value && tpl.province !== fProvince.value) return false
+  const list = templates.value.filter((tpl) => {
+    if (fSubjects.value.length > 0 && (!tpl.subject || !fSubjects.value.includes(tpl.subject))) return false
+    if (fLevels.value.length > 0 && (!tpl.educationLevel || !fLevels.value.includes(tpl.educationLevel))) return false
+    if (fLanguages.value.length > 0 && (!tpl.language || !fLanguages.value.includes(tpl.language))) return false
+    if (fProvinces.value.length > 0 && (!tpl.province || !fProvinces.value.includes(tpl.province))) return false
     if (q) {
-      const hay = normalize(`${tpl.name} ${tpl.narrative ?? ''}`)
+      const hay = normalize(tpl.name)
       if (!hay.includes(q)) return false
     }
     return true
   })
+
+  // Sort in-memory. 'recent' preserva el orden del backend (updatedAt desc).
+  if (sort.value === 'name-asc') {
+    return [...list].sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }))
+  }
+  if (sort.value === 'name-desc') {
+    return [...list].sort((a, b) => b.name.localeCompare(a.name, undefined, { sensitivity: 'base' }))
+  }
+  return list
 })
+
+const activeFilterCount = computed(
+  () => fSubjects.value.length + fLevels.value.length + fLanguages.value.length + fProvinces.value.length
+)
+const hasActiveFilters = computed(() => activeFilterCount.value > 0)
+
+function resetFilters() {
+  search.value = ''
+  fSubjects.value = []
+  fLevels.value = []
+  fLanguages.value = []
+  fProvinces.value = []
+  sort.value = 'recent'
+}
 
 async function loadTemplates() {
   loading.value = true

@@ -36,6 +36,87 @@
             </label>
             <ClassScheduleEditor v-model="general.schedule" />
           </div>
+
+          <!-- Imagen de fondo -->
+          <div>
+            <label class="text-sm font-medium text-text-primary mb-2 block">
+              {{ t('teacher.classes.detail.settings.general.background_label') }}
+            </label>
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+              <!-- Preview -->
+              <div
+                class="relative w-full sm:w-40 h-28 rounded-xl overflow-hidden bg-navy-700/5 flex-shrink-0"
+              >
+                <img
+                  v-if="general.backgroundImage"
+                  :src="getImageUrl(general.backgroundImage)"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  v-else
+                  class="w-full h-full flex items-center justify-center text-text-secondary text-xs"
+                >
+                  <PhotoIcon class="w-8 h-8 opacity-40" />
+                </div>
+                <div
+                  v-if="generatingImage"
+                  class="absolute inset-0 bg-navy-700/60 flex items-center justify-center"
+                >
+                  <Spinner size="sm" class="text-white" />
+                </div>
+              </div>
+
+              <!-- Acciones -->
+              <div class="flex-1 space-y-2">
+                <div class="flex flex-wrap gap-2">
+                  <Button
+                    type="button"
+                    variant="primary"
+                    size="sm"
+                    :icon-left="SparklesIcon"
+                    :loading="generatingImage"
+                    :disabled="generatingImage"
+                    @click="regenerateImage"
+                  >
+                    {{
+                      general.backgroundImage
+                        ? t('teacher.classes.detail.settings.general.background_regenerate')
+                        : t('teacher.classes.detail.settings.general.background_generate')
+                    }}
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    :icon-left="ArrowUpTrayIcon"
+                    :disabled="generatingImage"
+                    @click="coverFileRef?.click()"
+                  >
+                    {{ t('teacher.classes.detail.settings.general.background_upload') }}
+                  </Button>
+                  <Button
+                    v-if="general.backgroundImage"
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    :icon-left="TrashIcon"
+                    :disabled="generatingImage"
+                    @click="clearImage"
+                  >
+                    {{ t('teacher.classes.detail.settings.general.background_clear') }}
+                  </Button>
+                </div>
+                <input
+                  ref="coverFileRef"
+                  type="file"
+                  accept="image/png,image/jpeg,image/webp"
+                  class="hidden"
+                  @change="handleCoverUpload"
+                />
+              </div>
+            </div>
+          </div>
           </div>
 
           <!-- Clasificación (columna derecha). Alimenta los filtros del marketplace
@@ -49,9 +130,10 @@
                 :model-value="general.subject"
                 :options="subjectOptions"
                 searchable
+                :error="publishErrors.subject"
                 :placeholder="t('teacher.classes.detail.settings.general.metadata_none')"
                 :search-placeholder="t('teacher.classes.detail.settings.general.metadata_search')"
-                @update:model-value="general.subject = String($event)"
+                @update:model-value="general.subject = String($event); publishErrors.subject = false"
               />
             </div>
             <div>
@@ -61,8 +143,9 @@
               <SelectDropdown
                 :model-value="general.educationLevel"
                 :options="educationLevelOptions"
+                :error="publishErrors.educationLevel"
                 :placeholder="t('teacher.classes.detail.settings.general.metadata_none')"
-                @update:model-value="general.educationLevel = String($event)"
+                @update:model-value="general.educationLevel = String($event); publishErrors.educationLevel = false"
               />
             </div>
             <div>
@@ -72,8 +155,9 @@
               <SelectDropdown
                 :model-value="general.language"
                 :options="languageOptions"
+                :error="publishErrors.language"
                 :placeholder="t('teacher.classes.detail.settings.general.metadata_none')"
-                @update:model-value="general.language = String($event)"
+                @update:model-value="general.language = String($event); publishErrors.language = false"
               />
             </div>
             <div>
@@ -89,74 +173,26 @@
                 @update:model-value="general.province = String($event)"
               />
             </div>
-          </div>
-        </div>
 
-        <hr class="border-border-primary" />
-
-        <!-- Imagen de fondo -->
-        <div>
-          <label class="text-sm font-medium text-text-primary mb-2 block">
-            {{ t('teacher.classes.detail.settings.general.background_label') }}
-          </label>
-          <div class="flex flex-col sm:flex-row sm:items-center gap-4">
-            <!-- Preview -->
+            <!-- Publicar como plantilla en el marketplace: vive junto a la
+                 clasificación porque depende de asignatura/nivel/idioma. -->
             <div
-              class="relative w-full sm:w-40 h-28 rounded-xl overflow-hidden bg-navy-700/5 flex-shrink-0"
+              class="sm:col-span-2 mt-1 flex flex-col gap-3 rounded-2xl border border-border-primary p-4 sm:flex-row sm:items-center sm:justify-between"
             >
-              <img
-                v-if="general.backgroundImage"
-                :src="getImageUrl(general.backgroundImage)"
-                alt=""
-                class="w-full h-full object-cover"
+              <div class="min-w-0">
+                <p class="font-semibold text-navy-700">
+                  {{ t('teacher.classes.detail.settings.general.publish_title') }}
+                </p>
+                <p class="mt-0.5 text-sm text-text-secondary">
+                  {{ t('teacher.classes.detail.settings.general.publish_hint') }}
+                </p>
+              </div>
+              <Toggle
+                :model-value="isTemplate"
+                :disabled="publishing"
+                class="flex-shrink-0"
+                @update:model-value="togglePublish"
               />
-              <div
-                v-else
-                class="w-full h-full flex items-center justify-center text-text-secondary text-xs"
-              >
-                <PhotoIcon class="w-8 h-8 opacity-40" />
-              </div>
-              <div
-                v-if="generatingImage"
-                class="absolute inset-0 bg-navy-700/60 flex items-center justify-center"
-              >
-                <Spinner size="sm" class="text-white" />
-              </div>
-            </div>
-
-            <!-- Acciones -->
-            <div class="flex-1 space-y-2">
-              <p class="text-sm text-text-secondary">
-                {{ t('teacher.classes.detail.settings.general.background_hint') }}
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <Button
-                  type="button"
-                  variant="primary"
-                  size="sm"
-                  :icon-left="SparklesIcon"
-                  :loading="generatingImage"
-                  :disabled="generatingImage"
-                  @click="regenerateImage"
-                >
-                  {{
-                    general.backgroundImage
-                      ? t('teacher.classes.detail.settings.general.background_regenerate')
-                      : t('teacher.classes.detail.settings.general.background_generate')
-                  }}
-                </Button>
-                <Button
-                  v-if="general.backgroundImage"
-                  type="button"
-                  variant="ghost"
-                  size="sm"
-                  :icon-left="TrashIcon"
-                  :disabled="generatingImage"
-                  @click="clearImage"
-                >
-                  {{ t('teacher.classes.detail.settings.general.background_clear') }}
-                </Button>
-              </div>
             </div>
           </div>
         </div>
@@ -184,26 +220,6 @@
           </Button>
         </div>
       </form>
-
-      <!-- Publicar como plantilla en el marketplace -->
-      <div
-        class="mt-6 flex flex-col gap-3 rounded-2xl border border-border-primary p-4 sm:flex-row sm:items-center sm:justify-between"
-      >
-        <div class="min-w-0">
-          <p class="font-semibold text-navy-700">
-            {{ t('teacher.classes.detail.settings.general.publish_title') }}
-          </p>
-          <p class="mt-0.5 text-sm text-text-secondary">
-            {{ t('teacher.classes.detail.settings.general.publish_hint') }}
-          </p>
-        </div>
-        <Toggle
-          :model-value="isTemplate"
-          :disabled="publishing"
-          class="flex-shrink-0"
-          @update:model-value="togglePublish"
-        />
-      </div>
     </div>
 
     <!-- Section: Funcionalidades -->
@@ -265,6 +281,7 @@ import {
   HandRaisedIcon,
   PhotoIcon,
   TrashIcon,
+  ArrowUpTrayIcon,
   SpeakerWaveIcon,
 } from '@heroicons/vue/24/outline'
 import CoinIcon from '~/components/atoms/CoinIcon.vue'
@@ -396,6 +413,32 @@ const provinceOptions = computed(() => [noneOption.value, ...SPANISH_PROVINCES])
 
 // --------- Imagen de fondo ---------
 const generatingImage = ref(false)
+const coverFileRef = ref<HTMLInputElement>()
+
+// El profe puede subir su propia portada en vez de generarla con IA. Se lee
+// como data URL y el backend la persiste en /uploads al guardar (updateClass).
+function handleCoverUpload(event: Event) {
+  const input = event.target as HTMLInputElement
+  const file = input.files?.[0]
+  if (!file) return
+  const validTypes = ['image/png', 'image/jpeg', 'image/webp']
+  if (!validTypes.includes(file.type)) {
+    toast.error(t('teacher.classes.detail.settings.general.background_upload_type_error'))
+    input.value = ''
+    return
+  }
+  if (file.size > 5 * 1024 * 1024) {
+    toast.error(t('teacher.classes.detail.settings.general.background_upload_size_error'))
+    input.value = ''
+    return
+  }
+  const reader = new FileReader()
+  reader.onload = e => {
+    general.value.backgroundImage = e.target?.result as string
+  }
+  reader.readAsDataURL(file)
+  input.value = ''
+}
 
 async function regenerateImage() {
   if (generatingImage.value) return
@@ -474,8 +517,26 @@ watch(
   }
 )
 
+// Campos de clasificación que deben estar guardados para poder publicar.
+// Al intentar activar sin ellos, se resaltan en rojo en el formulario.
+const publishErrors = ref({ subject: false, educationLevel: false, language: false })
+
 async function togglePublish(value: boolean) {
   if (publishing.value) return
+  if (value) {
+    const snap = generalSnapshot.value
+    const missing = {
+      subject: !snap.subject,
+      educationLevel: !snap.educationLevel,
+      language: !snap.language,
+    }
+    if (missing.subject || missing.educationLevel || missing.language) {
+      publishErrors.value = missing
+      toast.error(t('teacher.classes.detail.settings.general.publish_missing_metadata'))
+      return
+    }
+  }
+  publishErrors.value = { subject: false, educationLevel: false, language: false }
   publishing.value = true
   const previous = isTemplate.value
   isTemplate.value = value // optimista

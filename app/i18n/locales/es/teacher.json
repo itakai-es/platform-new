@@ -52,12 +52,12 @@
         },
         "preview_label": "Así se verá tu clase",
         "onboarding": {
-          "ask_idea": "¡Hola {name}! Soy {god}. Cuéntame, ¿de qué quieres que sea tu clase?",
+          "ask_idea": "¡Hola {name}! Soy {god}. Cuéntame, ¿qué mundo o temática quieres para tu clase?",
           "review_approach": "Esto es lo que he preparado para ti, ¿te gusta?",
           "pick_title": "¿Qué título le ponemos a tu clase?",
           "ask_schedule": "¿Qué horario tendrá tu clase?",
           "ask_image": "He creado esta portada para tu clase",
-          "placeholder_idea": "Ej: Quiero crear una clase de física para 3º ESO con temática de mitología griega, centrada en mecánica y termodinámica...",
+          "placeholder_idea": "Ej: Una escuela de magia con 4 casas que compiten por puntos, alumnos-magos y desafíos como mazmorras…",
           "generating_approach": "Estoy creando la narrativa de tu clase...",
           "narrative_feedback_placeholder": "Ej: Quiero más referencias a las casas de Hogwarts...",
           "btn_change_something": "Quiero cambiar algo",
@@ -66,6 +66,9 @@
           "placeholder_schedule": "Ej: Lunes y Miércoles 10:00-12:00",
           "generating_cover": "Generando portada...",
           "cover_error": "No se pudo generar la portada. Puedes saltarte este paso.",
+          "btn_upload_cover": "Subir la mía",
+          "cover_upload_type_error": "Formato no válido. Sube una imagen PNG, JPG o WEBP.",
+          "cover_upload_size_error": "La imagen es demasiado grande (máximo 5 MB).",
           "image_feedback_placeholder": "Quiero que sea más colorida, con fondo azul...",
           "thinking": "Pensando...",
           "btn_back": "Atrás",
@@ -258,7 +261,8 @@
             "metadata_none": "Sin especificar",
             "metadata_search": "Buscar...",
             "publish_title": "Publicar como plantilla",
-            "publish_hint": "Compártela en el marketplace para que otros profesores la importen. Necesitas asignatura, nivel e idioma guardados.",
+            "publish_hint": "Compártela en el marketplace para que otros profesores la importen.",
+            "publish_missing_metadata": "Guarda asignatura, nivel e idioma antes de publicar.",
             "publish_on": "Clase publicada como plantilla",
             "publish_off": "Plantilla retirada del marketplace",
             "publish_error": "No se pudo publicar la plantilla",
@@ -276,6 +280,9 @@
             "background_generate": "Generar con IA",
             "background_regenerate": "Regenerar con IA",
             "background_clear": "Quitar imagen",
+            "background_upload": "Subir la mía",
+            "background_upload_type_error": "Formato no válido. Sube una imagen PNG, JPG o WEBP.",
+            "background_upload_size_error": "La imagen es demasiado grande (máximo 5 MB).",
             "background_error": "No se pudo generar la imagen"
           },
           "features": {
@@ -661,7 +668,43 @@
       "empty_title": "Aún no hay plantillas",
       "empty_description": "Cuando algún profesor publique una clase como plantilla, aparecerá aquí.",
       "no_results_title": "Sin resultados",
-      "no_results_description": "No hay plantillas que coincidan con los filtros."
+      "no_results_description": "No hay plantillas que coincidan con los filtros.",
+      "preview_action": "Previsualizar",
+      "preview": {
+        "loading": "Cargando plantilla…",
+        "by": "Por {name}",
+        "active": "Activada",
+        "inactive": "Desactivada",
+        "load_error": "No se pudo cargar la plantilla",
+        "error": "No se encontró la plantilla.",
+        "tab_narrative": "Historia",
+        "tab_features": "Funcionalidades",
+        "tab_shop": "Tienda ({n})",
+        "tab_behaviors": "Comportamientos ({n})",
+        "no_narrative_title": "Sin historia",
+        "no_narrative_description": "Esta plantilla no tiene historia definida.",
+        "no_shop_title": "Sin tienda",
+        "no_shop_description": "Esta plantilla no trae artículos de tienda. Podrás añadirlos tú.",
+        "no_behaviors_title": "Sin comportamientos",
+        "no_behaviors_description": "Esta plantilla no trae comportamientos. Podrás definirlos tú."
+      },
+      "filter_all": {
+        "subject": "Todas las asignaturas",
+        "level": "Todos los niveles",
+        "language": "Todos los idiomas",
+        "province": "Todas las provincias"
+      },
+      "sort": {
+        "recent": "Más recientes",
+        "name_asc": "Nombre A-Z",
+        "name_desc": "Nombre Z-A"
+      },
+      "plural": {
+        "subjects": "asignaturas",
+        "levels": "niveles",
+        "languages": "idiomas",
+        "provinces": "provincias"
+      }
     }
   }
 }

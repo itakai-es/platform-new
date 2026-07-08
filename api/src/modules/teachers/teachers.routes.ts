@@ -373,6 +373,19 @@ export async function teacherRoutes(fastify: FastifyInstance) {
     }
   })
 
+  fastify.get('/templates/:classId', async (request: FastifyRequest<{ Params: { classId: string } }>, reply: FastifyReply) => {
+    try {
+      const { id } = request.user as { id: string }
+      const result = await teachersService.getTemplateDetail(id, request.params.classId)
+      return result
+    } catch (error) {
+      if (error instanceof Error) {
+        return reply.status(404).send({ message: error.message })
+      }
+      return reply.status(500).send({ message: 'Error interno' })
+    }
+  })
+
   fastify.post('/templates/:classId/import', async (request: FastifyRequest<{ Params: { classId: string } }>, reply: FastifyReply) => {
     try {
       const { id } = request.user as { id: string }

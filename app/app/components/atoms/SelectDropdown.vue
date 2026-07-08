@@ -86,6 +86,8 @@ interface Props {
   searchable?: boolean
   searchPlaceholder?: string
   noResultsText?: string
+  /** Resalta el campo en rojo para señalar un valor requerido que falta. */
+  error?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -94,6 +96,7 @@ const props = withDefaults(defineProps<Props>(), {
   searchable: false,
   searchPlaceholder: 'Buscar...',
   noResultsText: 'Sin resultados',
+  error: false,
 })
 
 const emit = defineEmits<{
@@ -125,9 +128,17 @@ const triggerClasses = computed(() => {
     'w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-2xl text-sm sm:text-base flex items-center justify-between gap-2 transition-colors duration-200 outline-none'
   const normal = 'border-border-primary bg-surface text-text-primary'
   const active = 'border-primary bg-surface text-text-primary ring-2 ring-primary/20'
+  const errorStyle = 'border-red-500 bg-surface text-text-primary ring-2 ring-red-500/20'
   const disabledStyle = 'bg-gray-100 border-gray-200 cursor-not-allowed opacity-60'
 
-  return [base, props.disabled ? disabledStyle : isOpen.value ? active : normal].join(' ')
+  const state = props.disabled
+    ? disabledStyle
+    : isOpen.value
+      ? active
+      : props.error
+        ? errorStyle
+        : normal
+  return [base, state].join(' ')
 })
 
 const toggleDropdown = () => {
